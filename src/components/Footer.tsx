@@ -30,7 +30,10 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a
+                  href="https://www.instagram.com/forgnstudio/"
+                  className="hover:underline"
+                >
                   Instagram
                 </a>
               </li>
@@ -39,7 +42,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="mt-8 text-center text-xs text-gray-500">
-        ©2024 STORE. ALL RIGHTS RESERVED.
+        ©2024 FORGN. ALL RIGHTS RESERVED.
       </div>
     </footer>
   )

@@ -22,7 +22,7 @@ const config: Config = {
         customButton: '#FF4343',
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        inter: ['Inter'],
       },
     },
   },

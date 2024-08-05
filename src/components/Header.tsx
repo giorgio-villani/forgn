@@ -15,8 +15,8 @@ interface MenuItemProps {
 
 const Header: React.FC = () => {
   return (
-    <div className="bg-gray-100 w-full">
-      <div className="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
+    <div className="bg-white w-full">
+      <div className="max-w-screen-xl mx-auto py-4 flex items-center justify-between">
         <a href="./">
           <img src="./forgn.png" className="max-w-[120px] max-h-[120px]" />
         </a>
@@ -26,12 +26,12 @@ const Header: React.FC = () => {
             <button className="px-4 py-2 rounded-md flex items-center">
               ABOUT <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
             </button>
-            <div className="absolute hidden group-hover:block bg-white border mt-2 rounded-md shadow-lg">
+            <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
               <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                Option 1
+                Team
               </a>
               <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                Option 2
+                Activations
               </a>
             </div>
           </div>
@@ -40,12 +40,12 @@ const Header: React.FC = () => {
             <button className="px-4 py-2 rounded-md flex items-center">
               EVENTS <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
             </button>
-            <div className="absolute hidden group-hover:block bg-white border mt-2 rounded-md shadow-lg">
+            <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
               <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                Option 1
+                Presentations
               </a>
               <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                Option 2
+                Workshops
               </a>
             </div>
           </div>
