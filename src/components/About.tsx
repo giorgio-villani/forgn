@@ -2,7 +2,7 @@ import React from 'react'
 
 const About: React.FC = () => {
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <section className="bg-customGray py-20">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="text-3xl mb-4">
@@ -104,6 +104,11 @@ const About: React.FC = () => {
           <h2 className="text-4xl mb-4 capitalize font-inter">
             What We Strive For
           </h2>
+          <p>
+            Bridge the gap between traditional artistry and digital innovation,
+            fostering a vibrant community where creativity and technology
+            converge.
+          </p>
           <div className="py-12 px-4">
             <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-left">
@@ -119,7 +124,7 @@ const About: React.FC = () => {
                   </li>
                 </ul>
               </div>
-              <div className="bg-gray-300 h-64"></div>
+              <img src="./activation.jpg" alt="activation" />
             </div>
           </div>
         </div>
