@@ -1,5 +1,4 @@
 import React from 'react'
-import data from '@/data/artists'
 
 interface CardProps {
   icon: string
