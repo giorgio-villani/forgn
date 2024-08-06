@@ -108,7 +108,7 @@ const About: React.FC = () => {
               />
               <Card
                 icon="1x1.svg"
-                title="Schedule"
+                title="Hackathon"
                 description={lorem}
                 link="#"
               />
@@ -231,7 +231,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-customBlue py-20">
+      <section className="bg-customButton py-20">
         <div className="flex flex-col items-center justify-center text-center ">
           <div className="bg-white rounded-xl w-[1200px]">
             <div className="m-10">
