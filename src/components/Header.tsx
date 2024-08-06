@@ -22,13 +22,13 @@ const Header: React.FC = () => {
         </a>
 
         <div className="flex items-center space-x-4">
-          <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+          <a href="./sculpture" className="block px-4 py-2 hover:bg-gray-100">
             Sculpture Classes
           </a>
-          <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+          <a href="./digital" className="block px-4 py-2 hover:bg-gray-100">
             Digital Art Classes
           </a>
-          <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+          <a href="./gallery" className="block px-4 py-2 hover:bg-gray-100">
             Gallery
           </a>
           <div className="relative group">
@@ -36,23 +36,34 @@ const Header: React.FC = () => {
               More <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
             </button>
             <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+              <a href="./team" className="block px-4 py-2 hover:bg-gray-100">
                 Team
               </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+              <a
+                href="./activations"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 Activations
               </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+              <a
+                href="./presentations"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 Presentations
               </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+              <a
+                href="./workshops"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 Workshops
               </a>
             </div>
           </div>
-          <button className="bg-customButton rounded-full text-white py-3 px-5 transform hover:scale-105 transition duration-300 ease-in-out">
-            Calendar
-          </button>
+          <a href="./calendar">
+            <button className="bg-customButton rounded-full text-white py-3 px-5 transform hover:scale-105 transition duration-300 ease-in-out">
+              Calendar
+            </button>
+          </a>
         </div>
       </div>
     </div>
