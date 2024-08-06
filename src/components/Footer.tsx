@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-footerColor text-white py-8 w-full">
+    <footer className="bg-gray-100 text-black py-8 w-full">
       <div className="max-w-screen-xl mx-auto flex justify-between items-start">
         <div>
           <img src="./forgn.png" className="max-w-[120px] max-h-[120px]" />

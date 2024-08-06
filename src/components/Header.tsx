@@ -50,11 +50,8 @@ const Header: React.FC = () => {
               </a>
             </div>
           </div>
-          <button className="bg-customButton rounded-full text-white p-3 transform hover:scale-105 transition duration-300 ease-in-out">
-            Schedule Class
-          </button>
-          <button className="bg-green-500 rounded-full text-black p-3 transform hover:scale-105 transition duration-300 ease-in-out">
-            Book Space
+          <button className="bg-customButton rounded-full text-white py-3 px-5 transform hover:scale-105 transition duration-300 ease-in-out">
+            Calendar
           </button>
         </div>
       </div>
