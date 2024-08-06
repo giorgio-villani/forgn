@@ -11,6 +11,7 @@ interface TeamMemberProps {
 }
 
 type Artist = {
+  name: string
   picture: string
   description: string
 }
