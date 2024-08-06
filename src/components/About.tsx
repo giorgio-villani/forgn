@@ -3,28 +3,113 @@ import React from 'react'
 const About: React.FC = () => {
   return (
     <div className="w-full ">
-      <section className="bg-customGray py-20">
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="text-3xl mb-4">
-            <img
-              src="forgn_icon.png"
-              className="max-w-[75px] max-h-[75px]"
-            ></img>
-            <div className="pt-5 capitalize font-inter text-4xl">
-              Forgn: the future of physical art and digital applications
+      <section className="bg-white py-20">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-2">
+          <div>
+            <div>
+              <h2 className="text-3xl mb-4">
+                <img
+                  src="forgn_icon.png"
+                  className="max-w-[75px] max-h-[75px]"
+                  alt="Forgn Icon"
+                />
+                <div
+                  className="pt-5 capitalize font-inter text-4xl"
+                  style={{ textWrap: 'balance' }}
+                >
+                  Forgn: the future of physical art and digital applications
+                </div>
+              </h2>
+              <p
+                className="text-xl font-inter leading-relaxed mb-4"
+                style={{ textWrap: 'balance' }}
+              >
+                Work with artists and tech experts to create exciting art that
+                blends traditional and digital styles.
+              </p>
             </div>
-          </h2>
-          <p className="text-xl font-inter">
-            Where Creativity and Technology Unite
-          </p>
-          <div className="pt-10">
-            <button className="bg-customButton rounded-full text-white p-3">
-              Up Coming Events
-            </button>
+            <div className="pt-10">
+              <button className="PRIMARY BUTTON LARGE bg-customButton rounded-full text-white p-3 transform hover:scale-105 transition duration-300 ease-in-out">
+                Upcoming Events
+              </button>
+            </div>
+          </div>
+          <img src="./ed.JPG" className="pl-5 max-w-[650px] max-h-[500px]" />
+        </div>
+      </section>
+      <section className="bg-gray-200 text-white py-20">
+        <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center">
+          <h2 className="text-4xl mb-4 font-inter capitalize">What we offer</h2>
+          <div className="bg-gray-200 text-white text-left py-12 px-4">
+            <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div>
+                <h3 className="font-bold text-xl mb-2">Sculpture Classes</h3>
+                <p>
+                  Create flexible studio spaces that accommodate both
+                  traditional art-making tools (easels, sculpting tools, etc.)
+                  and digital equipment (computers, tablets, 3D printers). This
+                  encourages seamless transitions between physical and digital
+                  work.
+                </p>
+              </div>
+              <div className="bg-gray-200 text-black border border-customButton p-4">
+                <h3 className="font-bold text-xl mb-2">Digital Art Classes</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <a className="text-red-500 m-2" href="">
+                  Learn More
+                </a>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl mb-2">Gallery</h3>
+                <p>
+                  Utilize digital fabrication techniques such as 3D printing,
+                  laser cutting, and CNC milling to produce intricate physical
+                  artworks. This allows for precise and innovative designs that
+                  might be difficult to achieve by hand.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl mb-2">Team</h3>
+                <p>
+                  Implement software and tools that enable real-time
+                  collaboration between artists. Platforms like virtual reality
+                  (VR) workspaces can allow multiple artists to co-create in a
+                  shared digital environment, even if they are physically apart.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl mb-2">
+                  Exhibition Innovation
+                </h3>
+                <p>
+                  Design gallery spaces that merge physical and digital
+                  experiences. Use projection mapping to animate static artworks
+                  or create immersive VR exhibitions that visitors can explore
+                  digitally.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl mb-2">
+                  Cross-Disciplinary Teams
+                </h3>
+                <p>
+                  Build diverse teams that include both traditional artists and
+                  digital technologists. This fusion of skills will foster
+                  innovative approaches and allow the studio to tackle a wide
+                  range of projects, from digital animations to physical
+                  installations enhanced with digital interactivity.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section className="bg-customBlue text-white py-20">
+      {/* <section className="bg-customBlue text-white py-20">
         <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center">
           <h2 className="text-4xl mb-4 font-inter capitalize">
             a passion for creating change
@@ -98,7 +183,7 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="bg-customGray py-8">
         <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center w-[700px]">
           <h2 className="text-4xl mb-4 capitalize font-inter">
@@ -115,7 +200,7 @@ const About: React.FC = () => {
                 <h2 className="text-4xl mb-4 capitalize font-inter">
                   Our Mission
                 </h2>
-                <ul className="list-disc pl-5 space-y-2 text-lg">
+                <ul className="list-disc pl-5 space-y-2">
                   <li>Collaborate with Visionary Artists and Technologists.</li>
                   <li>Showcase Innovative Artworks and Installations.</li>
                   <li>
@@ -124,7 +209,11 @@ const About: React.FC = () => {
                   </li>
                 </ul>
               </div>
-              <img src="./activation.jpg" alt="activation" />
+              <img
+                src="./activation.jpg"
+                alt="activation"
+                className="transform hover:scale-105 transition duration-500 ease-in-out"
+              />
             </div>
           </div>
         </div>
@@ -135,8 +224,10 @@ const About: React.FC = () => {
           <div className="bg-white rounded-xl w-[1200px]">
             <div className="m-10">
               <h2 className="text-4xl capitalize font-inter">subscribe</h2>
-              <p>Stay in the loop with everything you need to know.</p>
-              <button className="bg-customButton rounded-full text-white p-2">
+              <p className="mt-2">
+                Stay in the loop with everything you need to know.
+              </p>
+              <button className="bg-customButton rounded-full text-white p-3 mt-5 transform hover:scale-105 transition duration-300 ease-in-out">
                 Sign Up
               </button>
             </div>
