@@ -3,19 +3,14 @@
 'use client'
 
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
-interface MenuItemProps {
-  tag: string
-  link: string
-}
-
 const Header: React.FC = () => {
   return (
-    <div className="bg-white w-full">
+    <div className="bg-white w-full z-50 relative">
       <div className="max-w-screen-xl mx-auto py-4 flex items-center justify-between">
         <a className="hover:opacity-50 transition duration-300" href="./">
           <img src="./forgn.png" className="max-w-[120px] max-h-[120px]" />
@@ -56,6 +51,12 @@ const Header: React.FC = () => {
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 Workshops
+              </a>
+              <a
+                href="./hackathons"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                Hackathons
               </a>
             </div>
           </div>

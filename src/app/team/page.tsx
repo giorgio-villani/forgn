@@ -29,16 +29,16 @@ const teamMember = ({
   reverse = false,
 }: TeamMemberProps) => (
   <div
-    className={`max-w-screen-xl mx-auto flex ${reverse ? 'flex-row-reverse' : ''}`}
+    className={`max-w-screen-xl mx-auto flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center`}
   >
-    <div className="w-1/2">
-      <img src={imgSrc} className={`w-1/2 ${imgClass}`} alt={name} />
+    <div className="w-full md:w-1/2">
+      <img src={imgSrc} className={`w-full md:w-auto ${imgClass}`} alt={name} />
     </div>
-    <div className="w-1/2 flex">
+    <div className="w-full md:w-1/2 flex">
       <div className="px-5">
         <h2 className="mb-4">
           <div
-            className="pt-5 font-inter text-7xl"
+            className="pt-5 font-inter text-4xl md:text-7xl"
             style={{ textWrap: 'balance' }}
           >
             {name}
@@ -77,14 +77,6 @@ export default function Team() {
           reverse: true,
         })}
       </section>
-      {/* <section className="bg-white py-20">
-        {teamMember({
-          name: artistsData.bailey.name,
-          description: artistsData.bailey.description,
-          imgSrc: `./team/${artistsData.bailey.picture}`,
-          imgClass: 'max-h-[500px]',
-        })}
-      </section> */}
     </div>
   )
 }

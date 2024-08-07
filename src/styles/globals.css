@@ -31,3 +31,45 @@ body {
     text-wrap: balance;
   }
 }
+
+/* styles/globals.css */
+
+.fc .fc-toolbar {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.fc .fc-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+.fc .fc-button:hover {
+  background-color: #0056b3;
+}
+
+.fc .fc-button:focus {
+  box-shadow: none;
+}
+
+.fc .fc-button-group .fc-button {
+  margin-right: 5px;
+}
+
+.fc .fc-button-group .fc-button:last-child {
+  margin-right: 0;
+}
+
+.fc .fc-today-button {
+  background-color: #28a745;
+}
+
+.fc .fc-today-button:hover {
+  background-color: #218838;
+}
+
+.fc .fc-title {
+  font-weight: bold;
+}
