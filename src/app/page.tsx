@@ -1,4 +1,5 @@
 import CustomButton from '@/components/CustomButton'
+import SubscribeForm from '@/components/SubscribeForm'
 import React from 'react'
 
 interface CardProps {
@@ -231,7 +232,7 @@ const About: React.FC = () => {
       </section>
 
       <section className="bg-customButton py-20">
-        <div className="flex flex-col items-center justify-center text-center ">
+        {/* <div className="flex flex-col items-center justify-center text-center ">
           <div className="bg-white rounded-xl w-[1200px]">
             <div className="m-10">
               <h2 className="text-4xl capitalize font-inter">subscribe</h2>
@@ -247,10 +248,12 @@ const About: React.FC = () => {
               </div>
               <div className="mt-5">
                 <CustomButton href="./" text="Sign Up" />
+                <SubscribeForm />
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+        <SubscribeForm />
       </section>
     </div>
   )
