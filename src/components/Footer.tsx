@@ -10,10 +10,10 @@ const Footer: React.FC = () => {
           <img src="./forgn.png" className="max-w-[120px] max-h-[120px]" />
           <p className="text-sm mt-1">ART AND TECH MEET</p>
         </div>
-        <div className="flex m-5 space-x-16">
-          <div>
+        <div className="flex m-5">
+          <div className="pr-5">
             <h2 className="text-xl font-semibold">About</h2>
-            <ul className="mt-2 space-y-1">
+            <ul className="">
               <li>
                 <a href="#" className="hover:underline">
                   Team
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h2 className="text-xl font-semibold">Social</h2>
-            <ul className="mt-2 space-y-1">
+            <ul className="">
               <li>
                 <a href="#" className="hover:underline">
                   Twitter/X
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="mt-3 text-center text-xs text-gray-500">
+      <div className="mt-5 text-center text-xs text-gray-500">
         ©2024 FORGN Studio. ALL RIGHTS RESERVED.
       </div>
     </footer>
