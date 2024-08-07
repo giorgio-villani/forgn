@@ -61,7 +61,7 @@ export default function Sculpture() {
             methods and gain inspiration from a master sculptor.
           </li>
         </ul>
-        <h2 className="text-3xl mb-4">What You willl Gain:</h2>
+        <h2 className="text-3xl mb-4">What You will Gain:</h2>
         <ul className="list-disc list-inside mb-6">
           <li>
             Technical Skills: Master the essential techniques of clay sculpting.
