@@ -17,8 +17,8 @@ const About: React.FC = () => {
           className={`bg-white text-black border border-customButton p-4 transition-transform duration-100 transform hover:-translate-y-5 aspect-1 flex flex-col`}
         >
           <img className="w-12 h-12" src={icon} alt="" />
-          <h3 className="font-bold text-xl mb-2">{title}</h3>
-          <p>{description}</p>
+          <h3 className="font-bold text-xl font-inter mb-2">{title}</h3>
+          <p className="text-xl font-inter">{description}</p>
           <div className="mt-auto text-red-500 m-2">Learn More</div>
         </div>
       </a>
@@ -61,7 +61,7 @@ const About: React.FC = () => {
             What we offer
           </h2>
           <div className="text-left py-12 px-4">
-            <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card
                 icon="1x1.svg"
                 title="Sculpture Classes"
@@ -96,22 +96,22 @@ const About: React.FC = () => {
               />
               <Card
                 icon="1x1.svg"
+                title="Workshops"
+                description="Join hands-on workshops to develop your artistic skills. Our workshops cover a wide range of topics and techniques for all skill levels."
+                link="./workshops"
+              />
+              {/* <Card
+                icon="1x1.svg"
                 title="Presentations"
                 description="Attend presentations by leading artists and technologists. Gain insights into the latest trends and techniques in the art world."
                 link="./presentations"
               />
               <Card
                 icon="1x1.svg"
-                title="Workshops"
-                description="Join hands-on workshops to develop your artistic skills. Our workshops cover a wide range of topics and techniques for all skill levels."
-                link="./workshops"
-              />
-              <Card
-                icon="1x1.svg"
                 title="Hackathons"
                 description="Compete in our hackathons where art meets technology. Collaborate with others to create innovative projects in a fast-paced environment."
                 link="./hackathons"
-              />
+              /> */}
             </div>
           </div>
           <div>

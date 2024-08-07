@@ -8,6 +8,7 @@ interface TeamMemberProps {
   imgSrc: string
   imgClass?: string
   reverse?: boolean
+  website?: string
 }
 
 type Artist = {
@@ -27,6 +28,7 @@ const teamMember = ({
   imgSrc,
   imgClass = '',
   reverse = false,
+  website = '',
 }: TeamMemberProps) => (
   <div
     className={`max-w-screen-xl mx-auto flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center`}
@@ -50,6 +52,11 @@ const teamMember = ({
         >
           {description}
         </p>
+        {website && (
+          <p className="underline text-customButton ">
+            <a href={website}>Website</a>
+          </p>
+        )}
       </div>
     </div>
   </div>
@@ -60,12 +67,14 @@ export default function Team() {
 
   return (
     <div className="w-full">
-      <section className="bg-white py-20">
+      <section className="bg-white py-10">
         {teamMember({
           name: artistsData.shelley.name,
           description: artistsData.shelley.description,
           imgSrc: `./team/${artistsData.shelley.picture}`,
           imgClass: 'min-w-[600px]',
+          website:
+            'http://sculpturestudieswithshelley.info/Houstons_Premiere_Ceramic_Figure_Sculpture_Studio.html',
         })}
       </section>
       <section className="bg-gradient-to-b from-gray-100 to-white py-20">
@@ -75,6 +84,15 @@ export default function Team() {
           imgSrc: `./team/${artistsData.bailey.picture}`,
           imgClass: 'max-h-[500px]',
           reverse: true,
+          website: 'https://linktr.ee/skogsnegl',
+        })}
+      </section>
+      <section className="bg-gradient-to-b from-gray-100 to-white py-20">
+        {teamMember({
+          name: artistsData.olesia.name,
+          description: artistsData.olesia.description,
+          imgSrc: `./team/${artistsData.olesia.picture}`,
+          imgClass: 'max-h-[500px]',
         })}
       </section>
     </div>

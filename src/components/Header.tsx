@@ -51,9 +51,9 @@ const Header: React.FC = () => {
               <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
                 <LinkButton href="./team" text="Team" />
                 <LinkButton href="./activations" text="Activations" />
-                <LinkButton href="./presentations" text="Presentations" />
                 <LinkButton href="./workshops" text="Workshops" />
-                <LinkButton href="./hackathons" text="Hackathons" />
+                {/* <LinkButton href="./presentations" text="Presentations" />
+                <LinkButton href="./hackathons" text="Hackathons" /> */}
               </div>
             </div>
             <CustomButton href="./calendar" text="Calendar" />
@@ -68,9 +68,9 @@ const Header: React.FC = () => {
             <div className="bg-gray-200">
               <LinkButton href="./team" text="Team" />
               <LinkButton href="./activations" text="Activations" />
-              <LinkButton href="./presentations" text="Presentations" />
               <LinkButton href="./workshops" text="Workshops" />
-              <LinkButton href="./hackathons" text="Hackathons" />
+              {/* <LinkButton href="./presentations" text="Presentations" /> */}
+              {/* <LinkButton href="./hackathons" text="Hackathons" /> */}
             </div>
             <div className="bg-customButton text-white">
               <LinkButton href="./calendar" text="Calendar" />
