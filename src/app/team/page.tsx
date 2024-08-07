@@ -80,7 +80,7 @@ export default function Team() {
 
   return (
     <div className="w-full">
-      <section className="bg-white py-10">
+      <section className="bg-white py-5 lg:py-10">
         {teamMember({
           name: artistsData.shelley.name,
           description: artistsData.shelley.description,
@@ -90,7 +90,7 @@ export default function Team() {
             'http://sculpturestudieswithshelley.info/Houstons_Premiere_Ceramic_Figure_Sculpture_Studio.html',
         })}
       </section>
-      <section className="bg-gradient-to-b from-gray-100 to-white py-20">
+      <section className="bg-gradient-to-b from-gray-100 to-white py-5 lg:py-10">
         {teamMember({
           name: artistsData.bailey.name,
           description: artistsData.bailey.description,
@@ -100,7 +100,7 @@ export default function Team() {
           website: 'https://linktr.ee/skogsnegl',
         })}
       </section>
-      <section className="bg-gradient-to-b from-gray-100 to-white py-20">
+      <section className="bg-white py-5 lg:py-10">
         {teamMember({
           name: artistsData.olesia.name,
           description: artistsData.olesia.description,

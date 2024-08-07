@@ -26,8 +26,8 @@ const About: React.FC = () => {
   }
   return (
     <div className="w-full ">
-      <section className="bg-white py-20 m-5">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-2">
+      <section className="bg-white lg:py-20 m-5">
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row flex-col-reverse">
           <div>
             <div>
               <h2 className="mb-4">
@@ -52,7 +52,10 @@ const About: React.FC = () => {
               </button>
             </div>
           </div>
-          <img src="./ed.JPG" className="pl-5 max-w-[650px] max-h-[500px]" />
+          <img
+            src="./ed.jpg"
+            className="md:pl-5 lg:pl-5 max-w-[650px] max-h-[500px] object-cover"
+          />
         </div>
       </section>
       <section className="bg-gradient-to-b from-gray-100 to-white text-white py-20">
