@@ -1,3 +1,4 @@
+import CustomButton from '@/components/CustomButton'
 import React from 'react'
 
 interface CardProps {
@@ -24,16 +25,11 @@ const About: React.FC = () => {
   }
   return (
     <div className="w-full ">
-      <section className="bg-white py-20">
+      <section className="bg-white py-20 m-5">
         <div className="max-w-screen-xl mx-auto grid grid-cols-2">
           <div>
             <div>
               <h2 className="mb-4">
-                {/* <img
-                  src="forgn_icon.png"
-                  className="max-w-[75px] max-h-[75px]"
-                  alt="Forgn Icon"
-                /> */}
                 <div
                   className="pt-5 font-inter text-7xl"
                   style={{ textWrap: 'balance' }}
@@ -249,9 +245,9 @@ const About: React.FC = () => {
                   placeholder="Enter email here..."
                 />
               </div>
-              <button className="bg-customButton rounded-full text-white p-3 mt-5 transform hover:scale-105 transition duration-300 ease-in-out">
-                Sign Up
-              </button>
+              <div className="mt-5">
+                <CustomButton href="./" text="Sign Up" />
+              </div>
             </div>
           </div>
         </div>
