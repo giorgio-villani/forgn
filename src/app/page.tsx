@@ -28,24 +28,22 @@ const About: React.FC = () => {
     <div className="w-full ">
       <section className="bg-white lg:py-20 m-5">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row flex-col-reverse">
-          <div>
-            <div>
-              <h2 className="mb-4">
-                <div
-                  className="pt-5 font-inter text-5xl lg:text-7xl"
-                  style={{ textWrap: 'balance' }}
-                >
-                  Learn Skills, Make Art, Meet People
-                </div>
-              </h2>
-              <p
-                className="text-xl font-inter leading-relaxed mb-4"
+          <div className="">
+            <h2 className="mb-4">
+              <div
+                className="pt-5 font-inter text-5xl lg:text-7xl"
                 style={{ textWrap: 'balance' }}
               >
-                Work with artists and tech experts to create exciting art that
-                blends traditional and digital styles.
-              </p>
-            </div>
+                Learn Skills, Make Art, Meet People
+              </div>
+            </h2>
+            <p
+              className="text-xl font-inter leading-relaxed mb-4"
+              style={{ textWrap: 'balance' }}
+            >
+              Work with artists and tech experts to create exciting art that
+              blends traditional and digital styles.
+            </p>
             <div className="pt-10">
               <button className="PRIMARY BUTTON LARGE bg-customButton rounded-full text-white text-2xl px-8 py-4 transform hover:scale-105 transition duration-300 ease-in-out">
                 Upcoming Events
@@ -200,7 +198,7 @@ const About: React.FC = () => {
         </div>
       </section> */}
       <section className="bg-red py-8">
-        <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center w-[700px]">
+        <div className="max-w-screen-xl mx-auto text-center px-4">
           <h2 className="text-4xl mb-4 capitalize font-inter">
             What We Strive For
           </h2>
@@ -209,25 +207,25 @@ const About: React.FC = () => {
             fostering a vibrant community where creativity and technology
             converge.
           </p>
-          <div className="py-12 px-4">
-            <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="text-left">
-                <h2 className="text-4xl mb-4 capitalize font-inter">
-                  Our Mission
-                </h2>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Collaborate with Visionary Artists and Technologists.</li>
-                  <li>Showcase Innovative Artworks and Installations.</li>
-                  <li>
-                    Explore and Learn About the Future of Art and technology
-                    applications.
-                  </li>
-                </ul>
-              </div>
+          <div className="py-12 flex flex-col md:flex-row gap-8 ">
+            <div className=" md:text-left flex-1">
+              <h2 className="text-4xl mb-4 capitalize font-inter text-center">
+                Our Mission
+              </h2>
+              <ul className="pl-5 space-y-2">
+                <li>Collaborate with Visionary Artists and Technologists.</li>
+                <li>Showcase Innovative Artworks and Installations.</li>
+                <li>
+                  Explore and Learn About the Future of Art and technology
+                  applications.
+                </li>
+              </ul>
+            </div>
+            <div className="flex justify-center md:justify-end flex-1">
               <img
                 src="./activation.jpg"
                 alt="activation"
-                className="transform hover:scale-105 transition duration-500 ease-in-out"
+                className="w-full h-auto max-w-xs md:max-w-md transform hover:scale-105 transition duration-500 ease-in-out"
               />
             </div>
           </div>

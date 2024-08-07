@@ -5,7 +5,7 @@ export default function Activations() {
     <div className="w-full flex flex-col items-center">
       <h1 className="text-5xl text-center">Activations</h1>
       <div className="max-w-[1200px] flex flex-col md:flex-row items-center">
-        <div className="w-full m-2 md:w-1/2">
+        <div className="w-full p-2 md:w-1/2">
           <img
             className="w-full h-[500px] object-cover"
             src="./activation/activation-before.jpg"
@@ -13,7 +13,7 @@ export default function Activations() {
           />
           <div className="text-center">Before</div>
         </div>
-        <div className="w-full m-2 md:w-1/2">
+        <div className="w-full p-2 md:w-1/2">
           <img
             className="w-full h-[500px] object-cover"
             src="./activation/activation-after.jpg"

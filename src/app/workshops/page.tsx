@@ -5,7 +5,7 @@ export default function Workshops() {
     <div className="w-full flex flex-col items-center">
       <h1 className="text-5xl text-center">Workshops</h1>
       <div className="max-w-[1200px] m-5">
-        <img src="./workshops/daniel-presentation.jpg" alt="" />
+        <img className="" src="./workshops/daniel-presentation.jpg" alt="" />
         <div className="text-center">Creative Coding - Daniel Calderon</div>
       </div>
       <section className="bg-white py-5 max-w-[1200px] w-full px-4 text-center">

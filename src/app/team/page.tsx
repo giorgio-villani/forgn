@@ -80,6 +80,7 @@ export default function Team() {
 
   return (
     <div className="w-full">
+      <h1 className="text-5xl text-center">Team</h1>
       <section className="bg-white py-5 lg:py-10">
         {teamMember({
           name: artistsData.shelley.name,
