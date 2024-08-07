@@ -4,7 +4,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  inputs = {
-    disableNextImageOptimizer = false,
+  [plugins.inputs]
+    disableNextImageOptimizer = false
     enableAdvancedFormsSupport = true
-  }
