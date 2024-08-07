@@ -20,6 +20,16 @@ type Artist = {
 type Data = {
   shelley: Artist
   bailey: Artist
+  olesia: Artist
+}
+
+const unescapeHtml = (escapedStr: string) => {
+  return escapedStr
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
 }
 
 const teamMember = ({
@@ -50,7 +60,7 @@ const teamMember = ({
           className="text-xl font-inter leading-relaxed mb-4"
           style={{ textWrap: 'balance' }}
         >
-          {description}
+          {unescapeHtml(description)}
         </p>
         {website && (
           <p className="underline text-customButton ">

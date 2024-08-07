@@ -67,7 +67,7 @@ export default function Digital() {
             explore new methods and gain inspiration from industry experts.
           </li>
         </ul>
-        <h2 className="text-3xl mb-4">What You'll Gain:</h2>
+        <h2 className="text-3xl mb-4">What You will Gain:</h2>
         <ul className="list-disc list-inside mb-6">
           <li>
             Technical Skills: Master the essential tools and techniques of
@@ -93,9 +93,9 @@ export default function Digital() {
         </p>
         <p className="mb-6">
           Dive into the world of digital art and unlock your potential with the
-          guidance of our expert instructors. Whether you're looking to pursue
-          digital art as a hobby or a professional career, our classes will
-          equip you with the skills and inspiration to succeed.
+          guidance of our expert instructors. Whether you&lsquo;re looking to
+          pursue digital art as a hobby or a professional career, our classes
+          will equip you with the skills and inspiration to succeed.
         </p>
         <p>Experience the future of art at FORGN Studio. Register today!</p>
       </section>
