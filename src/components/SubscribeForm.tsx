@@ -2,25 +2,35 @@
 
 import React, { useState } from 'react'
 
-const SubscribeForm = () => {
+const SubscribeForm: React.FC = () => {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const form = e.target
+    const form = e.currentTarget
+
+    const formData = new FormData(form)
+    const formDataEntries = Array.from(formData.entries()).reduce(
+      (acc, [key, value]) => {
+        acc[key] = value as string
+        return acc
+      },
+      {} as Record<string, string>
+    )
+    const urlSearchParams = new URLSearchParams(formDataEntries).toString()
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString(),
+      body: urlSearchParams,
     })
       .then(() => setStatus('success'))
       .catch((error) => setStatus('error'))
   }
 
   return (
-    <div className="bg-red-600 flex items-center justify-center text-center py-10 ">
+    <div className="bg-red-600 flex items-center justify-center text-center py-10">
       <div className="bg-white rounded-lg w-[1200px]">
         <div className="m-10">
           <h2 className="text-4xl mb-4 font-inter">Subscribe</h2>
