@@ -32,7 +32,7 @@ const About: React.FC = () => {
             <div>
               <h2 className="mb-4">
                 <div
-                  className="pt-5 font-inter text-7xl"
+                  className="pt-5 font-inter text-5xl lg:text-7xl"
                   style={{ textWrap: 'balance' }}
                 >
                   Learn Skills, Make Art, Meet People
