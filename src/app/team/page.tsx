@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import artists from '@/data/artists.json'
 
 interface TeamMemberProps {
@@ -43,27 +42,31 @@ const teamMember = ({
   <div
     className={`max-w-screen-xl mx-auto flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center`}
   >
-    <div className="w-full md:w-1/2">
-      <img src={imgSrc} className={`w-full md:w-auto ${imgClass}`} alt={name} />
+    <div className="w-full md:w-1/2 p-4">
+      <img
+        src={imgSrc}
+        className={`w-full h-auto object-cover ${imgClass}`}
+        alt={name}
+      />
     </div>
-    <div className="w-full md:w-1/2 flex">
+    <div className="w-full md:w-1/2 flex p-4">
       <div className="px-5">
         <h2 className="mb-4">
           <div
             className="pt-5 font-inter text-4xl md:text-7xl"
-            style={{ textWrap: 'balance' }}
+            style={{ wordWrap: 'break-word' }}
           >
             {name}
           </div>
         </h2>
         <p
           className="text-xl font-inter leading-relaxed mb-4"
-          style={{ textWrap: 'balance' }}
+          style={{ wordWrap: 'break-word' }}
         >
           {unescapeHtml(description)}
         </p>
         {website && (
-          <p className="underline text-customButton ">
+          <p className="underline text-customButton">
             <a href={website}>Website</a>
           </p>
         )}
@@ -82,7 +85,7 @@ export default function Team() {
           name: artistsData.shelley.name,
           description: artistsData.shelley.description,
           imgSrc: `./team/${artistsData.shelley.picture}`,
-          imgClass: 'min-w-[600px]',
+          imgClass: 'max-w-full h-auto object-cover',
           website:
             'http://sculpturestudieswithshelley.info/Houstons_Premiere_Ceramic_Figure_Sculpture_Studio.html',
         })}
@@ -92,7 +95,7 @@ export default function Team() {
           name: artistsData.bailey.name,
           description: artistsData.bailey.description,
           imgSrc: `./team/${artistsData.bailey.picture}`,
-          imgClass: 'max-h-[500px]',
+          imgClass: 'max-w-full max-h-[500px] object-cover',
           reverse: true,
           website: 'https://linktr.ee/skogsnegl',
         })}
@@ -102,7 +105,7 @@ export default function Team() {
           name: artistsData.olesia.name,
           description: artistsData.olesia.description,
           imgSrc: `./team/${artistsData.olesia.picture}`,
-          imgClass: 'max-h-[500px]',
+          imgClass: 'max-w-full max-h-[500px] object-cover',
         })}
       </section>
     </div>
