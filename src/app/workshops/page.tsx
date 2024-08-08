@@ -39,7 +39,7 @@ export default function WorkshopList() {
   return (
     <div className="flex justify-center p-4 font-poppins">
       <div className="w-full max-w-[1200px]">
-        <h1 className="text-5xl  mb-6 text-center">Workshop List</h1>
+        <h1 className="text-5xl mb-6 text-center">Workshop List</h1>
         <div className="flex">
           <aside className="w-1/4 pr-4">
             <input
@@ -50,15 +50,15 @@ export default function WorkshopList() {
             <div className="mb-4 border rounded p-2">
               <h2 className="font-bold text-lg mb-2">All Subjects</h2>
               <ul className="space-y-2 text-customButton">
-                <a href="">
-                  <li>Sculpture</li>
-                </a>
-                <a href="">
-                  <li>Digital Art</li>
-                </a>
-                <a href="">
-                  <li>Film</li>
-                </a>
+                <li>
+                  <a href="#">Sculpture</a>
+                </li>
+                <li>
+                  <a href="#">Digital Art</a>
+                </li>
+                <li>
+                  <a href="#">Film</a>
+                </li>
               </ul>
             </div>
           </aside>
@@ -73,11 +73,11 @@ export default function WorkshopList() {
             </div>
             <div className="space-y-4">
               {classes.map((cls, index) => (
-                <a href={`/classes/${index}`}>
-                  <div
-                    key={index}
-                    className="flex border border-gray-300 rounded p-4 hover:bg-gray-200"
-                  >
+                <div
+                  key={index}
+                  className="border border-gray-300 rounded p-4 hover:bg-gray-200"
+                >
+                  <a href={`/workshops/${index}`} className="flex">
                     <img
                       src={cls.image}
                       alt={cls.title}
@@ -93,8 +93,8 @@ export default function WorkshopList() {
                         <span className="text-xl font-bold">{cls.price}</span>
                       </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               ))}
             </div>
           </main>
