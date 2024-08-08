@@ -14,12 +14,14 @@ type Artist = {
   name: string
   picture: string
   description: string
+  website?: string
 }
 
 type Data = {
   shelley: Artist
   bailey: Artist
   olesia: Artist
+  daniel: Artist
 }
 
 const unescapeHtml = (escapedStr: string) => {
@@ -40,7 +42,7 @@ const teamMember = ({
   website = '',
 }: TeamMemberProps) => (
   <div
-    className={`max-w-screen-xl mx-auto flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center`}
+    className={`max-w-screen-xl mx-auto font-poppins flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center`}
   >
     <div className="w-full md:w-1/2 p-4">
       <img
@@ -53,23 +55,23 @@ const teamMember = ({
       <div className="px-5">
         <h2 className="mb-4">
           <div
-            className="pt-5 font-inter text-4xl md:text-7xl"
+            className="pt-5 text-4xl md:text-5xl"
             style={{ wordWrap: 'break-word' }}
           >
             {name}
           </div>
         </h2>
+        {website && (
+          <p className="underline text-customButton pb-3">
+            <a href={website}>Artist Website</a>
+          </p>
+        )}
         <p
-          className="text-xl font-inter leading-relaxed mb-4"
+          className="text-lg  leading-relaxed mb-4"
           style={{ wordWrap: 'break-word' }}
         >
           {unescapeHtml(description)}
         </p>
-        {website && (
-          <p className="underline text-customButton">
-            <a href={website}>Website</a>
-          </p>
-        )}
       </div>
     </div>
   </div>
@@ -80,15 +82,14 @@ export default function Team() {
 
   return (
     <div className="w-full">
-      <h1 className="text-5xl text-center">Team</h1>
+      <h1 className="text-5xl text-center font-inter">Team</h1>
       <section className="bg-white py-5 lg:py-10">
         {teamMember({
           name: artistsData.shelley.name,
           description: artistsData.shelley.description,
           imgSrc: `./team/${artistsData.shelley.picture}`,
-          imgClass: 'max-w-full h-auto object-cover',
-          website:
-            'http://sculpturestudieswithshelley.info/Houstons_Premiere_Ceramic_Figure_Sculpture_Studio.html',
+          imgClass: 'max-w-full max-h-[500px] object-cover',
+          website: `${artistsData.shelley.website}`,
         })}
       </section>
       <section className="bg-gradient-to-b from-gray-100 to-white py-5 lg:py-10">
@@ -98,7 +99,7 @@ export default function Team() {
           imgSrc: `./team/${artistsData.bailey.picture}`,
           imgClass: 'max-w-full max-h-[500px] object-cover',
           reverse: true,
-          website: 'https://linktr.ee/skogsnegl',
+          website: `${artistsData.bailey.website}`,
         })}
       </section>
       <section className="bg-white py-5 lg:py-10">
@@ -107,6 +108,16 @@ export default function Team() {
           description: artistsData.olesia.description,
           imgSrc: `./team/${artistsData.olesia.picture}`,
           imgClass: 'max-w-full max-h-[500px] object-cover',
+        })}
+      </section>
+      <section className="bg-gradient-to-b from-gray-100 to-white py-5 lg:py-10">
+        {teamMember({
+          name: artistsData.daniel.name,
+          description: artistsData.daniel.description,
+          imgSrc: `./team/${artistsData.daniel.picture}`,
+          imgClass: 'max-w-full max-h-[500px] object-cover',
+          reverse: true,
+          website: `${artistsData.daniel.website}`,
         })}
       </section>
     </div>

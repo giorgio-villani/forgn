@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-100 text-black py-3 w-full">
       <div className="max-w-screen-xl mx-auto flex justify-between items-start">
         <div className="m-5">
-          <img src="./forgn.png" className="max-w-[120px] max-h-[120px]" />
+          <img src="/forgn.png" className="max-w-[120px] max-h-[120px]" />
           <p className="text-sm mt-1">ART AND TECH MEET</p>
         </div>
         <div className="flex m-5">
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
             <h2 className="text-xl font-semibold">About</h2>
             <ul className="">
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/team" className="hover:underline">
                   Team
                 </a>
               </li>

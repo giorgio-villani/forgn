@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Activations() {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center font-poppins ">
       <h1 className="text-5xl text-center">Activations</h1>
       <div className="max-w-[1200px] flex flex-col md:flex-row items-center">
         <div className="w-full p-2 md:w-1/2">
@@ -23,7 +23,7 @@ export default function Activations() {
         </div>
       </div>
 
-      <section className="bg-white py-10 max-w-[1200px] w-full px-4 text-center">
+      <section className="bg-white py-10 max-w-[1200px] w-full px-4 text-center text-lg">
         Our experience in creatively transforming spaces is exemplified by our
         project at the Houston Vintage Truck Club, which we converted from a
         storage warehouse into a thriving art gallery. This transformation

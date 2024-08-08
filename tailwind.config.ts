@@ -22,7 +22,8 @@ const config: Config = {
         customButton: '#E01A28',
       },
       fontFamily: {
-        inter: ['Poppins'],
+        inter: ['Inter', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },

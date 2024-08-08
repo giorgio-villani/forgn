@@ -20,9 +20,9 @@ const Header: React.FC = () => {
   return (
     <div className="bg-white w-full z-50 relative">
       <div className="max-w-screen-xl mx-auto py-4 flex items-center justify-between">
-        <a className="hover:opacity-50 transition duration-300 m-5" href="./">
+        <a className="hover:opacity-50 transition duration-300 m-5" href="/">
           <img
-            src="./forgn.png"
+            src="/forgn.png"
             className="max-w-[120px] max-h-[120px]"
             alt="Forgn"
           />
@@ -41,39 +41,39 @@ const Header: React.FC = () => {
 
           {/* Always visible on larger screens */}
           <div className=" hidden lg:flex items-center space-x-4">
-            <LinkButton href="./sculpture" text="Sculpture Classes" />
-            <LinkButton href="./digital" text="Digital Art Classes" />
-            <LinkButton href="./gallery" text="Gallery" />
+            <LinkButton href="/sculpture" text="Sculpture Classes" />
+            <LinkButton href="/digital" text="Digital Art Classes" />
+            <LinkButton href="/gallery" text="Gallery" />
             <div className="relative group">
               <button className="px-4 py-2 rounded-md flex items-center">
                 More <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
               </button>
               <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
-                <LinkButton href="./team" text="Team" />
-                <LinkButton href="./activations" text="Activations" />
-                <LinkButton href="./workshops" text="Workshops" />
+                <LinkButton href="/team" text="Team" />
+                <LinkButton href="/workshops" text="Workshops" />
+                <LinkButton href="/activations" text="Activations" />
                 {/* <LinkButton href="./presentations" text="Presentations" />
                 <LinkButton href="./hackathons" text="Hackathons" /> */}
               </div>
             </div>
-            <CustomButton href="./calendar" text="Calendar" />
+            <CustomButton href="/calendar" text="Calendar" />
           </div>
         </div>
 
         {menuOpen && (
           <div className="lg:hidden flex flex-col absolute top-full left-0 w-full text-center bg-white">
-            <LinkButton href="./sculpture" text="Sculpture Classes" />
-            <LinkButton href="./digital" text="Digital Art Classes" />
-            <LinkButton href="./gallery" text="Gallery" />
+            <LinkButton href="/sculpture" text="Sculpture Classes" />
+            <LinkButton href="/digital" text="Digital Art Classes" />
+            <LinkButton href="/gallery" text="Gallery" />
             <div className="bg-gray-200">
-              <LinkButton href="./team" text="Team" />
-              <LinkButton href="./activations" text="Activations" />
-              <LinkButton href="./workshops" text="Workshops" />
+              <LinkButton href="/team" text="Team" />
+              <LinkButton href="/workshops" text="Workshops" />
+              <LinkButton href="/activations" text="Activations" />
               {/* <LinkButton href="./presentations" text="Presentations" /> */}
               {/* <LinkButton href="./hackathons" text="Hackathons" /> */}
             </div>
             <div className="bg-customButton text-white">
-              <LinkButton href="./calendar" text="Calendar" />
+              <LinkButton href="/calendar" text="Calendar" />
             </div>
           </div>
         )}
