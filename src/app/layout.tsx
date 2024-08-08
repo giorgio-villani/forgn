@@ -20,6 +20,10 @@ export default function RootLayout({
           name="description"
           content="Learn Skills, Make Art and Meet People"
         />
+        <meta
+          name="keywords"
+          content="art, workshops, teachers, school, learning, art classes, sculpture, digital art, painting, drawing, creative classes, art education, Houston art studio, art lessons, art events, art exhibitions, creative community, art techniques, artistic skills, art for kids, art for adults, art courses, visual arts"
+        />
         <meta property="og:title" content="Forgn Studio" />
         <meta
           property="og:description"

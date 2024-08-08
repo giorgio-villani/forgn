@@ -40,14 +40,14 @@ export default function WorkshopList() {
     <div className="flex justify-center p-4 font-poppins">
       <div className="w-full max-w-[1200px]">
         <h1 className="text-5xl mb-6 text-center">Workshop List</h1>
-        <div className="flex">
-          <aside className="w-1/4 pr-4">
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/4 pr-0 md:pr-4 mb-4 md:mb-0">
             <input
               type="text"
               placeholder="Search Classes"
               className="w-full p-2 mb-4 border border-gray-300 rounded"
             />
-            <div className="mb-4 border rounded p-2">
+            <div className="border rounded p-2">
               <h2 className="font-bold text-lg mb-2">All Subjects</h2>
               <ul className="space-y-2 text-customButton">
                 <li>
@@ -61,8 +61,9 @@ export default function WorkshopList() {
                 </li>
               </ul>
             </div>
-          </aside>
-          <main className="w-3/4">
+          </div>
+
+          <main className="md:w-3/4">
             <div className="flex justify-between mb-4">
               <button className="px-4 py-2 bg-gray-200 rounded">
                 All Classes
@@ -77,11 +78,14 @@ export default function WorkshopList() {
                   key={index}
                   className="border border-gray-300 rounded p-4 hover:bg-gray-200"
                 >
-                  <a href={`/workshops/${index}`} className="flex">
+                  <a
+                    href={`/workshops/${index}`}
+                    className="flex flex-col md:flex-row"
+                  >
                     <img
                       src={cls.image}
                       alt={cls.title}
-                      className="w-1/4 h-auto mr-4 rounded object-cover"
+                      className="w-full md:w-1/4 h-auto mb-4 md:mb-0 md:mr-4 rounded object-cover"
                     />
                     <div className="flex flex-col justify-between">
                       <div>
