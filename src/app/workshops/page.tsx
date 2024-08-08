@@ -33,6 +33,14 @@ const classes = [
     price: '$150',
     image: '/classes/davinci.jpg',
   },
+  {
+    title: 'AI Art: Stable Diffusion',
+    description:
+      'A Stable Diffusion class focused on Automatic 1111 Stable Diffusion would cover the usage and customization of the popular AI image generation tool. The course would include installing and setting up the Automatic 1111 interface, understanding model parameters, exploring various prompts and styles, and fine-tuning model outputs. Students would learn to generate high-quality images, apply custom settings, and utilize extensions and scripts to enhance their workflow. Practical sessions would provide hands-on experience in creating, modifying, and experimenting with AI-generated art.',
+    sessions: 'Next Session: Aug 7, 14, 21, 28',
+    price: '$150',
+    image: '/classes/ai.gif',
+  },
 ]
 
 export default function WorkshopList() {
