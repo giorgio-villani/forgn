@@ -22,6 +22,7 @@ type Data = {
   bailey: Artist
   olesia: Artist
   daniel: Artist
+  tom: Artist
 }
 
 const unescapeHtml = (escapedStr: string) => {
@@ -63,7 +64,7 @@ const teamMember = ({
         </h2>
         {website && (
           <p className="underline text-customButton pb-3">
-            <a href={website}>Artist Website</a>
+            <a href={website}>Teacher Website</a>
           </p>
         )}
         <p
@@ -118,6 +119,15 @@ export default function Team() {
           imgClass: 'max-w-full max-h-[500px] object-cover',
           reverse: true,
           website: `${artistsData.daniel.website}`,
+        })}
+      </section>
+      <section className="bg-gradient-to-b from-gray-100 to-white py-5 lg:py-10">
+        {teamMember({
+          name: artistsData.tom.name,
+          description: artistsData.tom.description,
+          imgSrc: `./team/${artistsData.tom.picture}`,
+          imgClass: 'max-w-full max-h-[500px] object-cover',
+          website: `${artistsData.tom.website}`,
         })}
       </section>
     </div>
