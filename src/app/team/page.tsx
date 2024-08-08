@@ -1,5 +1,5 @@
 import React from 'react'
-import artists from '@/data/artists.json'
+import artists from '@/data/artists'
 
 interface TeamMemberProps {
   name: string
@@ -8,21 +8,6 @@ interface TeamMemberProps {
   imgClass?: string
   reverse?: boolean
   website?: string
-}
-
-type Artist = {
-  name: string
-  picture: string
-  description: string
-  website?: string
-}
-
-type Data = {
-  shelley: Artist
-  bailey: Artist
-  olesia: Artist
-  daniel: Artist
-  tom: Artist
 }
 
 const unescapeHtml = (escapedStr: string) => {
@@ -38,7 +23,6 @@ const teamMember = ({
   name,
   description,
   imgSrc,
-  imgClass = '',
   reverse = false,
   website = '',
 }: TeamMemberProps) => (
@@ -48,7 +32,7 @@ const teamMember = ({
     <div className="w-full md:w-1/2 p-4">
       <img
         src={imgSrc}
-        className={`w-full h-auto object-cover ${imgClass}`}
+        className={`w-full h-auto object-cover max-w-full max-h-[500px] object-cover`}
         alt={name}
       />
     </div>
@@ -68,7 +52,7 @@ const teamMember = ({
           </p>
         )}
         <p
-          className="text-lg  leading-relaxed mb-4"
+          className="text-lg leading-relaxed mb-4"
           style={{ wordWrap: 'break-word' }}
         >
           {unescapeHtml(description)}
@@ -79,57 +63,24 @@ const teamMember = ({
 )
 
 export default function Team() {
-  const artistsData: Data = artists
-
   return (
     <div className="w-full">
       <h1 className="text-5xl text-center font-inter">Team</h1>
-      <section className="bg-white py-5 lg:py-10">
-        {teamMember({
-          name: artistsData.shelley.name,
-          description: artistsData.shelley.description,
-          imgSrc: `./team/${artistsData.shelley.picture}`,
-          imgClass: 'max-w-full max-h-[500px] object-cover',
-          website: `${artistsData.shelley.website}`,
-        })}
-      </section>
-      <section className="bg-gradient-to-b from-gray-100 to-white py-5 lg:py-10">
-        {teamMember({
-          name: artistsData.bailey.name,
-          description: artistsData.bailey.description,
-          imgSrc: `./team/${artistsData.bailey.picture}`,
-          imgClass: 'max-w-full max-h-[500px] object-cover',
-          reverse: true,
-          website: `${artistsData.bailey.website}`,
-        })}
-      </section>
-      <section className="bg-white py-5 lg:py-10">
-        {teamMember({
-          name: artistsData.olesia.name,
-          description: artistsData.olesia.description,
-          imgSrc: `./team/${artistsData.olesia.picture}`,
-          imgClass: 'max-w-full max-h-[500px] object-cover',
-        })}
-      </section>
-      <section className="bg-gradient-to-b from-gray-100 to-white py-5 lg:py-10">
-        {teamMember({
-          name: artistsData.daniel.name,
-          description: artistsData.daniel.description,
-          imgSrc: `./team/${artistsData.daniel.picture}`,
-          imgClass: 'max-w-full max-h-[500px] object-cover',
-          reverse: true,
-          website: `${artistsData.daniel.website}`,
-        })}
-      </section>
-      <section className="bg-gradient-to-b from-gray-100 to-white py-5 lg:py-10">
-        {teamMember({
-          name: artistsData.tom.name,
-          description: artistsData.tom.description,
-          imgSrc: `./team/${artistsData.tom.picture}`,
-          imgClass: 'max-w-full max-h-[500px] object-cover',
-          website: `${artistsData.tom.website}`,
-        })}
-      </section>
+      {artists.map((artist, index) => (
+        <section
+          key={artist.name}
+          className={`${index % 2 === 0 ? 'bg-white' : 'bg-gradient-to-b from-gray-100 to-white'} py-5 lg:py-10`}
+        >
+          {teamMember({
+            name: artist.name,
+            description: artist.description,
+            imgSrc: `./team/${artist.picture}`,
+            imgClass: 'max-w-full max-h-[500px] object-cover',
+            reverse: index % 2 !== 0,
+            website: artist.website,
+          })}
+        </section>
+      ))}
     </div>
   )
 }
