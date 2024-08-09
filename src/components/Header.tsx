@@ -2,7 +2,7 @@
 
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import CustomButton from './CustomButton'
@@ -16,6 +16,18 @@ const Header: React.FC = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
   }
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('no-scroll')
+    } else {
+      document.body.classList.remove('no-scroll')
+    }
+
+    return () => {
+      document.body.classList.remove('no-scroll')
+    }
+  }, [menuOpen])
 
   return (
     <div className="bg-white w-full z-50 relative">
@@ -61,8 +73,8 @@ const Header: React.FC = () => {
         </div>
 
         {menuOpen && (
-          <div className="lg:hidden h-screen text-2xl flex flex-col absolute top-full left-0 w-full h-text-center bg-white p-4 text-center">
-            <div className="bg-customButton rounded rounded-full text-white mb-6 ">
+          <div className="lg:hidden h-screen text-2xl flex flex-col absolute top-full left-0 w-full h-text-center bg-white p-4 pt-7 text-center">
+            <div className="bg-customButton rounded rounded-full text-white m-6 ">
               <LinkButton href="/calendar" text="Calendar" />
             </div>
             <LinkButton href="/sculpture" text="Sculpture Classes" />

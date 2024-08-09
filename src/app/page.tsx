@@ -14,12 +14,12 @@ const About: React.FC = () => {
     return (
       <a href={link}>
         <div
-          className={`bg-white text-black border border-customButton p-4 transition-transform duration-100 transform hover:-translate-y-5 aspect-1 flex flex-col`}
+          className={`bg-white text-black border border-customButton p-4 transition-transform duration-100 transform hover:-translate-y-5 md:aspect-1 flex flex-col`}
         >
           <img className="w-12 h-12" src={icon} alt="" />
           <h3 className="font-bold text-xl font-inter mb-2">{title}</h3>
-          <p className="text-xl font-inter">{description}</p>
-          <div className="mt-auto text-red-500 m-2">Learn More</div>
+          <p className="text-xl font-inter mb-4">{description}</p>
+          <div className="mt-auto text-red-500 ">Learn More</div>
         </div>
       </a>
     )
