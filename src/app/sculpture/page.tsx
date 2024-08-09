@@ -7,7 +7,7 @@ export default function Sculpture() {
         Sculpture Classes at FORGN Studio
       </h1>
       <section className="bg-white py-10 max-w-[1200px] w-full px-4 text-center">
-        <p className="mb-6">Discover the Art of Sculpture</p>
+        <h2 className="mb-6 text-3xl">Discover the Art of Sculpture</h2>
         <p className="mb-6">
           Join our immersive sculpture classes at FORGN Studio, where
           traditional techniques meet innovative creativity. Led by renowned

@@ -7,9 +7,9 @@ export default function Digital() {
         Digital Art Classes at FORGN Studio
       </h1>
       <section className="bg-white py-10 max-w-[1200px] w-full px-4 text-center">
-        <p className="mb-6">
+        <h2 className="mb-6 text-3xl">
           Embrace the Future of Art with Digital Creativity
-        </p>
+        </h2>
         <p className="mb-6">
           Join our comprehensive digital art classes at FORGN Studio, where
           innovative techniques meet cutting-edge technology. Led by experienced

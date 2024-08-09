@@ -29,7 +29,7 @@ const workshops = [
       'In this 4-week class, students will learn the fundamentals of digital art. Topics include using digital art software, understanding layers and tools, and creating digital illustrations and paintings. No prior experience is required.',
     location: 'East End Maker Hub - Y114',
     sessions: 'Next Session: Aug 6, 13, 20, 27',
-    price: '$220',
+    price: '$150',
     image: '/classes/digital-art.jpg',
   },
   {
