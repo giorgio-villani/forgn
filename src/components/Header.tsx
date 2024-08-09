@@ -61,20 +61,20 @@ const Header: React.FC = () => {
         </div>
 
         {menuOpen && (
-          <div className="lg:hidden flex flex-col absolute top-full left-0 w-full text-center bg-white">
+          <div className="lg:hidden h-screen text-2xl flex flex-col absolute top-full left-0 w-full h-text-center bg-white p-4 text-center">
+            <div className="bg-customButton rounded rounded-full text-white mb-6 ">
+              <LinkButton href="/calendar" text="Calendar" />
+            </div>
             <LinkButton href="/sculpture" text="Sculpture Classes" />
             <LinkButton href="/digital" text="Digital Art Classes" />
             <LinkButton href="/gallery" text="Gallery" />
-            <div className="bg-gray-200">
-              <LinkButton href="/team" text="Team" />
-              <LinkButton href="/workshops" text="Workshops" />
-              <LinkButton href="/activations" text="Activations" />
-              {/* <LinkButton href="./presentations" text="Presentations" /> */}
-              {/* <LinkButton href="./hackathons" text="Hackathons" /> */}
-            </div>
-            <div className="bg-customButton text-white">
-              <LinkButton href="/calendar" text="Calendar" />
-            </div>
+            {/* <div className="bg-gray-200"> */}
+            <LinkButton href="/team" text="Team" />
+            <LinkButton href="/workshops" text="Workshops" />
+            <LinkButton href="/activations" text="Activations" />
+            {/* <LinkButton href="./presentations" text="Presentations" /> */}
+            {/* <LinkButton href="./hackathons" text="Hackathons" /> */}
+            {/* </div> */}
           </div>
         )}
 

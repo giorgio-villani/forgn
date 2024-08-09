@@ -7,7 +7,7 @@ interface LinkButtonProps {
 
 const LinkButton: React.FC<LinkButtonProps> = ({ href, text }) => {
   return (
-    <a href={href} className="block px-4 py-2 hover:bg-gray-100">
+    <a href={href} className="block px-4 py-2 my-1 hover:bg-gray-100 ">
       {text}
     </a>
   )
