@@ -7,11 +7,11 @@ export default function WorkshopList() {
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
 
-  const handleFilterClick = (filter) => {
+  const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter)
   }
 
-  const handleSearch = (event) => {
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value.toLowerCase())
   }
 
