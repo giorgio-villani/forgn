@@ -21,7 +21,7 @@ const workshops = [
     location: 'East End Maker Hub - Y114',
     sessions: 'Next Session: Not scheduled yet',
     price: '$250',
-    image: '/classes/polymer.jpg',
+    image: '/classes/polymer-1.jpg',
   },
   {
     id: '2',
