@@ -6,90 +6,93 @@ export default function Sculpture() {
       <h1 className="text-5xl text-center mb-8">
         Sculpture Classes at FORGN Studio
       </h1>
-      <section className="bg-white py-10 max-w-[1200px] w-full px-4 text-center">
+      <section className="bg-white py-10 max-w-[800px] w-full px-4 text-center">
         <h2 className="mb-6 text-3xl">Discover the Art of Sculpture</h2>
-        <p className="mb-6">
-          Join our immersive sculpture classes at FORGN Studio, where
-          traditional techniques meet innovative creativity. Led by renowned
-          sculptor Shelley Townsend, our classes are designed for artists of all
-          levels who are eager to explore the world of sculpting.
+        <p className="mb-6 text-left text-center text-justify">
+          Immerse yourself in the art of sculpture at FORGN Studio, where
+          traditional techniques meet innovative creativity. Our classes cater
+          to artists of all levels, offering specialized experiences in both
+          polymer and terracotta sculpting. Led by experienced sculptors, these
+          classes foster exploration and artistic expression in a dynamic
+          environment that bridges physical and digital art.
         </p>
-        <h2 className="text-3xl mb-4">Class Details:</h2>
-        <ul className="list-disc list-inside mb-6">
-          <li>
-            <strong>Start Date:</strong> January 2024
+        <h2 className="text-3xl mb-4">Class Offering:</h2>
+        <ul className="list-inside text-justify">
+          <li className="pb-3">
+            <strong>Terracotta Sculpture:</strong> Delve into the rich tradition
+            of terracotta sculpting. Learn to mold and shape this classic
+            material, known for its earthy texture and historical significance,
+            while also exploring modern applications.
           </li>
-          <li>
-            <strong>Instructor:</strong> Shelley Townsend, a master sculptor
-            with extensive experience in teaching and creating sculptural art.
-          </li>
-          <li>
-            <strong>Location:</strong> FORGN Studio, [Address]
+          <li className="pb-3">
+            <strong>Polymer Clay Sculpture:</strong> Explore the versatility of
+            polymer clay, perfect for detailed work and contemporary designs.
+            This class focuses on mastering techniques specific to polymer,
+            allowing you to create intricate and vibrant sculptures.
           </li>
         </ul>
         <h2 className="text-3xl mb-4">Course Highlights:</h2>
-        <ul className="list-disc list-inside mb-6">
-          <li>
-            Live Model Sessions: Gain hands-on experience by sculpting from live
-            models, enhancing your understanding of human anatomy and form.
+        <ul className="list-inside text-justify">
+          <li className="pb-3">
+            <strong>Live Model Sessions:</strong> Gain hands-on experience by
+            sculpting from live models, enhancing your understanding of human
+            anatomy and form.
           </li>
-          <li>
-            Clay Techniques: Learn fundamental techniques in clay sculpting,
-            including molding, shaping, and detailing.
+          <li className="pb-3">
+            <strong>Clay Techniques:</strong> Learn fundamental techniques in
+            clay sculpting, including molding, shaping, and detailing.
           </li>
-          <li>
-            Form and Space: Develop your skills in creating three-dimensional
-            art, focusing on the interaction between form and space.
+          <li className="pb-3">
+            <strong>Form and Space:</strong> Develop your skills in creating
+            three-dimensional art, focusing on the interaction between form and
+            space.
           </li>
-          <li>
-            Personal Guidance: Receive personalized feedback and guidance from
-            Shelley Townsend to refine your sculpting abilities.
+          <li className="pb-3">
+            <strong>Personal Guidance:</strong> Receive personalized feedback
+            and guidance from instructor to refine your sculpting abilities.
           </li>
         </ul>
         <h2 className="text-3xl mb-4">Who Should Attend:</h2>
-        <ul className="list-disc list-inside mb-6">
-          <li>
-            Beginners: Those new to sculpture who want to learn the basics and
-            build a strong foundation.
+        <ul className="list-inside text-justify">
+          <li className="pb-3">
+            <strong>Beginners:</strong> Those new to sculpture who want to learn
+            the basics and build a strong foundation.
+          </li>
+          <li className="pb-3">
+            <strong>Intermediate Artists:</strong> Sculptors looking to refine
+            their techniques and expand their skill set.
           </li>
           <li>
-            Intermediate Artists: Sculptors looking to refine their techniques
-            and expand their skill set.
-          </li>
-          <li>
-            Advanced Practitioners: Experienced artists seeking to explore new
-            methods and gain inspiration from a master sculptor.
+            <strong>Advanced Practitioners:</strong> Experienced artists seeking
+            to explore new methods and gain inspiration from a master sculptor.
           </li>
         </ul>
         <h2 className="text-3xl mb-4">What You will Gain:</h2>
-        <ul className="list-disc list-inside mb-6">
-          <li>
-            Technical Skills: Master the essential techniques of clay sculpting.
+        <ul className="list-inside text-justify mb-6">
+          <li className="pb-3">
+            <strong>Community:</strong> Connect with fellow artists and become
+            part of the vibrant FORGN Studio community.
           </li>
-          <li>
-            Artistic Expression: Learn how to translate your creative vision
-            into tangible forms.
+          <li className="pb-3">
+            <strong>Technical Skills:</strong> Master the essential techniques
+            of clay sculpting.
           </li>
-          <li>
-            Community: Connect with fellow artists and become part of the
-            vibrant FORGN Studio community.
+          <li className="pb-3">
+            <strong>Artistic Expression:</strong> Learn how to translate your
+            creative vision into tangible forms.
           </li>
         </ul>
         <h2 className="text-3xl mb-4">How to Register:</h2>
-        <p className="mb-6">
-          <strong>Online Registration:</strong> Visit our website at [Website
-          URL] to sign up for the classes.
-        </p>
-        <p className="mb-6">
-          <strong>Contact Us:</strong> For more information or assistance, email
-          us at [Email Address] or call [Phone Number].
-        </p>
-        <p className="mb-6">
-          Embark on a journey of artistic discovery and create stunning
-          sculptures under the expert guidance of Shelley Townsend. Whether you
-          aim to pursue sculpture as a hobby or a professional path, our classes
-          will provide you with the skills and inspiration to succeed.
-        </p>
+        <ul className="list-inside text-justify mb-6">
+          <li className="pb-3">
+            <strong>Online Registration:</strong> Visit our website at [Website
+            URL] to sign up for the classes.
+          </li>
+          <li className="pb-3">
+            <strong>Contact Us:</strong> For more information or assistance,
+            email us at [Email Address] or call [Phone Number].
+          </li>
+        </ul>
         <p>Experience the art of sculpture at FORGN Studio. Register today!</p>
       </section>
     </div>
