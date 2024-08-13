@@ -6,7 +6,7 @@ export default function Digital() {
       <h1 className="text-5xl text-center mb-8">
         Digital Art Classes at FORGN Studio
       </h1>
-      <section className="py-10 max-w-[800px] w-full px-4 text-center">
+      <section className=" max-w-[800px] w-full px-4 text-center">
         <h2 className="mb-6 text-4xl">Innovate with Digital Art</h2>
         <p className="mb-6 text-left text-center text-justify">
           Join our comprehensive digital art classes at FORGN Studio, where

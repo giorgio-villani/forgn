@@ -11,7 +11,7 @@ export default function Credit() {
             <a
               href="https://www.flaticon.com/free-icons/sculpture"
               title="sculpture icons"
-              className="hover:underline"
+              className="text-customButton hover:underline"
             >
               Sculpture icons created by Freepik - Flaticon
             </a>
@@ -20,7 +20,7 @@ export default function Credit() {
             <a
               href="https://www.flaticon.com/free-icons/art-gallery"
               title="art gallery icons"
-              className="hover:underline"
+              className="text-customButton hover:underline"
             >
               Art gallery icons created by Made by Made Premium - Flaticon
             </a>
@@ -29,7 +29,7 @@ export default function Credit() {
             <a
               href="https://www.flaticon.com/free-icons/personalize"
               title="personalize icons"
-              className="hover:underline"
+              className="text-customButton hover:underline"
             >
               Personalize icons created by Icon home - Flaticon
             </a>
@@ -38,7 +38,7 @@ export default function Credit() {
             <a
               href="https://www.flaticon.com/free-icons/workshop"
               title="workshop icons"
-              className="hover:underline"
+              className="text-customButton hover:underline"
             >
               Workshop icons created by Buandesign - Flaticon
             </a>
@@ -47,10 +47,44 @@ export default function Credit() {
             <a
               href="https://www.flaticon.com/free-icons/team"
               title="team icons"
-              className="hover:underline"
+              className="text-customButton hover:underline"
             >
               Team icons created by Freepik - Flaticon
             </a>
+          </li>
+          <li>
+            <a
+              href="https://www.flaticon.com/free-icons/cogs"
+              title="cogs icons"
+              className="text-customButton hover:underline"
+            >
+              Cogs icons created by Prosymbols Premium - Flaticon
+            </a>
+          </li>
+        </ul>
+        <h2 className="text-3xl text-center py-3">Photos</h2>
+        <ul className="list-inside list-disc">
+          <li>
+            Photo by{' '}
+            <a
+              href="https://www.instagram.com/efedenari/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-customButton hover:underline"
+            >
+              Franco Denari
+            </a>{' '}
+            at the <em>"Ed in Between Lines"</em> exhibition, featuring the work
+            of{' '}
+            <a
+              href="https://www.instagram.com/subomar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-customButton hover:underline"
+            >
+              Omar Ochoa
+            </a>
+            .
           </li>
         </ul>
       </div>

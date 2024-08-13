@@ -6,7 +6,7 @@ export default function Sculpture() {
       <h1 className="text-5xl text-center mb-8">
         Sculpture Classes at FORGN Studio
       </h1>
-      <section className="py-10 max-w-[800px] w-full px-4 text-center">
+      <section className="max-w-[800px] w-full px-4 text-center">
         <h2 className="mb-6 text-4xl">Discover the Art of Sculpture</h2>
         <p className="mb-6 text-left text-center text-justify">
           Immerse yourself in the art of sculpture at FORGN Studio, where

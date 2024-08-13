@@ -28,7 +28,7 @@ const About: React.FC = () => {
     <div className="w-full ">
       <section className="bg-white lg:py-20 m-5">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row flex-col-reverse">
-          <div className="">
+          <div className="text-center md:text-left">
             <h2 className="mb-4">
               <div
                 className="pt-5 font-inter text-5xl lg:text-7xl"
@@ -50,10 +50,31 @@ const About: React.FC = () => {
               </button>
             </div>
           </div>
-          <img
-            src="./ed.jpg"
-            className="md:pl-5 lg:pl-5 max-w-[650px] max-h-[500px] object-cover"
-          />
+          <div className="md:pl-5 lg:pl-5 max-w-[650px] max-h-[500px] object-cover">
+            <img src="./ed.jpg" />
+            <div className="text-center txt-sm">
+              Photo by{' '}
+              <a
+                href="https://www.instagram.com/efedenari/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-customButton hover:underline"
+              >
+                Franco Denari
+              </a>{' '}
+              at the <em>"Ed in Between Lines"</em> exhibition, featuring the
+              work of{' '}
+              <a
+                href="https://www.instagram.com/subomar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-customButton hover:underline"
+              >
+                Omar Ochoa
+              </a>
+              .
+            </div>
+          </div>
         </div>
       </section>
       <section className="bg-gradient-to-b from-gray-100 to-white text-white py-10">

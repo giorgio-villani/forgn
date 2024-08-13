@@ -12,7 +12,7 @@ export default function Gallery() {
             creativity of artists who blend physical and digital art forms.
           </p>
           <div className="flex justify-center pb-5">
-            <img src="/gallery/gallery.jpg"></img>
+            <img src="/gallery/ai_gallery.jpg"></img>
           </div>
           <h2 className="mb-6 text-4xl">Purpose of the Gallery:</h2>
           <ul className="list-inside text-justify pb-5">
