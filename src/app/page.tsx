@@ -62,8 +62,8 @@ const About: React.FC = () => {
               >
                 Franco Denari
               </a>{' '}
-              at the <em>"Ed in Between Lines"</em> exhibition, featuring the
-              work of{' '}
+              at the <em>&quot;Ed in Between Lines&quot;</em> exhibition,
+              featuring the work of{' '}
               <a
                 href="https://www.instagram.com/subomar/"
                 target="_blank"

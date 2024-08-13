@@ -38,7 +38,7 @@ export default function Activations() {
         </div>
         <h2 className="mb-6 text-4xl">East End Revitalization</h2>
         <p className="mb-6 text-left text-center text-justify">
-          Forgn Studio's objective to revitalize the East End centers on
+          Forgn Studio&lsquo;s objective to revitalize the East End centers on
           transforming industrial spaces into vibrant creative hubs by uniting
           artists and technologists. Their mission includes creating
           collaborative opportunities across multiple mediums, fostering
