@@ -4,7 +4,7 @@ export default function Activations() {
   return (
     <div className="w-full flex flex-col items-center font-poppins ">
       <h1 className="text-5xl text-center">Activations</h1>
-      <section className="py-5 max-w-[800px] w-full text-center ">
+      <section className="p-5 max-w-[800px] w-full text-center ">
         <h2 className="mb-6 text-4xl">Houston Vintage Truck Club</h2>
         <p className="mb-6 text-left text-center text-justify">
           Our experience in creatively transforming spaces is exemplified by our
