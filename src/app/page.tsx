@@ -45,9 +45,11 @@ const About: React.FC = () => {
               blends traditional and digital styles.
             </p>
             <div className="pt-10">
-              <button className="PRIMARY BUTTON LARGE bg-customButton rounded-full text-white text-2xl px-8 py-4 transform hover:scale-105 transition duration-300 ease-in-out">
-                Upcoming Events
-              </button>
+              <a href="./calendar">
+                <button className="PRIMARY BUTTON LARGE bg-customButton rounded-full text-white text-2xl px-8 py-4 transform hover:scale-105 transition duration-300 ease-in-out">
+                  Upcoming Events
+                </button>
+              </a>
             </div>
           </div>
           <div className="md:pl-5 lg:pl-5 max-w-[650px] max-h-[500px] object-cover">
@@ -137,9 +139,11 @@ const About: React.FC = () => {
             </div>
           </div>
           <div>
-            <button className="PRIMARY BUTTON LARGE bg-customButton rounded-full text-white text-2xl px-8 py-4 transform hover:scale-105 transition duration-300 ease-in-out">
-              Upcoming Events
-            </button>
+            <a href="./calendar">
+              <button className="PRIMARY BUTTON LARGE bg-customButton rounded-full text-white text-2xl px-8 py-4 transform hover:scale-105 transition duration-300 ease-in-out">
+                Upcoming Events
+              </button>
+            </a>
           </div>
         </div>
       </section>
