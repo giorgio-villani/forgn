@@ -86,10 +86,7 @@ export default function Sculpture() {
         <ul className="list-inside text-justify">
           <li className="pb-3">
             <strong>Online Registration:</strong> Visit our website at{' '}
-            <a
-              className="text-customButton"
-              href="http://localhost:3000/workshops"
-            >
+            <a className="text-customButton" href="/workshops">
               Workshops
             </a>{' '}
             to sign up for the classes.

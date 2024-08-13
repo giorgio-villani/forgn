@@ -56,7 +56,7 @@ const About: React.FC = () => {
           />
         </div>
       </section>
-      <section className="bg-gradient-to-b from-gray-100 to-white text-white py-20">
+      <section className="bg-gradient-to-b from-gray-100 to-white text-white py-10">
         <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center">
           <h2 className="text-4xl text-black mb-4 font-inter capitalize">
             What we offer
@@ -64,39 +64,39 @@ const About: React.FC = () => {
           <div className="text-left py-12 px-4">
             <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card
-                icon="1x1.svg"
+                icon="/icons/sculpture.svg"
                 title="Sculpture Classes"
                 description="Learn the art of sculpting from expert artists. These classes cover various techniques and materials to help you create stunning sculptures."
                 link="./sculpture"
               />
               <Card
-                icon="1x1.svg"
+                icon="/icons/digital-art.svg"
                 title="Digital Art Classes"
                 description="Discover a curated collection of artworks in our gallery. Enjoy a diverse range of styles and mediums from talented artists."
                 link="./digital"
               />
 
               <Card
-                icon="1x1.svg"
+                icon="/icons/art-gallery.svg"
                 title="Gallery"
                 description="Discover a curated collection of artworks in our gallery. Enjoy a diverse range of styles and mediums from talented artists."
                 link="./gallery"
               />
 
               <Card
-                icon="1x1.svg"
+                icon="/icons/team.svg"
                 title="Team"
                 description="Meet our dedicated team of artists, technologists, and educators. Together, we work to foster a creative and innovative environment."
                 link="./team"
               />
               <Card
-                icon="1x1.svg"
+                icon="/icons/cogs.svg"
                 title="Activation"
                 description="Participate in dynamic activations designed to engage and inspire. These events connect artists with audiences in meaningful ways."
                 link="./activations"
               />
               <Card
-                icon="1x1.svg"
+                icon="/icons/presentation.svg"
                 title="Workshops"
                 description="Join hands-on workshops to develop your artistic skills. Our workshops cover a wide range of topics and techniques for all skill levels."
                 link="./workshops"
@@ -197,7 +197,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section> */}
-      <section className="bg-red py-8">
+      <section className="bg-red">
         <div className="max-w-screen-xl mx-auto text-center px-4">
           <h2 className="text-4xl mb-4 capitalize font-inter">
             What We Strive For

@@ -19,6 +19,11 @@ const Footer: React.FC = () => {
                   Team
                 </a>
               </li>
+              <li>
+                <a href="/credits" className="hover:underline">
+                  Credits
+                </a>
+              </li>
             </ul>
           </div>
           <div>

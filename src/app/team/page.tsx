@@ -52,7 +52,7 @@ const teamMember = ({
           </p>
         )}
         <p
-          className="text-lg leading-relaxed mb-4"
+          className="leading-relaxed text-justify mb-4"
           style={{ wordWrap: 'break-word' }}
         >
           {unescapeHtml(description)}
