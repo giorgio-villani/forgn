@@ -5,7 +5,12 @@ export default function Activations() {
     <div className="w-full flex flex-col items-center font-poppins ">
       <h1 className="text-5xl text-center">Activations</h1>
       <section className="p-5 max-w-[800px] w-full text-center ">
-        <h2 className="mb-6 text-4xl">Houston Vintage Truck Club</h2>
+        <h2 className="mb-6 text-4xl">
+          Moth (Formerly Houston Vintage Truck Club)
+        </h2>
+        <div className="text-customButton text-center hover:underline pb-3">
+          <a href="https://www.instagram.com/moth.htx/">Website Link</a>
+        </div>
         <p className="mb-6 text-left text-center text-justify">
           Our experience in creatively transforming spaces is exemplified by our
           project at the Houston Vintage Truck Club, which we converted from a
@@ -18,6 +23,7 @@ export default function Activations() {
           infused with insights and inspirations from Houston&lsquo;s diverse
           markets, creating a dynamic and immersive experience for attendees.
         </p>
+
         <div className="py-5 max-w-[1200px] flex flex-col md:flex-row items-center">
           <div className="w-full p-2 md:w-1/2">
             <img

@@ -47,7 +47,7 @@ const teamMember = ({
           </div>
         </h2>
         {website && (
-          <p className="underline text-customButton pb-3">
+          <p className="hover:underline text-customButton pb-3">
             <a href={website}>Teacher Website</a>
           </p>
         )}
