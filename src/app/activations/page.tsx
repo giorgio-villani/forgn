@@ -29,7 +29,7 @@ export default function Activations() {
             <img
               className="w-full h-[500px] object-cover"
               src="./activation/activation-before.jpg"
-              alt="Before"
+              alt="Moth Formerly Houston Vintage Truck Club - Before"
             />
             <div className="text-center">Before</div>
           </div>
@@ -37,7 +37,7 @@ export default function Activations() {
             <img
               className="w-full h-[500px] object-cover"
               src="./activation/activation-after.jpg"
-              alt="After"
+              alt="Moth Formerly Houston Vintage Truck Club - After"
             />
             <div className="text-center">After</div>
           </div>

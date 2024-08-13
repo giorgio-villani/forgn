@@ -7,10 +7,12 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Forgn Studio',
-  description: 'Learn Skills, Make Art and Meet People',
+  title:
+    'Forgn Studio - Learn about Digital and Physical Art with Classes, Gallery Exhibits, and Artist Collaborations',
+  description:
+    'Join Forgn Studio to learn and explore digital art through hands-on classes, connect with visionary artists, and discover our innovative gallery showcasing the fusion of physical and digital creativity.',
   keywords:
-    'art, workshops, teachers, school, learning, art classes, sculpture, digital art, painting, drawing, creative classes, art education, Houston art studio, art lessons, art events, art exhibitions, creative community, art techniques, artistic skills, art for kids, art for adults, art courses, visual arts',
+    'art, artists, classes, digital, gallery, workshops, teachers, school, learning, learn, art classes, sculpture, digital art, painting, drawing, creative classes, art education, Houston art studio, art lessons, art events, art exhibitions, creative community, art techniques, artistic skills, art for kids, art for adults, art courses, visual arts',
   openGraph: {
     title: 'Forgn Studio',
     description: 'Learn Skills, Make Art and Meet People',

@@ -16,7 +16,7 @@ export default function Sculpture() {
           classes foster exploration and artistic expression in a dynamic
           environment that bridges physical and digital art.
         </p>
-        <h2 className="text-2xl mb-4">Class Offering:</h2>
+        <h3 className="text-2xl mb-4">Class Offering:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
             <strong>Terracotta Sculpture:</strong> Delve into the rich tradition
@@ -31,7 +31,7 @@ export default function Sculpture() {
             allowing you to create intricate and vibrant sculptures.
           </li>
         </ul>
-        <h2 className="text-2xl mb-4">Course Highlights:</h2>
+        <h3 className="text-2xl mb-4">Course Highlights:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
             <strong>Live Model Sessions:</strong> Gain hands-on experience by
@@ -52,7 +52,7 @@ export default function Sculpture() {
             and guidance from instructor to refine your sculpting abilities.
           </li>
         </ul>
-        <h2 className="text-2xl mb-4">Who Should Attend:</h2>
+        <h3 className="text-2xl mb-4">Who Should Attend:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
             <strong>Beginners:</strong> Those new to sculpture who want to learn
@@ -67,7 +67,7 @@ export default function Sculpture() {
             to explore new methods and gain inspiration from a master sculptor.
           </li>
         </ul>
-        <h2 className="text-2xl mb-4">What You will Gain:</h2>
+        <h3 className="text-2xl mb-4">What You will Gain:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
             <strong>Community:</strong> Connect with fellow artists and become
@@ -82,7 +82,7 @@ export default function Sculpture() {
             creative vision into tangible forms.
           </li>
         </ul>
-        <h2 className="text-2xl mb-4">How to Register:</h2>
+        <h3 className="text-2xl mb-4">How to Register:</h3>
         <ul className="list-inside text-justify">
           <li className="pb-3">
             <strong>Online Registration:</strong> Visit our website at{' '}

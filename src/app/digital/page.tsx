@@ -14,7 +14,7 @@ export default function Digital() {
           digital artists, our classes cater to both beginners and advanced
           practitioners eager to explore the digital art landscape.
         </p>
-        <h2 className="text-2xl mb-4">Class Offering:</h2>
+        <h3 className="text-2xl mb-4">Class Offering:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
             <strong>Creative Coding:</strong> Explore the intersection of
@@ -35,7 +35,7 @@ export default function Digital() {
           </li>
         </ul>
 
-        <h2 className="text-2xl mb-4">Course Highlights:</h2>
+        <h3 className="text-2xl mb-4">Course Highlights:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
             <strong>Introduction to Digital Tools:</strong> Learn to use
@@ -58,7 +58,7 @@ export default function Digital() {
             critique to refine your digital art skills.
           </li>
         </ul>
-        <h2 className="text-2xl mb-4">Who Should Attend:</h2>
+        <h3 className="text-2xl mb-4">Who Should Attend:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
             <strong>Beginners:</strong> Those new to digital art who want to
@@ -74,7 +74,7 @@ export default function Digital() {
             experts.
           </li>
         </ul>
-        <h2 className="text-2xl mb-4">What You Will Gain:</h2>
+        <h3 className="text-2xl mb-4">What You Will Gain:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
             <strong>Technical Skills:</strong> Master the essential tools and
@@ -89,7 +89,7 @@ export default function Digital() {
             become part of the vibrant FORGN Studio community.
           </li>
         </ul>
-        <h2 className="text-2xl mb-4">How to Register:</h2>
+        <h3 className="text-2xl mb-4">How to Register:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
             <strong>Online Registration:</strong> Visit our website at{' '}
