@@ -27,6 +27,14 @@ export default function WorkshopList() {
     return matchesType && matchesSearchTerm
   })
 
+  const uniqueWorkshops = Array.from(
+    new Map(workshops.map((workshop) => [workshop.type, workshop])).values()
+  )
+
+  function capitalizeFirstLetter(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+
   return (
     <div className="flex justify-center p-4 font-poppins">
       <div className="w-full max-w-[1200px]">
@@ -43,26 +51,18 @@ export default function WorkshopList() {
             <div className="border rounded p-2">
               <h2 className="font-bold text-lg mb-2">All Subjects</h2>
               <ul className="space-y-2 text-customButton">
-                <li>
-                  <button
-                    onClick={() => handleFilterClick('sculpture')}
-                    className="text-left w-full"
-                  >
-                    {`Sculpture (${workshops.filter((item) => item.type === 'sculpture').length})`}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleFilterClick('digital art')}
-                    className="text-left w-full"
-                  >{`Digital Art (${workshops.filter((item) => item.type === 'digital art').length})`}</button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleFilterClick('film')}
-                    className="text-left w-full"
-                  >{`Film (${workshops.filter((item) => item.type === 'film').length})`}</button>
-                </li>
+                {uniqueWorkshops.map((cls, index) => (
+                  // <div>{cls.type}</div>
+                  <li>
+                    <button
+                      onClick={() => handleFilterClick(cls.type)}
+                      className="text-left w-full"
+                    >
+                      {`${capitalizeFirstLetter(cls.type)} (${workshops.filter((item) => item.type === cls.type).length})`}
+                    </button>
+                  </li>
+                ))}
+
                 <li>
                   <button
                     onClick={() => handleFilterClick('all')}

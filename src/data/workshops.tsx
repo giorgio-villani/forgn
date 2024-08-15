@@ -59,6 +59,18 @@ const workshops = [
     price: '$150',
     image: '/classes/ai.gif',
   },
+  {
+    id: '5',
+    title: 'Website Design: Figma',
+    type: 'website design',
+    instructor: 'Thomas MacDonald',
+    description:
+      "Learn the essentials of Figma in this 3-session course. You'll explore key features, master design tools, and create interactive prototypes. Perfect for beginners looking to build a strong foundation in UI/UX design.",
+    location: 'East End Maker Hub - Y114',
+    sessions: 'Next Session: Not scheduled yet',
+    price: '$125',
+    image: '/classes/figma.webp',
+  },
 ]
 
 export default workshops
