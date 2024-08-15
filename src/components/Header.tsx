@@ -9,6 +9,7 @@ import CustomButton from './CustomButton'
 import LinkButton from './LinkButton'
 
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx'
+import Image from 'next/image'
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
@@ -33,7 +34,7 @@ const Header: React.FC = () => {
     <div className="bg-white w-full z-50 relative">
       <div className="max-w-screen-xl mx-auto py-4 flex items-center justify-between">
         <a className="hover:opacity-50 transition duration-300 m-5" href="/">
-          <img
+          <Image
             src="/forgn.png"
             className="max-w-[120px] max-h-[120px]"
             alt="Forgn"

@@ -26,7 +26,7 @@ export default function Activations() {
 
         <div className="py-5 max-w-[1200px] flex flex-col md:flex-row items-center">
           <div className="w-full p-2 md:w-1/2">
-            <img
+            <Image
               className="w-full h-[500px] object-cover"
               src="./activation/activation-before.jpg"
               alt="Moth Formerly Houston Vintage Truck Club - Before"
@@ -34,7 +34,7 @@ export default function Activations() {
             <div className="text-center">Before</div>
           </div>
           <div className="w-full p-2 md:w-1/2">
-            <img
+            <Image
               className="w-full h-[500px] object-cover"
               src="./activation/activation-after.jpg"
               alt="Moth Formerly Houston Vintage Truck Club - After"

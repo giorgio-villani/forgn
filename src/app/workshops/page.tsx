@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import workshops from '@/data/workshops'
+import Image from 'next/image'
 
 export default function WorkshopList() {
   const [selectedFilter, setSelectedFilter] = useState('all')
@@ -53,7 +54,7 @@ export default function WorkshopList() {
               <ul className="space-y-2 text-customButton">
                 {uniqueWorkshops.map((cls, index) => (
                   // <div>{cls.type}</div>
-                  <li>
+                  <li key={index}>
                     <button
                       onClick={() => handleFilterClick(cls.type)}
                       className="text-left w-full"
@@ -95,7 +96,7 @@ export default function WorkshopList() {
                     href={`/workshops/${cls.id}`}
                     className="flex flex-col md:flex-row"
                   >
-                    <img
+                    <Image
                       src={cls.image}
                       alt={cls.title}
                       className="w-full md:w-1/4 h-auto mb-4 md:mb-0 md:mr-4 rounded object-cover"

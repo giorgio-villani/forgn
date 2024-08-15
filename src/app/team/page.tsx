@@ -1,5 +1,6 @@
 import React from 'react'
 import artists from '@/data/artists'
+import Image from 'next/image'
 
 interface TeamMemberProps {
   name: string
@@ -30,7 +31,7 @@ const teamMember = ({
     className={`max-w-screen-xl mx-auto font-poppins flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center`}
   >
     <div className="w-full md:w-1/2 p-4">
-      <img
+      <Image
         src={imgSrc}
         className={`w-full h-auto object-cover max-w-full max-h-[500px] object-cover`}
         alt={name}
