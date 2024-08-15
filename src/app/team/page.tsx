@@ -33,8 +33,10 @@ const teamMember = ({
     <div className="w-full md:w-1/2 p-4">
       <Image
         src={imgSrc}
-        className={`w-full h-auto object-cover max-w-full max-h-[500px] object-cover`}
         alt={name}
+        className={`w-full h-auto object-cover max-w-full max-h-[500px] object-cover`}
+        width={1000}
+        height={1000}
       />
     </div>
     <div className="w-full md:w-1/2 flex p-4">
@@ -75,7 +77,7 @@ export default function Team() {
           {teamMember({
             name: artist.name,
             description: artist.description,
-            imgSrc: `./team/${artist.picture}`,
+            imgSrc: `/team/${artist.picture}`,
             imgClass: 'max-w-full max-h-[500px] object-cover',
             reverse: index % 2 !== 0,
             website: artist.website,

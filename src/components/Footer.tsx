@@ -10,6 +10,8 @@ const Footer: React.FC = () => {
         <div className="m-5">
           <Image
             src="/forgn.png"
+            width={120} // Specify the width
+            height={120} // Specify the height
             className="max-w-[120px] max-h-[120px]"
             alt="forgn studio logo"
           />

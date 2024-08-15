@@ -100,6 +100,8 @@ export default function WorkshopList() {
                       src={cls.image}
                       alt={cls.title}
                       className="w-full md:w-1/4 h-auto mb-4 md:mb-0 md:mr-4 rounded object-cover"
+                      width={1000}
+                      height={1000}
                     />
                     <div className="flex flex-col justify-between">
                       <div>

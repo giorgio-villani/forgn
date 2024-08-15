@@ -24,8 +24,10 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
         <div className="w-full md:w-1/2 p-4">
           <Image
             src={workshop.image}
-            className="w-full h-auto object-cover max-w-full max-h-[500px] object-cover"
             alt={workshop.title}
+            className="w-full h-auto object-cover max-w-full max-h-[500px] object-cover"
+            width={1000}
+            height={1000}
           />
         </div>
         <div className="w-full md:w-1/2 flex p-4">

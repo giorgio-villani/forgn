@@ -24,7 +24,13 @@ const About: React.FC = () => {
         <div
           className={`bg-white text-black border border-customButton p-4 transition-transform duration-100 transform hover:-translate-y-5 md:aspect-1 flex flex-col`}
         >
-          <Image className="w-12 h-12" src={icon} alt={alt} />
+          <Image
+            className="w-12 h-12"
+            src={icon}
+            alt={alt}
+            width={1000}
+            height={1000}
+          />
           <h3 className="font-bold text-xl font-inter mb-2">{title}</h3>
           <p className="text-xl font-inter mb-4">{description}</p>
           <div className="mt-auto text-red-500 ">Learn More</div>
@@ -61,7 +67,12 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className="md:pl-5 lg:pl-5 max-w-[650px] max-h-[500px] object-cover">
-            <Image src="./ed-low.webp" alt="ed in between lines exhibition" />
+            <Image
+              src="/ed-low.webp"
+              alt="ed in between lines exhibition"
+              width={1000}
+              height={1000}
+            />
             <div className="text-center txt-sm">
               Photo by{' '}
               <a
@@ -187,8 +198,10 @@ const About: React.FC = () => {
             </div>
             <div className="flex justify-center md:justify-end flex-1">
               <Image
-                src="./activation.jpg"
+                src="/activation.jpg"
                 alt="activation"
+                width={1000}
+                height={1000}
                 className="w-full h-auto max-w-xs md:max-w-md transform hover:scale-105 transition duration-500 ease-in-out"
               />
             </div>
