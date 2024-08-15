@@ -31,12 +31,10 @@ const teamMember = ({
     className={`max-w-screen-xl mx-auto font-poppins flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center`}
   >
     <div className="w-full md:w-1/2 p-4">
-      <Image
+      <img
         src={imgSrc}
         alt={name}
         className={`w-full h-auto object-cover max-w-full max-h-[500px] object-cover`}
-        width={1000}
-        height={1000}
       />
     </div>
     <div className="w-full md:w-1/2 flex p-4">

@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import workshops from '@/data/workshops'
-import Image from 'next/image'
 
 export default function WorkshopList() {
   const [selectedFilter, setSelectedFilter] = useState('all')

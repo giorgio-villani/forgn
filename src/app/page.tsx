@@ -185,11 +185,9 @@ const About: React.FC = () => {
               </ul>
             </div>
             <div className="flex justify-center md:justify-end flex-1">
-              <Image
+              <img
                 src="/activation.jpg"
                 alt="activation"
-                width={1000}
-                height={1000}
                 className="w-full h-auto max-w-xs md:max-w-md transform hover:scale-105 transition duration-500 ease-in-out"
               />
             </div>

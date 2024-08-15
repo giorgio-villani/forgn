@@ -1,6 +1,5 @@
 import { notFound, useParams } from 'next/navigation'
 import workshops from '@/data/workshops'
-import Image from 'next/image'
 
 interface ClassDetailsProps {
   params: {
@@ -22,12 +21,10 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
       <h1 className="text-5xl text-center font-inter mb-8">{workshop.title}</h1>
       <div className="flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2 p-4">
-          <Image
+          <img
             src={workshop.image}
             alt={workshop.title}
             className="w-full h-auto object-cover max-w-full max-h-[500px] object-cover"
-            width={1000}
-            height={1000}
           />
         </div>
         <div className="w-full md:w-1/2 flex p-4">
