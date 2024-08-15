@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function Activations() {
   return (
     <div className="w-full flex flex-col items-center font-poppins ">
@@ -26,22 +24,18 @@ export default function Activations() {
 
         <div className="py-5 max-w-[1200px] flex flex-col md:flex-row items-center">
           <div className="w-full p-2 md:w-1/2">
-            <Image
+            <img
               className="w-full h-[500px] object-cover"
               src="/activation/activation-before.jpg"
               alt="Moth Formerly Houston Vintage Truck Club - Before"
-              width={1000}
-              height={1000}
             />
             <div className="text-center">Before</div>
           </div>
           <div className="w-full p-2 md:w-1/2">
-            <Image
+            <img
               className="w-full h-[500px] object-cover"
               src="/activation/activation-after.jpg"
               alt="Moth Formerly Houston Vintage Truck Club - After"
-              width={1000}
-              height={1000}
             />
             <div className="text-center">After</div>
           </div>

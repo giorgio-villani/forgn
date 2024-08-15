@@ -1,6 +1,5 @@
 import CustomButton from '@/components/CustomButton'
 import SubscribeForm from '@/components/SubscribeForm'
-import Image from 'next/image'
 import React from 'react'
 
 interface CardProps {
@@ -24,13 +23,7 @@ const About: React.FC = () => {
         <div
           className={`bg-white text-black border border-customButton p-4 transition-transform duration-100 transform hover:-translate-y-5 md:aspect-1 flex flex-col`}
         >
-          <Image
-            className="w-12 h-12"
-            src={icon}
-            alt={alt}
-            width={1000}
-            height={1000}
-          />
+          <img className="w-12 h-12" src={icon} alt={alt} />
           <h3 className="font-bold text-xl font-inter mb-2">{title}</h3>
           <p className="text-xl font-inter mb-4">{description}</p>
           <div className="mt-auto text-red-500 ">Learn More</div>
@@ -67,12 +60,7 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className="md:pl-5 lg:pl-5 max-w-[650px] max-h-[500px] object-cover">
-            <Image
-              src="/ed-low.webp"
-              alt="ed in between lines exhibition"
-              width={1000}
-              height={1000}
-            />
+            <img src="/ed-low.webp" alt="ed in between lines exhibition" />
             <div className="text-center txt-sm">
               Photo by{' '}
               <a
