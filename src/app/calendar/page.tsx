@@ -1,5 +1,4 @@
 import MyCalendar from '@/components/MyCalendar'
-import Image from 'next/image'
 
 export default function Calendar() {
   return (

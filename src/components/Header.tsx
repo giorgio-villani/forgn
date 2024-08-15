@@ -17,17 +17,17 @@ const Header: React.FC = () => {
     setMenuOpen(!menuOpen)
   }
 
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.classList.add('no-scroll')
-    } else {
-      document.body.classList.remove('no-scroll')
-    }
+  // useEffect(() => {
+  //   if (menuOpen) {
+  //     document.body.classList.add('no-scroll')
+  //   } else {
+  //     document.body.classList.remove('no-scroll')
+  //   }
 
-    return () => {
-      document.body.classList.remove('no-scroll')
-    }
-  }, [menuOpen])
+  //   return () => {
+  //     document.body.classList.remove('no-scroll')
+  //   }
+  // }, [menuOpen])
 
   return (
     <div className="bg-white w-full z-50 relative">
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* Always visible on larger screens */}
-          <div className=" hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <LinkButton href="/sculpture" text="Sculpture Classes" />
             <LinkButton href="/digital" text="Digital Art Classes" />
             <LinkButton href="/gallery" text="Gallery" />
@@ -73,8 +73,8 @@ const Header: React.FC = () => {
         </div>
 
         {menuOpen && (
-          <div className="lg:hidden h-screen text-2xl flex flex-col absolute top-full left-0 w-full h-text-center bg-white p-4 pt-7 text-center">
-            <div className="bg-customButton rounded rounded-full text-white m-6 ">
+          <div className="lg:hidden h-screen text-2xl flex flex-col absolute top-0 left-0 w-full bg-white p-4 pt-7 text-center z-50">
+            <div className="bg-customButton rounded-full text-white m-6 ">
               <LinkButton href="/calendar" text="Calendar" />
             </div>
             <LinkButton href="/sculpture" text="Sculpture Classes" />

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function Sculpture() {
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white">

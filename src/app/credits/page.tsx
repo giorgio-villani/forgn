@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function Credit() {
   return (
     <div className="w-full h-screen flex flex-col font-poppins items-center ">

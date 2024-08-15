@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import React from 'react'
 
 const Footer: React.FC = () => {
@@ -8,10 +7,8 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-300 text-black py-3 w-full">
       <div className="max-w-screen-xl mx-auto flex justify-between items-start">
         <div className="m-5">
-          <Image
+          <img
             src="/forgn.png"
-            width={120} // Specify the width
-            height={120} // Specify the height
             className="max-w-[120px] max-h-[120px]"
             alt="forgn studio logo"
           />

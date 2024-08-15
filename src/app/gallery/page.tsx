@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function Gallery() {
   return (
     <div className="w-full flex flex-col font-poppins items-center ">
