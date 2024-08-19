@@ -73,7 +73,7 @@ const Header: React.FC = () => {
         </div>
 
         {menuOpen && (
-          <div className="lg:hidden h-screen text-2xl flex flex-col absolute top-0 left-0 w-full bg-white p-4 pt-7 text-center z-50">
+          <div className="lg:hidden h-screen text-2xl flex flex-col absolute top-full left-0 w-full h-text-center bg-white p-4 pt-7 text-center">
             <div className="bg-customButton rounded-full text-white m-6 ">
               <LinkButton href="/calendar" text="Calendar" />
             </div>
