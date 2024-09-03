@@ -1,5 +1,12 @@
 const artists = [
   {
+    name: 'Giorgio Villani',
+    picture: 'giorgio-2.png',
+    description:
+      'Thomas Grant MacDonald is a skilled video editor and the owner of Southwest Digital, a full-service digital marketing company in Houston, Texas. He is an alumnus of the University of Texas at Austin and the University of Pennsylvania School of Design. With years of experience in video content creation and editing, Thomas loves helping others learn new skills. He is excited to share his knowledge at Forgn. Join his class to learn how to create amazing videos with easy-to-follow steps!',
+    website: 'https://spindletop.digital',
+  },
+  {
     name: 'Shelley Townsend',
     picture: 'shelley-1.jpg',
     description:

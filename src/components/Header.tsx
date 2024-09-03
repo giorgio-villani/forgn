@@ -58,12 +58,14 @@ const Header: React.FC = () => {
             <LinkButton href="/gallery" text="Gallery" />
             <div className="relative group">
               <button className="px-4 py-2 rounded-md flex items-center">
-                More <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
+                More
+                <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
               </button>
               <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
                 <LinkButton href="/team" text="Team" />
                 <LinkButton href="/workshops" text="Workshops" />
                 <LinkButton href="/activations" text="Activations" />
+                <LinkButton href="/donate" text="Donate" />
                 {/* <LinkButton href="./presentations" text="Presentations" />
                 <LinkButton href="./hackathons" text="Hackathons" /> */}
               </div>
@@ -84,6 +86,7 @@ const Header: React.FC = () => {
             <LinkButton href="/team" text="Team" />
             <LinkButton href="/workshops" text="Workshops" />
             <LinkButton href="/activations" text="Activations" />
+            <LinkButton href="/donate" text="Donate" />
             {/* <LinkButton href="./presentations" text="Presentations" /> */}
             {/* <LinkButton href="./hackathons" text="Hackathons" /> */}
             {/* </div> */}

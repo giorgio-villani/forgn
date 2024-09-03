@@ -52,9 +52,9 @@ const About: React.FC = () => {
               blends traditional and digital styles.
             </p>
             <div className="pt-10">
-              <a href="./calendar">
+              <a href="./workshops">
                 <button className="PRIMARY BUTTON LARGE bg-customButton rounded-full text-white text-2xl px-8 py-4 transform hover:scale-105 transition duration-300 ease-in-out">
-                  Upcoming Events
+                  Register for Workshops
                 </button>
               </a>
             </div>
@@ -160,7 +160,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className="bg-red">
+      <section className="bg-gray-100 py-10">
         <div className="max-w-screen-xl mx-auto text-center px-4">
           <h2 className="text-4xl mb-4 capitalize font-inter">
             What We Strive For

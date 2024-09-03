@@ -71,6 +71,18 @@ const workshops = [
     price: '$125',
     image: '/classes/figma.webp',
   },
+  {
+    id: '6',
+    title: 'Blender: 3D Sculpting',
+    type: 'digital art',
+    instructor: 'Daniel Calderon Arenas',
+    description:
+      'Dive into the world of 3D sculpting with Blender, one of the most powerful open-source 3D modeling tools available. This hands-on course is designed to guide beginners through the fundamental concepts and techniques of digital sculpting, helping you transform your creative ideas into detailed 3D models.',
+    location: 'East End Maker Hub - Y114',
+    sessions: 'Next Session: Not scheduled yet',
+    price: '$125',
+    image: '/classes/blender_icon.png',
+  },
 ]
 
 export default workshops
