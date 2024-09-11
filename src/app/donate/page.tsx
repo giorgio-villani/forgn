@@ -30,7 +30,7 @@ export default function Donate() {
         </p>
 
         <a
-          href="[Donation Link]"
+          href="https://fresharts.app.neoncrm.com/forms/fs-forgn-studio"
           className="text-2xl text-customButton underline mb-6 block"
         >
           Donate now to support our mission!
