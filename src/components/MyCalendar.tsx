@@ -6,23 +6,33 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import listPlugin from '@fullcalendar/list'
 import interactionPlugin from '@fullcalendar/interaction'
-// import '@fullcalendar/daygrid/main.css';
-// import '@fullcalendar/timegrid/main.css';
-// import '@fullcalendar/list/main.css';
+import iCalendarPlugin from '@fullcalendar/icalendar' // Import iCalendar plugin
 
 const MyCalendar: React.FC = () => {
   return (
     <div className="max-w-5xl mx-auto m-8 bg-white">
       <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
+        plugins={[
+          dayGridPlugin,
+          timeGridPlugin,
+          listPlugin,
+          interactionPlugin,
+          iCalendarPlugin,
+        ]}
+        initialView="listMonth"
         headerToolbar={{
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
         }}
         weekends={true}
-        events={[]} // Empty events array to start without events
+        events={{
+          url: '/api/calendar', // Use the new App Router API route
+          format: 'ics',
+          failure: function () {
+            alert('There was an error while fetching events!')
+          },
+        }}
       />
     </div>
   )
