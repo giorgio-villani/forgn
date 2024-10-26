@@ -33,11 +33,11 @@ const Footer: React.FC = () => {
           <div>
             <h2 className="text-xl font-semibold">Social</h2>
             <ul className="">
-              <li>
+              {/* <li>
                 <a href="#" className="hover:underline">
                   Twitter/X
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="https://www.instagram.com/forgnstudio/"
