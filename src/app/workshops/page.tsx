@@ -107,7 +107,10 @@ export default function WorkshopList() {
                       <div>
                         <h2 className="text-xl font-bold mb-2">{cls.title}</h2>
                         <p className="text-gray-700 mb-2">{cls.description}</p>
-                        <p className="text-gray-500">{cls.sessions}</p>
+                        <p className="">
+                          Sessions:{' '}
+                          <span className="text-gray-500">{cls.sessions}</span>
+                        </p>
                       </div>
                       <div className="text-right">
                         <span className="text-xl font-bold">{cls.price}</span>

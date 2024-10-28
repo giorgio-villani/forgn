@@ -1,5 +1,9 @@
-import { notFound, useParams } from 'next/navigation'
+'use client'
+
+import { notFound } from 'next/navigation'
 import workshops from '@/data/workshops'
+import { useState } from 'react'
+import Popup from '@/components/Popup' // Ensure this path is correct
 
 interface ClassDetailsProps {
   params: {
@@ -11,6 +15,14 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
   const { workshopId } = params
 
   const workshop = workshops.find((workshop) => workshop.id === workshopId)
+
+  // State to control the modal's visibility
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // Function to open the modal
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
 
   if (!workshop) {
     return notFound()
@@ -34,14 +46,27 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
               {workshop.description}
             </p>
             <p className="text-lg mb-4">
+              <strong>Price:</strong> {workshop.price}
+            </p>
+            <p className="text-lg mb-4">
               <strong>Sessions:</strong> {workshop.sessions}
             </p>
             <p className="text-lg mb-4">
               <strong>Location:</strong> {workshop.location}
             </p>
+            {/* Trigger Modal when this button is clicked */}
+            <button
+              onClick={openModal}
+              className="w-full bg-customButton rounded text-white py-3 transform hover:scale-105 transition duration-300 ease-in-out"
+            >
+              Register for Class Mailing List
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Modal component is shown when isModalOpen is true */}
+      <Popup isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
     </div>
   )
 }

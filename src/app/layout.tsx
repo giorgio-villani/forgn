@@ -67,9 +67,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Header />
-        {children}
+        <div className="grow">{children}</div>
         <Footer />
       </body>
     </html>
