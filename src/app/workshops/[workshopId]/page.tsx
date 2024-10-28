@@ -3,7 +3,7 @@
 import { notFound } from 'next/navigation'
 import workshops from '@/data/workshops'
 import { useState } from 'react'
-import Popup from '@/components/Popup' // Ensure this path is correct
+import SubscribeToClassPopup from '@/components/SubscribeToClassPopup' // Ensure this path is correct
 
 interface ClassDetailsProps {
   params: {
@@ -65,8 +65,11 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
         </div>
       </div>
 
-      {/* Modal component is shown when isModalOpen is true */}
-      <Popup isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
+      <SubscribeToClassPopup
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        workshopId={workshopId}
+      />
     </div>
   )
 }

@@ -1,30 +1,61 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import useSubscribeToClass from '@/hooks/useSubscribeToClass'
+import workshops from '@/data/workshops'
 
 interface ModalProps {
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
+  workshopId: string
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
+const SubscribeToClassPopup: React.FC<ModalProps> = ({
+  isOpen,
+  setIsOpen,
+  workshopId,
+}) => {
   const [email, setEmail] = useState('')
+  const [className, setClassName] = useState('') // Fixed casing for consistency
   const [showCheckmark, setShowCheckmark] = useState(false)
   const [subscribed, setSubscribed] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const workshop = workshops.find((workshop) => workshop.id === workshopId)
+
+  useEffect(() => {
+    if (workshop) {
+      setClassName(workshop.title || 'Unknown Workshop')
+    } else {
+      console.error(`Workshop with ID ${workshopId} not found.`)
+      setClassName('Unknown Workshop')
+    }
+  }, [workshop, workshopId])
+
+  // Call the hook with the email state
+  const { handleSubscribeToClass } = useSubscribeToClass({
+    emailAddress: email,
+    className: className,
+  })
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     // Simple email validation
     if (email && email.includes('@')) {
-      setShowCheckmark(true)
-      setSubscribed(true) // Show "Subscribed!" message
-      setEmail('')
+      try {
+        // Use the hook's submit function
+        await handleSubscribeToClass()
+        setShowCheckmark(true)
+        setSubscribed(true) // Show "Subscribed!" message
+        setEmail('')
 
-      // Reset checkmark after some time, or close modal
-      setTimeout(() => {
-        setIsOpen(false) // Close modal after showing checkmark
-        setShowCheckmark(false)
-        setSubscribed(false) // Reset the subscribed message after closing
-      }, 2000)
+        // Reset checkmark after some time, or close modal
+        setTimeout(() => {
+          setIsOpen(false) // Close modal after showing checkmark
+          setShowCheckmark(false)
+          setSubscribed(false) // Reset the subscribed message after closing
+        }, 2000)
+      } catch (error) {
+        console.error('Error subscribing to class:', error)
+      }
     } else {
       // Handle invalid email
       alert('Please enter a valid email.')
@@ -95,7 +126,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
                     className="text-base font-semibold leading-6 text-gray-900"
                     id="modal-title"
                   >
-                    Subscription
+                    Subscribe to {className}
                   </h3>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
@@ -149,4 +180,4 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
   )
 }
 
-export default Modal
+export default SubscribeToClassPopup
