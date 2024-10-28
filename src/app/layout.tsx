@@ -66,6 +66,13 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+          sizes="180x180"
+        />
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Header />
