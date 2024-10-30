@@ -46,6 +46,15 @@ const Footer: React.FC = () => {
                   Instagram
                 </a>
               </li>
+              <li>
+                {' '}
+                <a
+                  href="https://www.youtube.com/@forgn-studio"
+                  className="hover:underline"
+                >
+                  YouTube
+                </a>
+              </li>
             </ul>
           </div>
         </div>
