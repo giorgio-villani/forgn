@@ -49,7 +49,7 @@ const teamMember = ({
         </h2>
         {website && (
           <p className="hover:underline text-customButton pb-3">
-            <a href={website}>Teacher Website</a>
+            <a href={website}>{website}</a>
           </p>
         )}
         <p
