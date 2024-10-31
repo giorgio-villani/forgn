@@ -1,3 +1,17 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Support Forgn Studio: Donate to Art & Technology',
+  description:
+    'Help Forgn Studio continue its mission to blend art and technology. Your donation supports innovative programs, artist collaborations, and community workshops.',
+  openGraph: {
+    title: 'Support Forgn Studio',
+    description:
+      'Join us in supporting a creative future by donating to Forgn Studio’s art and technology initiatives.',
+    url: 'https://forgn.art/donate',
+  },
+}
+
 export default function Donate() {
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white">
@@ -18,7 +32,11 @@ export default function Donate() {
         <h3 className="text-3xl mb-6 text-customHighlight">
           Support Our Cause
         </h3>
-        <img className="p-7 " src="/donate/fresh-arts.jpg"></img>
+        <img
+          className="p-7 "
+          alt="Fresh Arts"
+          src="/donate/fresh-arts.jpg"
+        ></img>
         <p className="mb-6 text-left text-center text-justify">
           As a fiscally sponsored project of Fresh Arts, a nonprofit dedicated
           to empowering artists, we benefit from their support in managing our

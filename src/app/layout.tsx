@@ -7,8 +7,7 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title:
-    'Forgn Studio: Explore Digital and Physical Art through Classes, Exhibits, and Collaborations',
+  title: 'Forgn Studio: Explore Art/Tech Applications',
   description:
     'Join Forgn Studio to explore digital art with hands-on classes, connect with visionary artists, and experience our innovative gallery that blends physical and digital creativity',
   keywords:

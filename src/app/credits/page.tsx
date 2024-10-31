@@ -1,3 +1,17 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Credits | Forgn Studio',
+  description:
+    'Acknowledgments and credits for those who contributed to Forgn Studio. Learn about the collaborators, partners, and supporters behind our work.',
+  openGraph: {
+    title: 'Forgn Studio Credits',
+    description:
+      'Explore the individuals and organizations who have contributed to Forgn Studio’s journey in art and technology.',
+    url: 'https://forgn.art/credits',
+  },
+}
+
 export default function Credit() {
   return (
     <div className="w-full h-screen flex flex-col font-poppins items-center ">

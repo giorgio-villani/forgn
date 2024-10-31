@@ -1,3 +1,17 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Activations | Forgn Studio',
+  description:
+    'Explore past activations at Forgn Studio, where we transform spaces into immersive art experiences. Discover our warehouse and previous locations brought to life.',
+  openGraph: {
+    title: 'Forgn Studio Activations',
+    description:
+      'Experience the unique activations at Forgn Studio, showcasing creative transformations of our warehouse and past spaces.',
+    url: 'https://forgn.art/activations',
+  },
+}
+
 export default function Activations() {
   return (
     <div className="w-full flex flex-col items-center font-poppins ">

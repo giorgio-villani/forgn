@@ -1,3 +1,17 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Forgn Studio Gallery: Art and Technology',
+  description:
+    'Discover the unique fusion of art and technology at Forgn Studio Gallery.',
+  openGraph: {
+    title: 'Forgn Studio Gallery',
+    description:
+      'Experience innovative art at the intersection of digital and physical mediums.',
+    url: 'https://forgn.art/gallery',
+  },
+}
+
 export default function Gallery() {
   return (
     <div className="w-full flex flex-col font-poppins items-center ">

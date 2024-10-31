@@ -1,6 +1,8 @@
 import React from 'react'
-import artists from '@/data/artists'
 import Image from 'next/image'
+import type { Metadata } from 'next'
+
+import artists from '@/data/artists'
 
 interface TeamMemberProps {
   name: string
@@ -18,6 +20,18 @@ const unescapeHtml = (escapedStr: string) => {
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&amp;/g, '&')
+}
+
+export const metadata: Metadata = {
+  title: 'Forgn Studio Team: From Traditional To Digital',
+  description:
+    'Get to know the talented individuals behind Forgn Studio. Our team is dedicated to innovating at the intersection of art and technology.',
+  openGraph: {
+    title: 'Forgn Studio Team',
+    description:
+      'Meet the creative minds at Forgn Studio who are pushing the boundaries of art and technology.',
+    url: 'https://forgn.art/team',
+  },
 }
 
 const teamMember = ({
