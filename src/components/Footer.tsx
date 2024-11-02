@@ -55,6 +55,24 @@ const Footer: React.FC = () => {
                   YouTube
                 </a>
               </li>
+              <li>
+                {' '}
+                <a
+                  href="https://www.facebook.com/profile.php?id=61568193777555"
+                  className="hover:underline"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li>
+                {' '}
+                <a
+                  href="https://www.linkedin.com/company/forgn-studio"
+                  className="hover:underline"
+                >
+                  Linkedin
+                </a>
+              </li>
             </ul>
           </div>
         </div>

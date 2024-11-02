@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Forgn Studio Workshops: Explore Art & Technology Classes',
+  title: 'Workshops | Forgn Studio',
   description:
     'Discover a range of workshops at Forgn Studio. Learn from experts in art and technology with hands-on classes designed for all skill levels.',
   openGraph: {
