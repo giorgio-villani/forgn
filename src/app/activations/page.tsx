@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Activations | Forgn Studio',
@@ -38,19 +39,33 @@ export default function Activations() {
 
         <div className="py-5 max-w-[1200px] flex flex-col md:flex-row items-center">
           <div className="w-full p-2 md:w-1/2">
-            <img
+            {/* <img
               className="w-full h-[500px] object-cover"
-              src="/activation/activation-before.jpg"
+              src="/activation/activation-before.webp"
               alt="Moth Formerly Houston Vintage Truck Club - Before"
-            />
+            /> */}
+            <Image
+              className="w-full h-[500px] object-cover"
+              src="/activation/activation-before.webp"
+              alt="Moth Formerly Houston Vintage Truck Club - Before"
+              width={750}
+              height={500}
+            ></Image>
             <div className="text-center">Before</div>
           </div>
           <div className="w-full p-2 md:w-1/2">
-            <img
+            {/* <img
               className="w-full h-[500px] object-cover"
-              src="/activation/activation-after.jpg"
+              src="/activation/activation-after.webp"
               alt="Moth Formerly Houston Vintage Truck Club - After"
-            />
+            /> */}
+            <Image
+              className="w-full h-[500px] object-cover"
+              src="/activation/activation-after.webp"
+              alt="Moth Formerly Houston Vintage Truck Club - After"
+              width={750}
+              height={500}
+            ></Image>
             <div className="text-center">After</div>
           </div>
         </div>
