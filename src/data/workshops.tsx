@@ -9,7 +9,7 @@ const workshops = [
     location: 'East End Maker Hub - Y114',
     sessions: 'Not scheduled yet',
     price: '$350',
-    image: '/classes/sculpture-terracotta.jpg',
+    image: '/classes/sculpture-terracotta.webp',
   },
   {
     id: '1',
@@ -21,7 +21,7 @@ const workshops = [
     location: 'East End Maker Hub - Y114',
     sessions: 'Not scheduled yet',
     price: '$250',
-    image: '/classes/polymer-1.jpg',
+    image: '/classes/polymer-1.webp',
   },
   {
     id: '2',
@@ -33,7 +33,7 @@ const workshops = [
     location: 'East End Maker Hub - Y114',
     sessions: 'Not scheduled yet',
     price: '$150',
-    image: '/classes/digital-art.jpg',
+    image: '/classes/digital-art.webp',
   },
   {
     id: '3',
@@ -45,7 +45,7 @@ const workshops = [
     location: 'East End Maker Hub - Y114',
     sessions: 'Not scheduled yet',
     price: '$150',
-    image: '/classes/davinci.jpg',
+    image: '/classes/davinci.webp',
   },
   {
     id: '4',
@@ -81,7 +81,7 @@ const workshops = [
     location: 'East End Maker Hub - Y114',
     sessions: 'Not scheduled yet',
     price: '$125',
-    image: '/classes/blender_icon.png',
+    image: '/classes/blender_icon.webp',
   },
 ]
 

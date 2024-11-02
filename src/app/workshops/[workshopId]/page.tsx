@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import workshops from '@/data/workshops'
 import { useState } from 'react'
 import SubscribeToClassPopup from '@/components/SubscribeToClassPopup' // Ensure this path is correct
+import Image from 'next/image'
 
 interface ClassDetailsProps {
   params: {
@@ -33,9 +34,16 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
       <h1 className="text-5xl text-center font-inter mb-8">{workshop.title}</h1>
       <div className="flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2 p-4">
-          <img
+          {/* <img
             src={workshop.image}
             alt={workshop.title}
+            className="w-full h-auto object-cover max-w-full max-h-[500px] object-cover"
+          /> */}
+          <Image
+            src={workshop.image}
+            alt={workshop.title}
+            width={750}
+            height={500}
             className="w-full h-auto object-cover max-w-full max-h-[500px] object-cover"
           />
         </div>
