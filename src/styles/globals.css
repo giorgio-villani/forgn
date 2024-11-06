@@ -6,6 +6,8 @@
 @import '@fontsource/inter';
 @import '@fontsource/poppins';
 
+@import 'yet-another-react-lightbox/styles.css';
+
 @keyframes checkmark {
   0% {
     opacity: 0;

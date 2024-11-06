@@ -1,3 +1,5 @@
+import Gallery from '@/components/Gallery'
+
 export default function Sculpture() {
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white">
@@ -14,6 +16,7 @@ export default function Sculpture() {
           classes foster exploration and artistic expression in a dynamic
           environment that bridges physical and digital art.
         </p>
+        <Gallery />
         <h3 className="text-2xl mb-4">Class Offering:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
@@ -29,6 +32,7 @@ export default function Sculpture() {
             allowing you to create intricate and vibrant sculptures.
           </li>
         </ul>
+
         <h3 className="text-2xl mb-4">Course Highlights:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
