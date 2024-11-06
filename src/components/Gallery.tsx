@@ -34,7 +34,7 @@ export default function Gallery() {
     <div className="max-w-screen-xl mx-auto font-poppins p-4">
       <RowsPhotoAlbum
         photos={images}
-        targetRowHeight={350} // Adjust the row height as needed
+        targetRowHeight={300} // Adjust the row height as needed
         onClick={({ index: currentIndex }) => setIndex(currentIndex)} // Opens lightbox on image click
       />
       <Lightbox
