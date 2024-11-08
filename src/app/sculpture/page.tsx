@@ -1,4 +1,15 @@
-import Gallery from '@/components/Gallery'
+import ImageGallery from '@/components/ImageGallery'
+
+const images = [
+  { src: 'misty.jpg', width: 1215, height: 1800 },
+  { src: 'group.jpg', width: 800, height: 600 },
+  { src: 'claire.jpg', width: 1215, height: 1800 },
+  { src: 'shelley.jpg', width: 1215, height: 1800 },
+  { src: 'wade.jpg', width: 1215, height: 1800 },
+  { src: 'thuy_1.jpg', width: 1215, height: 1800 },
+  { src: 'will.jpg', width: 1215, height: 1800 },
+  { src: 'thuy_2.jpg', width: 203, height: 300 },
+]
 
 export default function Sculpture() {
   return (
@@ -16,7 +27,7 @@ export default function Sculpture() {
           classes foster exploration and artistic expression in a dynamic
           environment that bridges physical and digital art.
         </p>
-        <Gallery />
+        <ImageGallery images={images} />
         <h3 className="text-2xl mb-4">Class Offering:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
