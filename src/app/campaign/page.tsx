@@ -1,5 +1,14 @@
 import type { Metadata } from 'next'
 
+const unescapeHtml = (escapedStr: string) => {
+  return escapedStr
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+}
+
 export const metadata: Metadata = {
   title: 'Giving Tuesday Campaign: Donate to Art & Technology',
   description:
@@ -32,27 +41,17 @@ export default function Campaign() {
           </a>
         </h2>
         <p className="mb-6 text-center">
-          Giving Tuesday is a global movement held on the Tuesday after
-          Thanksgiving, encouraging people to give back to their communities
-          through donations, volunteering, and acts of kindness. It's a day
-          dedicated to generosity and supporting nonprofit organizations, aiming
-          to make a positive impact during the holiday season.
+          {unescapeHtml(
+            "Giving Tuesday is a global movement held on the Tuesday after Thanksgiving, encouraging people to give back to their communities through donations, volunteering, and acts of kindness. It's a day dedicated to generosity and supporting nonprofit organizations, aiming to make a positive impact during the holiday season."
+          )}
         </p>
         <h3 className="text-3xl mb-6 text-customHighlight">
           Support Our Cause
         </h3>
         <p className="mb-6 text-center">
-          FORGN STUDIO is dedicated to fusing art and technology, building a
-          sustainable community where traditional craftsmanship meets digital
-          innovation. By transforming industrial spaces into dynamic hubs, we
-          create an environment where artists and technologists collaborate,
-          pushing the boundaries of creativity. At the East End Maker Hub in
-          Houston, we offer residency programs, free workshops, and public
-          exhibitions that spotlight this art-tech fusion. Your support fuels
-          initiatives that empower local creators, drive technological
-          exploration in art, and bring cutting-edge installations to the
-          community. Join us in crafting a future where art and technology
-          inspire and transform.
+          {unescapeHtml(
+            `FORGN STUDIO is dedicated to fusing art and technology, building a sustainable community where traditional craftsmanship meets digital innovation. By transforming industrial spaces into dynamic hubs, we create an environment where artists and technologists collaborate, pushing the boundaries of creativity. At the East End Maker Hub in Houston, we offer residency programs, free workshops, and public exhibitions that spotlight this art-tech fusion. Your support fuels initiatives that empower local creators, drive technological exploration in art, and bring cutting-edge installations to the community. Join us in crafting a future where art and technology inspire and transform.`
+          )}
         </p>
         <a
           href="https://fresharts.app.neoncrm.com/forms/fs---forgn-2024-gt"
