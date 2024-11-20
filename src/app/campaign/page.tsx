@@ -20,11 +20,16 @@ export default function Campaign() {
       </h1>
       <section className="max-w-[800px] w-full px-4 text-center">
         <h2 className="mb-6 text-4xl">
-          <img
-            className="p-7 mx-auto"
-            alt="Fresh Arts"
-            src="/campaign/GT_logo_stacked2.png"
-          />
+          <a
+            href="https://www.givingtuesday.org/"
+            className="text-2xl text-customButton underline mb-6 block"
+          >
+            <img
+              className="p-7 mx-auto"
+              alt="Fresh Arts"
+              src="/campaign/GT_logo_stacked2.png"
+            />
+          </a>
         </h2>
         <p className="mb-6 text-center">
           Giving Tuesday is a global movement held on the Tuesday after
@@ -50,7 +55,7 @@ export default function Campaign() {
           inspire and transform.
         </p>
         <a
-          href="https://www.givingtuesday.org/"
+          href="https://fresharts.app.neoncrm.com/forms/fs---forgn-2024-gt"
           className="text-2xl text-customButton underline mb-6 block"
         >
           Donate now to support our mission!
