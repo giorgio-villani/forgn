@@ -51,7 +51,7 @@ export default function Campaign() {
         <h3 className="text-3xl mb-6 text-customHighlight">
           Support Our Cause
         </h3>
-        <DonationBar goal={5000} current={5165.12} />
+        <DonationBar goal={12000} current={5165.12} />
         <p className="mb-6 text-center">
           {unescapeHtml(
             `${StudioHighlight} is dedicated to fusing art and technology, building a sustainable community where traditional craftsmanship meets digital innovation. By transforming industrial spaces into dynamic hubs, we create an environment where artists and technologists collaborate, pushing the boundaries of creativity. At the East End Maker Hub in Houston, we offer residency programs, free workshops, and public exhibitions that spotlight this art-tech fusion. Your support fuels initiatives that empower local creators, drive technological exploration in art, and bring cutting-edge installations to the community. Join us in crafting a future where art and technology inspire and transform.`
