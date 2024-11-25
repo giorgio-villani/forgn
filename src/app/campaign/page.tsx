@@ -23,10 +23,12 @@ export const metadata: Metadata = {
 }
 
 export default function Campaign() {
-  const StudioHighlight = <span className="text-red-400">FORGN STUDIO</span>
+  const StudioHighlight = (
+    <span className="text-customButton">FORGN STUDIO</span>
+  )
 
   return (
-    <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white">
+    <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white ">
       <h1 className="text-5xl text-center mb-8">
         Donate to Giving Tuesday Campaign
       </h1>
@@ -48,13 +50,16 @@ export default function Campaign() {
             "Giving Tuesday is a global movement held on the Tuesday after Thanksgiving, encouraging people to give back to their communities through donations, volunteering, and acts of kindness. It's a day dedicated to generosity and supporting nonprofit organizations, aiming to make a positive impact during the holiday season."
           )}
         </p>
-        <h3 className="text-3xl mb-6 text-customHighlight">
-          Support Our Cause
-        </h3>
-        <DonationBar goal={12000} current={5165.12} />
+        <div className="border border-customButton rounded-lg shadow m-6 p-2 bg-gray-100">
+          <h3 className="text-3xl mb-6 text-customHighlight">
+            Support Our Cause
+          </h3>
+          <DonationBar goal={12000} current={5165.12} />
+        </div>
         <p className="mb-6 text-center">
+          {StudioHighlight}
           {unescapeHtml(
-            `${StudioHighlight} is dedicated to fusing art and technology, building a sustainable community where traditional craftsmanship meets digital innovation. By transforming industrial spaces into dynamic hubs, we create an environment where artists and technologists collaborate, pushing the boundaries of creativity. At the East End Maker Hub in Houston, we offer residency programs, free workshops, and public exhibitions that spotlight this art-tech fusion. Your support fuels initiatives that empower local creators, drive technological exploration in art, and bring cutting-edge installations to the community. Join us in crafting a future where art and technology inspire and transform.`
+            ` is dedicated to fusing art and technology, building a sustainable community where traditional craftsmanship meets digital innovation. By transforming industrial spaces into dynamic hubs, we create an environment where artists and technologists collaborate, pushing the boundaries of creativity. At the East End Maker Hub in Houston, we offer residency programs, free workshops, and public exhibitions that spotlight this art-tech fusion. Your support fuels initiatives that empower local creators, drive technological exploration in art, and bring cutting-edge installations to the community. Join us in crafting a future where art and technology inspire and transform.`
           )}
         </p>
       </section>

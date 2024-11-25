@@ -9,7 +9,7 @@ const DonationBar: React.FC<DonationBarProps> = ({ goal, current }) => {
   const progress = Math.min((current / goal) * 100, 100)
 
   return (
-    <div className="w-full max-w-2xl mx-auto text-center">
+    <div className="w-full max-w-2xl mx-auto text-center border-gray-800">
       <div className="font-bold mb-2">
         ${current.toLocaleString()}{' '}
         <span className="text-gray-500">RAISED OF</span> $
