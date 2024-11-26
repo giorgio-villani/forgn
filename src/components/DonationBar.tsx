@@ -21,7 +21,11 @@ const DonationBar: React.FC<DonationBarProps> = ({ goal, current }) => {
           style={{ width: `${progress}%` }}
         ></div>
       </div>
-      <a href="https://fresharts.app.neoncrm.com/forms/fs---forgn-2024-gt">
+      <a
+        href="https://fresharts.app.neoncrm.com/forms/fs---forgn-2024-gt"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <button className="bg-customButton rounded-full text-white py-3 px-5 m-3 transform hover:scale-105 transition duration-300 ease-in-out">
           DONATE NOW
         </button>

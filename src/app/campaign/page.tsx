@@ -54,7 +54,7 @@ export default function Campaign() {
           <h3 className="text-3xl mb-6 text-customHighlight">
             Support Our Cause
           </h3>
-          <DonationBar goal={12000} current={5165.12} />
+          <DonationBar goal={15000.0} current={5165.12} />
         </div>
         <p className="mb-6 text-center">
           {StudioHighlight}
