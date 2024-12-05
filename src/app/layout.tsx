@@ -73,6 +73,21 @@ export default function RootLayout({
           href="/apple-touch-icon.png"
           sizes="180x180"
         />
+        {/* Google Analytics Tag */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YK63ESRMTF"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-YK63ESRMTF');
+            `,
+          }}
+        />
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Header />
