@@ -8,8 +8,7 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title:
-    'Explore Digital Art at Forgn Studio – Classes, Workshops, and Creative Learning',
+  title: 'Forgn Studio | Digital Art Classes & Workshops',
   description:
     'Join Forgn Studio to learn art, connect with visionary artists, participate in hands-on classes, and engage in creative workshops blending physical and digital creativity.',
   keywords:
@@ -60,6 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
         {/* Add structured data */}
         <script
           type="application/ld+json"
