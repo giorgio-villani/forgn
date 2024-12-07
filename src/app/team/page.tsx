@@ -13,17 +13,8 @@ interface TeamMemberProps {
   website?: string
 }
 
-const unescapeHtml = (escapedStr: string) => {
-  return escapedStr
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&amp;/g, '&')
-}
-
 export const metadata: Metadata = {
-  title: 'Forgn Studio Team: From Traditional To Digital',
+  title: 'Forgn Studio Team | From Traditional To Digital',
   description:
     'Get to know the talented individuals behind Forgn Studio. Our team is dedicated to innovating at the intersection of art and technology.',
   openGraph: {
@@ -32,6 +23,15 @@ export const metadata: Metadata = {
       'Meet the creative minds at Forgn Studio who are pushing the boundaries of art and technology.',
     url: 'https://forgn.art/team',
   },
+}
+
+const unescapeHtml = (escapedStr: string) => {
+  return escapedStr
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
 }
 
 const teamMember = ({

@@ -11,7 +11,7 @@ const unescapeHtml = (escapedStr: string) => {
 }
 
 export const metadata: Metadata = {
-  title: 'Giving Tuesday Campaign: Donate to Art & Technology',
+  title: 'Giving Tuesday Campaign | Donate to Art & Technology',
   description:
     'Support FORGN STUDIO in blending art and technology to build a vibrant, innovative community. Your donation funds artist residencies, collaborative projects, and free educational workshops for the Houston area.',
   openGraph: {

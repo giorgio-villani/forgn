@@ -1,4 +1,17 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'Digital Art Classes | Learn and Create',
+  description:
+    'Join Forgn Studio’s digital art classes to explore creativity through technology. Perfect for beginners and professionals alike, these workshops inspire and innovate.',
+  openGraph: {
+    title: 'Digital Art Classes by Forgn Studio',
+    description:
+      'Discover your creative potential with Forgn Studio’s digital art classes. Hands-on learning, innovative techniques, and expert guidance await.',
+    url: 'https://forgn.art/digital',
+  },
+}
 
 export default function Digital() {
   return (

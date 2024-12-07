@@ -1,4 +1,17 @@
 import ImageGallery from '@/components/ImageGallery'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Sculpture Classes | Shape Your Creativity',
+  description:
+    'Discover the art of sculpture at Forgn Studio. Our classes offer hands-on learning to bring your creative visions to life, from traditional to modern techniques.',
+  openGraph: {
+    title: 'Sculpture Classes by Forgn Studio',
+    description:
+      'Unleash your artistic potential with Forgn Studio’s sculpture classes. Explore diverse materials and techniques with expert guidance.',
+    url: 'https://forgn.art/sculpture',
+  },
+}
 
 const images = [
   { src: 'misty.jpg', width: 1215, height: 1800 },

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Support Forgn Studio: Donate to Art & Technology',
+  title: 'Support Forgn Studio | Donate to Art & Technology',
   description:
     'Help Forgn Studio continue its mission to blend art and technology. Your donation supports innovative programs, artist collaborations, and community workshops.',
   openGraph: {

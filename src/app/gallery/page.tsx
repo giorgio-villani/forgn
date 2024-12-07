@@ -1,6 +1,18 @@
 import type { Metadata } from 'next'
 import ImageGallery from '@/components/ImageGallery'
 
+export const metadata: Metadata = {
+  title: 'Forgn Studio Gallery | Art and Technology',
+  description:
+    'Discover the unique fusion of art and technology at Forgn Studio Gallery.',
+  openGraph: {
+    title: 'Forgn Studio Gallery',
+    description:
+      'Experience innovative art at the intersection of digital and physical mediums.',
+    url: 'https://forgn.art/gallery',
+  },
+}
+
 const images = [
   { src: 'misty.jpg', width: 1215, height: 1800 },
   { src: 'group.jpg', width: 800, height: 600 },
@@ -11,18 +23,6 @@ const images = [
   { src: 'will.jpg', width: 1215, height: 1800 },
   { src: 'thuy_2.jpg', width: 203, height: 300 },
 ]
-
-export const metadata: Metadata = {
-  title: 'Forgn Studio Gallery: Art and Technology',
-  description:
-    'Discover the unique fusion of art and technology at Forgn Studio Gallery.',
-  openGraph: {
-    title: 'Forgn Studio Gallery',
-    description:
-      'Experience innovative art at the intersection of digital and physical mediums.',
-    url: 'https://forgn.art/gallery',
-  },
-}
 
 export default function Gallery() {
   return (
