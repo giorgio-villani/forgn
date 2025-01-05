@@ -79,22 +79,22 @@ export default function Credit() {
           <li>
             Photo by{' '}
             <a
-              href="https://www.instagram.com/efedenari/"
+              href="https://www.instagram.com/thomasgrantmacdonald/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-customButton hover:underline"
             >
-              Franco Denari
+              Thomas MacDonald
             </a>{' '}
-            at the <em>&quot;Ed in Between Lines&quot;</em> exhibition,
-            featuring the work of{' '}
+            at the <em>&quot;Art of Gen&quot;</em> exhibition, featuring the
+            work of{' '}
             <a
-              href="https://www.instagram.com/subomar/"
+              href="https://www.instagram.com/dacaldera/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-customButton hover:underline"
             >
-              Omar Ochoa
+              Daniel Calderon
             </a>
             .
           </li>
