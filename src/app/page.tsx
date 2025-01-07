@@ -60,8 +60,12 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className="md:pl-5 lg:pl-5 max-w-[650px] max-h-[500px] object-cover">
-            <img src="/daniel.webp" alt="daniel calderon art of" />
-            <div className="text-center txt-sm">
+            <img
+              src="/daniel.webp"
+              alt="daniel calderon art of gen"
+              className="w-full h-auto"
+            />
+            <div className="text-center text-sm mt-3 break-words">
               Photo by{' '}
               <a
                 href="https://www.instagram.com/thomasgrantmacdonald/"

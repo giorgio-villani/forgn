@@ -31,7 +31,9 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
 
   return (
     <div className="max-w-screen-xl mx-auto font-poppins p-4">
-      <h1 className="text-5xl text-center font-inter mb-8">{workshop.title}</h1>
+      <h1 className="text-2xl md:text-3xl lg:text-4xl text-center font-inter mb-8">
+        {workshop.title}
+      </h1>
       <div className="flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2 p-4">
           {/* <img
@@ -49,17 +51,19 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
         </div>
         <div className="w-full md:w-1/2 flex p-4">
           <div className="px-5">
-            <h2 className="text-3xl mb-4">Instructor: {workshop.instructor}</h2>
-            <p className="text-lg leading-relaxed mb-4">
+            <h2 className="text-xs md:text-sm lg:text-lg mb-4">
+              <strong>Instructor:</strong> {workshop.instructor}
+            </h2>
+            <p className="text-xs md:text-sm lg:text-lg leading-relaxed mb-4">
               {workshop.description}
             </p>
-            <p className="text-lg mb-4">
+            <p className="text-xs md:text-sm lg:text-lg mb-4">
               <strong>Price:</strong> {workshop.price}
             </p>
-            <p className="text-lg mb-4">
+            <p className="text-xs md:text-sm lg:text-lg mb-4">
               <strong>Sessions:</strong> {workshop.sessions}
             </p>
-            <p className="text-lg mb-4">
+            <p className="text-xs md:text-sm lg:text-lg mb-4">
               <strong>Location:</strong> {workshop.location}
             </p>
             {/* Trigger Modal when this button is clicked */}
