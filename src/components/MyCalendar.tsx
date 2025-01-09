@@ -46,7 +46,7 @@ const MyCalendar: React.FC = () => {
     // Check if it's a Google redirect link
     if (url.includes('https://www.google.com/url?q=')) {
       const params = new URLSearchParams(url.split('?')[1]) // Extract query parameters
-      url = params.get('q') // Get the actual URL from 'q' parameter
+      url = params.get('q') as string // Get the actual URL from 'q' parameter
     }
 
     // Remove trailing arguments if any
