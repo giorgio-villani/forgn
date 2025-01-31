@@ -14,16 +14,56 @@ export const metadata: Metadata = {
 }
 
 const images = [
-  { src: './gallery/studio-01.jpg', width: 4080, height: 3072 },
-  { src: './gallery/studio-02.jpg', width: 4080, height: 3072 },
-  { src: './gallery/studio-03.jpg', width: 4080, height: 3072 },
-  // { src: './gallery/studio-04.jpg', width: 4080, height: 3072 },
-  // { src: './gallery/studio-05.jpg', width: 4080, height: 3072 },
-  { src: './gallery/studio-06.jpg', width: 4080, height: 3072 },
-  { src: './gallery/studio-07.jpg', width: 4080, height: 3072 },
-  { src: './gallery/studio-08.jpg', width: 4080, height: 3072 },
-  { src: './gallery/studio-09.jpg', width: 4080, height: 3072 },
-  { src: './gallery/studio-10.jpg', width: 4080, height: 3072 },
+  {
+    src: 'studio-01.jpg',
+    root: 'gallery',
+    width: 4080,
+    height: 3072,
+  },
+  {
+    src: 'studio-02.jpg',
+    root: 'gallery',
+    width: 4080,
+    height: 3072,
+  },
+  {
+    src: 'studio-03.jpg',
+    root: 'gallery',
+    width: 4080,
+    height: 3072,
+  },
+  // { src: './gallery/studio-04.jpg', root: 'gallery', width: 4080, height: 3072 },
+  // { src: './gallery/studio-05.jpg', root: 'gallery', width: 4080, height: 3072 },
+  {
+    src: 'studio-06.jpg',
+    root: 'gallery',
+    width: 4080,
+    height: 3072,
+  },
+  {
+    src: 'studio-07.jpg',
+    root: 'gallery',
+    width: 4080,
+    height: 3072,
+  },
+  {
+    src: 'studio-08.jpg',
+    root: 'gallery',
+    width: 4080,
+    height: 3072,
+  },
+  {
+    src: 'studio-09.jpg',
+    root: 'gallery',
+    width: 4080,
+    height: 3072,
+  },
+  {
+    src: 'studio-10.jpg',
+    root: 'gallery',
+    width: 4080,
+    height: 3072,
+  },
 ]
 
 export default function Gallery() {

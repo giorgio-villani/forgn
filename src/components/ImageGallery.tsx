@@ -7,6 +7,7 @@ import 'react-photo-album/rows.css'
 
 interface Image {
   src: string
+  root: string
   width: number
   height: number
 }
@@ -15,15 +16,16 @@ interface GalleryProps {
   images: Image[]
 }
 
-function assetLink(asset: string, width: number) {
-  return `${encodeURIComponent(asset)}?w=${width}&q=75`
+function assetLink(asset: string, root: string, width: number) {
+  return `./${root}/${encodeURIComponent(asset)}?w=${width}&q=75`
 }
 
 export default function Gallery({ images }: GalleryProps) {
   const [index, setIndex] = useState(-1)
 
-  images = images.map(({ src, width, height }) => ({
-    src: assetLink(src, width),
+  images = images.map(({ src, root, width, height }) => ({
+    src: assetLink(src, root, width),
+    root: root,
     width,
     height,
   }))
