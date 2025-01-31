@@ -16,7 +16,7 @@ interface GalleryProps {
 }
 
 function assetLink(asset: string, width: number) {
-  return `./sculpture/${encodeURIComponent(asset)}?w=${width}&q=75`
+  return `${encodeURIComponent(asset)}?w=${width}&q=75`
 }
 
 export default function Gallery({ images }: GalleryProps) {

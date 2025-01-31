@@ -14,14 +14,16 @@ export const metadata: Metadata = {
 }
 
 const images = [
-  { src: 'misty.jpg', width: 1215, height: 1800 },
-  { src: 'group.jpg', width: 800, height: 600 },
-  { src: 'claire.jpg', width: 1215, height: 1800 },
-  { src: 'shelley.jpg', width: 1215, height: 1800 },
-  { src: 'wade.jpg', width: 1215, height: 1800 },
-  { src: 'thuy_1.jpg', width: 1215, height: 1800 },
-  { src: 'will.jpg', width: 1215, height: 1800 },
-  { src: 'thuy_2.jpg', width: 203, height: 300 },
+  { src: './gallery/studio-01.jpg', width: 4080, height: 3072 },
+  { src: './gallery/studio-02.jpg', width: 4080, height: 3072 },
+  { src: './gallery/studio-03.jpg', width: 4080, height: 3072 },
+  // { src: './gallery/studio-04.jpg', width: 4080, height: 3072 },
+  // { src: './gallery/studio-05.jpg', width: 4080, height: 3072 },
+  { src: './gallery/studio-06.jpg', width: 4080, height: 3072 },
+  { src: './gallery/studio-07.jpg', width: 4080, height: 3072 },
+  { src: './gallery/studio-08.jpg', width: 4080, height: 3072 },
+  { src: './gallery/studio-09.jpg', width: 4080, height: 3072 },
+  { src: './gallery/studio-10.jpg', width: 4080, height: 3072 },
 ]
 
 export default function Gallery() {
@@ -35,8 +37,9 @@ export default function Gallery() {
             innovation. Our gallery is dedicated to showcasing the cutting-edge
             creativity of artists who blend physical and digital art forms.
           </p>
+          <ImageGallery images={images} />
           <div className="flex justify-center pb-5">
-            <img src="/gallery/ai_gallery.webp" alt="ai art gallery" />
+            {/* <img src="/gallery/ai_gallery.webp" alt="ai art gallery" /> */}
           </div>
           <h2 className="mb-6 text-4xl">Purpose of the Gallery:</h2>
           <ul className="list-inside text-justify pb-5">

@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 }
 
 const images = [
-  { src: 'misty.jpg', width: 1215, height: 1800 },
-  { src: 'group.jpg', width: 800, height: 600 },
-  { src: 'claire.jpg', width: 1215, height: 1800 },
-  { src: 'shelley.jpg', width: 1215, height: 1800 },
-  { src: 'wade.jpg', width: 1215, height: 1800 },
-  { src: 'thuy_1.jpg', width: 1215, height: 1800 },
-  { src: 'will.jpg', width: 1215, height: 1800 },
-  { src: 'thuy_2.jpg', width: 203, height: 300 },
+  { src: './sculpture/misty.jpg', width: 1215, height: 1800 },
+  { src: './sculpture/group.jpg', width: 800, height: 600 },
+  { src: './sculpture/claire.jpg', width: 1215, height: 1800 },
+  { src: './sculpture/shelley.jpg', width: 1215, height: 1800 },
+  { src: './sculpture/wade.jpg', width: 1215, height: 1800 },
+  { src: './sculpture/thuy_1.jpg', width: 1215, height: 1800 },
+  { src: './sculpture/will.jpg', width: 1215, height: 1800 },
+  { src: './sculpture/thuy_2.jpg', width: 203, height: 300 },
 ]
 
 export default function Sculpture() {
