@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 }
 
 const images = [
-  { src: 'misty.jpg', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'group.jpg', root: 'sculpture', width: 800, height: 600 },
-  { src: 'claire.jpg', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'shelley.jpg', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'wade.jpg', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'thuy_1.jpg', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'will.jpg', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'thuy_2.jpg', root: 'sculpture', width: 203, height: 300 },
+  { src: 'misty.webp', root: 'sculpture', width: 1215, height: 1800 },
+  { src: 'group.webp', root: 'sculpture', width: 800, height: 600 },
+  { src: 'claire.webp', root: 'sculpture', width: 1215, height: 1800 },
+  { src: 'shelley.webp', root: 'sculpture', width: 1215, height: 1800 },
+  { src: 'wade.webp', root: 'sculpture', width: 1215, height: 1800 },
+  { src: 'thuy_1.webp', root: 'sculpture', width: 1215, height: 1800 },
+  { src: 'will.webp', root: 'sculpture', width: 1215, height: 1800 },
+  { src: 'thuy_2.webp', root: 'sculpture', width: 203, height: 300 },
 ]
 
 export default function Sculpture() {
