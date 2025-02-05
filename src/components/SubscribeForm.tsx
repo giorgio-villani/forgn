@@ -28,7 +28,7 @@ const SubscribeForm: React.FC = () => {
   }
 
   return (
-    <div className="bg-red-600 flex items-center justify-center text-center py-10">
+    <div className="bg-red-600 flex items-center justify-center text-center py-5">
       <div className="bg-white rounded-lg w-[1200px]">
         <div className="m-10">
           <h2 className="text-4xl mb-4 font-inter">Subscribe</h2>

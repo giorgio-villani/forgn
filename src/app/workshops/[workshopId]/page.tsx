@@ -57,9 +57,9 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
             <p className="text-sm lg:text-lg leading-relaxed mb-4">
               {workshop.description}
             </p>
-            <p className="text-sm lg:text-lg mb-4">
+            {/* <p className="text-sm lg:text-lg mb-4">
               <strong>Price:</strong> {workshop.price}
-            </p>
+            </p> */}
             <p className="text-sm lg:text-lg mb-4">
               <strong>Sessions:</strong> {workshop.sessions}
             </p>

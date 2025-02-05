@@ -50,16 +50,6 @@ export default function Sculpture() {
             while also exploring modern applications.
           </li>
           <li className="pb-3">
-            <strong>Polymer Clay Sculpture:</strong> Explore the versatility of
-            polymer clay, perfect for detailed work and contemporary designs.
-            This class focuses on mastering techniques specific to polymer,
-            allowing you to create intricate and vibrant sculptures.
-          </li>
-        </ul>
-
-        <h3 className="text-2xl mb-4">Course Highlights:</h3>
-        <ul className="list-inside text-justify pb-5">
-          <li className="pb-3">
             <strong>Live Model Sessions:</strong> Gain hands-on experience by
             sculpting from live models, enhancing your understanding of human
             anatomy and form.
@@ -77,52 +67,19 @@ export default function Sculpture() {
             <strong>Personal Guidance:</strong> Receive personalized feedback
             and guidance from instructor to refine your sculpting abilities.
           </li>
-        </ul>
-        <h3 className="text-2xl mb-4">Who Should Attend:</h3>
-        <ul className="list-inside text-justify pb-5">
-          <li className="pb-3">
-            <strong>Beginners:</strong> Those new to sculpture who want to learn
-            the basics and build a strong foundation.
-          </li>
-          <li className="pb-3">
-            <strong>Intermediate Artists:</strong> Sculptors looking to refine
-            their techniques and expand their skill set.
-          </li>
-          <li className="pb-3">
-            <strong>Advanced Practitioners:</strong> Experienced artists seeking
-            to explore new methods and gain inspiration from a master sculptor.
-          </li>
-        </ul>
-        <h3 className="text-2xl mb-4">What You will Gain:</h3>
-        <ul className="list-inside text-justify pb-5">
-          <li className="pb-3">
-            <strong>Community:</strong> Connect with fellow artists and become
-            part of the vibrant FORGN Studio community.
-          </li>
-          <li className="pb-3">
-            <strong>Technical Skills:</strong> Master the essential techniques
-            of clay sculpting.
-          </li>
-          <li className="pb-3">
-            <strong>Artistic Expression:</strong> Learn how to translate your
-            creative vision into tangible forms.
-          </li>
-        </ul>
+        </ul>        
         <h3 className="text-2xl mb-4">How to Register:</h3>
         <ul className="list-inside text-justify">
           <li className="pb-3">
-            <strong>Online Registration:</strong> Visit our website at{' '}
-            <a className="text-customButton" href="/workshops">
-              Workshops
-            </a>{' '}
+            <strong>Online Registration:</strong> Register for <a className="text-customButton" href="/workshops/0">
+            mailing list 
+            </a>{' '} or <a className="text-customButton" href="/workshops/0">
+            class
+            </a> when scheduled{' '}
+            
             to sign up for the classes.
           </li>
-          <li className="pb-3">
-            <strong>Contact Us:</strong> For more information or assistance,
-            email us at [Email Address] or call [Phone Number].
-          </li>
         </ul>
-        <p>Experience the art of sculpture at FORGN Studio. Register today!</p>
       </section>
     </div>
   )

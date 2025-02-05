@@ -90,6 +90,9 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+      <section className="bg-customButton py-20">
+        <SubscribeForm />
+      </section>
       <section className="bg-gradient-to-b from-gray-100 to-white text-white py-10">
         <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center">
           <h2 className="text-4xl text-black mb-4 font-inter capitalize">
@@ -164,7 +167,8 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className="bg-gray-100 py-10">
+      <section className="bg-red-600 p-10 ">
+      <div className="bg-white rounded-lg text-center mx-auto py-10">
         <div className="max-w-screen-xl mx-auto text-center px-4">
           <h2 className="text-4xl mb-4 capitalize font-inter">
             What We Strive For
@@ -197,10 +201,7 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="bg-customButton py-20">
-        <SubscribeForm />
+        </div>
       </section>
     </div>
   )

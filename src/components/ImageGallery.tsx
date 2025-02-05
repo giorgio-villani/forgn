@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
-import { RowsPhotoAlbum } from 'react-photo-album'
+import { RenderPhotoProps, RowsPhotoAlbum } from 'react-photo-album'
 import 'react-photo-album/rows.css'
 
 interface Image {
@@ -20,6 +20,10 @@ function assetLink(asset: string, root: string, width: number) {
   return `./${root}/${encodeURIComponent(asset)}?w=${width}&q=75`
 }
 
+// const RenderPhoto: React.FC<RenderPhotoProps> = ({ photo, imageProps }) => (
+//   <img {...imageProps} loading="lazy" alt={photo.src} />
+// )
+
 export default function Gallery({ images }: GalleryProps) {
   const [index, setIndex] = useState(-1)
 
@@ -36,6 +40,7 @@ export default function Gallery({ images }: GalleryProps) {
         photos={images}
         targetRowHeight={300}
         onClick={({ index: currentIndex }) => setIndex(currentIndex)}
+        // renderPhoto={RenderPhoto}
       />
       <Lightbox
         open={index >= 0}
