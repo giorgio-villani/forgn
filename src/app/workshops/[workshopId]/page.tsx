@@ -5,6 +5,7 @@ import workshops from '@/data/workshops'
 import { useState } from 'react'
 import SubscribeToClassPopup from '@/components/SubscribeToClassPopup' // Ensure this path is correct
 import Image from 'next/image'
+import SubscribeToClassForm from '@/components/SubscribeToClassForm'
 
 interface ClassDetailsProps {
   params: {
@@ -51,28 +52,29 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
         </div>
         <div className="w-full md:w-1/2 flex p-4">
           <div className="px-5">
-            <h2 className="text-sm lg:text-lg mb-4">
-              <strong>Instructor:</strong> {workshop.instructor}
-            </h2>
             <p className="text-sm lg:text-lg leading-relaxed mb-4">
               {workshop.description}
             </p>
             {/* <p className="text-sm lg:text-lg mb-4">
               <strong>Price:</strong> {workshop.price}
             </p> */}
+            <h2 className="text-sm lg:text-lg mb-4">
+              🎨<strong>Instructor:</strong> {workshop.instructor}
+            </h2>
             <p className="text-sm lg:text-lg mb-4">
-              <strong>Sessions:</strong> {workshop.sessions}
+              📅<strong>Sessions:</strong> {workshop.sessions}
             </p>
             <p className="text-sm lg:text-lg mb-4">
-              <strong>Location:</strong> {workshop.location}
+              📍<strong>Location:</strong> {workshop.location}
             </p>
             {/* Trigger Modal when this button is clicked */}
-            <button
+            {/* <button
               onClick={openModal}
               className="w-full bg-customButton rounded text-white py-3 transform hover:scale-105 transition duration-300 ease-in-out"
             >
               Register for Class Mailing List
-            </button>
+            </button> */}
+            <SubscribeToClassForm workshopId={workshopId} />
           </div>
         </div>
       </div>
