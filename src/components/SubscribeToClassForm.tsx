@@ -54,7 +54,7 @@ const SubscribeToClassForm: React.FC<SubscribeFormProps> = ({ workshopId }) => {
     <div className=" mx-auto ">
       {/* <h3 className="text-lg font-semibold mb-2">Subscribe to {className}</h3> */}
       <p className="text-sm lg:text-lg leading-relaxed mb-4">
-      ✨ Exciting News! By joining our mailing list, you'll get exclusive updates on this class, early access to registrations, and notifications about <span className="text-red-600 font-bold">FREE</span> workshops and <span className="text-red-600 font-bold">special events!</span>
+      ✨ Exciting News! By joining our mailing list, you will get exclusive updates on this class, early access to registrations, and notifications about <span className="text-red-600 font-bold">FREE</span> workshops and <span className="text-red-600 font-bold">special events!</span>
       </p>
       
       <form onSubmit={handleSubmit} className="space-y-4">
