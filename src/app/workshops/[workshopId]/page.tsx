@@ -2,7 +2,7 @@
 
 import { notFound } from 'next/navigation'
 import workshops from '@/data/workshops'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SubscribeToClassPopup from '@/components/SubscribeToClassPopup' // Ensure this path is correct
 import Image from 'next/image'
 import SubscribeToClassForm from '@/components/SubscribeToClassForm'
@@ -13,22 +13,29 @@ interface ClassDetailsProps {
   }
 }
 
+
 export default function ClassDetails({ params }: ClassDetailsProps) {
+  // Add mounting state to prevent hydration mismatch
+  const [isMounted, setIsMounted] = useState(false)
   const { workshopId } = params
 
   const workshop = workshops.find((workshop) => workshop.id === workshopId)
 
-  // State to control the modal's visibility
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  // Function to open the modal
-  const openModal = () => {
-    setIsModalOpen(true)
-  }
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   if (!workshop) {
     return notFound()
   }
+
+  // Return null or loading state before mounting
+  if (!isMounted) {
+    return null // or return a loading spinner
+  }
+
+  console.log(workshops);
+  console.log("Received workshopId:", workshopId);
 
   return (
     <div className="max-w-screen-xl mx-auto font-poppins p-4">
@@ -42,13 +49,20 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
             alt={workshop.title}
             className="w-full h-auto object-cover max-w-full max-h-[500px] object-cover"
           /> */}
-          <Image
-            src={workshop.image}
-            alt={workshop.title}
-            width={750}
-            height={500}
-            className="w-full h-auto object-cover max-w-full max-h-[500px] object-cover"
-          />
+          {workshop.image ? (
+            <Image
+              src={workshop.image}
+              alt={workshop.title}
+              width={750}
+              height={500}
+              className="w-full h-auto object-cover max-w-full max-h-[500px]"
+            />
+          ) : (
+            <div className="w-full h-auto bg-gray-200 flex items-center justify-center">
+              No Image Available
+            </div>
+          )}
+
         </div>
         <div className="w-full md:w-1/2 flex p-4">
           <div className="px-5">
@@ -67,23 +81,10 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
             <p className="text-sm lg:text-lg mb-4">
               📍<strong>Location:</strong> {workshop.location}
             </p>
-            {/* Trigger Modal when this button is clicked */}
-            {/* <button
-              onClick={openModal}
-              className="w-full bg-customButton rounded text-white py-3 transform hover:scale-105 transition duration-300 ease-in-out"
-            >
-              Register for Class Mailing List
-            </button> */}
             <SubscribeToClassForm workshopId={workshopId} />
           </div>
         </div>
       </div>
-
-      <SubscribeToClassPopup
-        isOpen={isModalOpen}
-        setIsOpen={setIsModalOpen}
-        workshopId={workshopId}
-      />
     </div>
   )
 }

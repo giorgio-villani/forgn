@@ -1,3 +1,4 @@
+import ImageGallery from '@/components/ImageGallery'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -13,6 +14,13 @@ export const metadata: Metadata = {
   },
 }
 
+const images = [
+  { src: 'digital-1.webp', root: 'digital', width: 710, height: 400 },
+  { src: 'digital-2.webp', root: 'digital', width: 710, height: 400 },
+  { src: 'digital-3.webp', root: 'digital', width: 710, height: 400 },
+  { src: 'digital-4.webp', root: 'digital', width: 710, height: 400 },
+]
+
 export default function Digital() {
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white">
@@ -27,6 +35,7 @@ export default function Digital() {
           digital artists, our classes cater to both beginners and advanced
           practitioners eager to explore the digital art landscape.
         </p>
+        <ImageGallery images={images} />
         <h3 className="text-2xl mb-4">Class Offering:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
@@ -48,29 +57,6 @@ export default function Digital() {
           </li>
         </ul>
 
-        <h3 className="text-2xl mb-4">Course Highlights:</h3>
-        <ul className="list-inside text-justify pb-5">
-          <li className="pb-3">
-            <strong>Introduction to Digital Tools:</strong> Learn to use
-            software and hardware essential for digital art creation.
-          </li>
-          <li className="pb-3">
-            <strong>Generative Art Techniques:</strong> Explore how algorithms
-            and AI can enhance your creative process.
-          </li>
-          <li className="pb-3">
-            <strong>Digital Illustration and Painting:</strong> Master the
-            fundamentals of digital drawing and painting.
-          </li>
-          <li className="pb-3">
-            <strong>Interactive Media:</strong> Create art that responds to user
-            input and environment.
-          </li>
-          <li className="pb-3">
-            <strong>Personalized Feedback:</strong> Get expert guidance and
-            critique to refine your digital art skills.
-          </li>
-        </ul>
         <h3 className="text-2xl mb-4">Who Should Attend:</h3>
         <ul className="list-inside text-justify pb-5">
           <li className="pb-3">
@@ -103,26 +89,17 @@ export default function Digital() {
           </li>
         </ul>
         <h3 className="text-2xl mb-4">How to Register:</h3>
-        <ul className="list-inside text-justify pb-5">
+        <ul className="list-inside text-justify">
           <li className="pb-3">
-            <strong>Online Registration:</strong> Visit our website at{' '}
-            <a className="text-customButton" href="/workshops">
-              Workshops
-            </a>{' '}
+            <strong>Online Registration:</strong> Register for <a className="text-customButton" href="/workshops/2">
+            mailing list 
+            </a>{' '} or <a className="text-customButton" href="/workshops/2">
+            class
+            </a> when scheduled{' '}
+            
             to sign up for the classes.
           </li>
-          <li className="pb-3">
-            <strong>Contact Us:</strong> For more information or assistance,
-            email us at [Email Address] or call [Phone Number].
-          </li>
         </ul>
-        <p className="text-justify pb-5">
-          Dive into the world of digital art and unlock your potential with the
-          guidance of our expert instructors. Whether you&rsquo;re looking to
-          pursue digital art as a hobby or a professional career, our classes
-          will equip you with the skills and inspiration to succeed.
-        </p>
-        <p>Experience the future of art at FORGN Studio. Register today!</p>
       </section>
     </div>
   )
