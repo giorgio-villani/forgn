@@ -35,7 +35,7 @@ const SubscribeForm: React.FC = () => {
           <p className="mb-4">
             Stay in the loop with everything you need to know.
           </p>
-          <form
+          {/* <form
             action="https://formspree.io/f/xwpebvon"
             method="POST"
             onSubmit={handleSubmit}
@@ -53,7 +53,16 @@ const SubscribeForm: React.FC = () => {
             >
               Sign Up
             </button>
-          </form>
+          </form> */}
+          <a href="http://eepurl.com/i7qwzg">
+            <button
+              type="submit"
+              className="w-full bg-red-600 text-white py-4 px-4 rounded hover:bg-red-700 transition duration-300 ease-in-out"
+              // className="bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700 transition duration-300 ease-in-out"
+            >
+              Register for Mailing List
+            </button>
+          </a>
           {status === 'success' && <p>Thank you for subscribing!</p>}
           {status === 'error' && (
             <p>Oops, something went wrong. Please try again.</p>
