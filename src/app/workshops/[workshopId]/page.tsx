@@ -86,12 +86,12 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
             </p>
             {/* <SubscribeToClassForm workshopId={workshopId} /> */}
 
-            <button type="submit"
-          className="w-full rounded bg-red-600 py-3 text-white hover:bg-red-500 mb-2">
+            <a href={workshop.booking} target="_blank">
+            <button type="submit" className="w-full rounded bg-red-600 py-3 text-white hover:bg-red-500 mb-2">
               Sign up for Class 
             </button>
-
-            <a href="http://eepurl.com/i7qwzg">
+            </a>
+            <a href="http://eepurl.com/i7qwzg" target="_blank">
             <button
               type="submit"
               className="w-full rounded bg-white hover:bg-gray-200 py-3 text-red-600 border-red-600 border-2"

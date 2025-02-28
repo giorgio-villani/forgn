@@ -8,9 +8,10 @@ const workshops = [
       'In this 4-week class, students will learn the basic tools and materials used to create hand-built ceramics using terracotta. Skills covered include pinching, coiling with a banding wheel, slab preparation with a slab roller, wedging, and glazing.',
     location: 'East End Maker Hub - Y114',
     sessions: 'March 18th, 20th, 25th, 27th',
-    time: '6:00 pm - 9:00 PM',
+    time: '6:00 pm - 9:00 pm',
     price: '$400',
     image: '/classes/sculpture-terracotta.webp',
+    booking: 'https://www-1577h.bookeo.com/bookeo/b_viewPayment.html?bsid=fc9rahylf4ulflrn&backNav=true&ncs=7ncc9c9na4&ncs2=lm99w4cw4k'
   },
   {
     id: '1',
