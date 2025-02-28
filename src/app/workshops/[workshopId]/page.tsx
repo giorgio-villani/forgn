@@ -76,7 +76,7 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
               🕰️<strong>Time:</strong> {workshop.time || "To be announced"}
             </p>
             <p className="text-sm lg:text-lg mb-4">
-              📍<strong>Location:</strong> <a href='https://g.co/kgs/fHhjxQn' className='font-italic hover:underline'>{workshop.location || "To be announced"}</a>
+              📍<strong>Location:</strong> <a href='https://g.co/kgs/fHhjxQn' className='text-blue-600 font-italic hover:underline'>{workshop.location || "To be announced"}</a>
             </p>
             <p className="text-sm lg:text-lg mb-4">
               🏷️<strong>Price:</strong> {workshop.price || "To be announced"}

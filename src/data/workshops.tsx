@@ -6,7 +6,7 @@ const workshops = [
     instructor: 'Shelley Townsend',
     description:
       'Join our 4-week clay figure sculpting class and create lifelike sculptures with a live model. Learn anatomy, proportion, and expression while refining your technique under expert guidance. Open to all skill levels, this hands-on course offers personalized instruction in a supportive, creative environment. All materials included.',
-    location: 'East End Maker Hub - Y114',
+    location: 'Forgn Studio @ East End Maker Hub - Y114',
     sessions: 'March 18th, 20th, 25th, 27th',
     time: '6:00 pm - 9:00 pm',
     price: '$400',
