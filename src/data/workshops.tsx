@@ -11,7 +11,7 @@ const workshops = [
     time: '6:00 pm - 9:00 pm',
     price: '$400',
     image: '/classes/sculpture-terracotta.webp',
-    booking: 'https://www-1577h.bookeo.com/bookeo/b_viewPayment.html?bsid=fc9rahylf4ulflrn&backNav=true&ncs=7ncc9c9na4&ncs2=lm99w4cw4k'
+    booking: 'https://bookeo.com/forgnstudio?type=41577A3PEP719549529190'
   },
   {
     id: '1',
