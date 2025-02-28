@@ -109,7 +109,7 @@ export default function WorkshopList() {
                         <p className="text-gray-700 mb-2">{cls.description}</p>
                         <p className="text-left">
                           Sessions:{' '}
-                          <span className="text-gray-500">{cls.sessions}</span>
+                          <span className="text-gray-500">{cls.sessions || "To be announced"}</span>
                           <br />
                           Location:{' '}
                           <span className="text-gray-500">{cls.location}</span>
