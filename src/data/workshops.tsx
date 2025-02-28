@@ -20,7 +20,7 @@ const workshops = [
     instructor: 'Bailey Ryherd',
     description:
       'This 4-week class introduces students to polymer clay techniques. You will learn to condition, blend, shape, and bake polymer clay, creating various small sculptures and decorative items. Projects will be guided step-by-step, ensuring you complete several finished pieces.',
-    location: 'East End Maker Hub - Y114',
+    location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$250',
@@ -33,7 +33,7 @@ const workshops = [
     instructor: 'Olesia Y. Rodionova',
     description:
       'In this 4-week class, students will learn the fundamentals of digital art. Topics include using digital art software, understanding layers and tools, and creating digital illustrations and paintings. No prior experience is required.',
-    location: 'East End Maker Hub - Y114',
+    location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$150',
@@ -46,7 +46,7 @@ const workshops = [
     instructor: 'Thomas MacDonald',
     description:
       'This 4-week class covers the basics of video editing using DaVinci Resolve. Students will learn how to import footage, edit clips, add transitions and effects, and export their projects. Ideal for beginners looking to get started with professional video editing software.',
-    location: 'East End Maker Hub - Y114',
+    location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$150',
@@ -59,7 +59,7 @@ const workshops = [
     instructor: 'Giorgio Villani',
     description:
       'A Stable Diffusion class focused on Automatic 1111 Stable Diffusion would cover the usage and customization of the popular AI image generation tool. The course would include installing and setting up the Automatic 1111 interface, understanding model parameters, exploring various prompts and styles, and fine-tuning model outputs. Students would learn to generate high-quality images, apply custom settings, and utilize extensions and scripts to enhance their workflow.',
-    location: 'East End Maker Hub - Y114',
+    location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$150',
@@ -72,7 +72,7 @@ const workshops = [
     instructor: 'Thomas MacDonald',
     description:
       "Learn the essentials of Figma in this 3-session course. You'll explore key features, master design tools, and create interactive prototypes. Perfect for beginners looking to build a strong foundation in UI/UX design.",
-    location: 'East End Maker Hub - Y114',
+    location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$125',
@@ -85,7 +85,7 @@ const workshops = [
     instructor: 'Daniel Calderon Arenas',
     description:
       'Dive into the world of 3D sculpting with Blender, one of the most powerful open-source 3D modeling tools available. This hands-on course is designed to guide beginners through the fundamental concepts and techniques of digital sculpting, helping you transform your creative ideas into detailed 3D models.',
-    location: 'East End Maker Hub - Y114',
+    location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$125',
