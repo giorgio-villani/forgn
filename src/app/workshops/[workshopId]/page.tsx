@@ -1,11 +1,24 @@
 'use client'
 
-import { notFound } from 'next/navigation'
+import { notFound, useSearchParams } from 'next/navigation'
 import workshops from '@/data/workshops'
 import { useEffect, useState } from 'react'
 import SubscribeToClassPopup from '@/components/SubscribeToClassPopup' // Ensure this path is correct
 import Image from 'next/image'
 import SubscribeToClassForm from '@/components/SubscribeToClassForm'
+import { Metadata } from 'next'
+
+// export const metadata: Metadata = {
+//   title: 'Sculpture Classes | Shape Your Creativity',
+//   description:
+//     'Discover the art of sculpture at Forgn Studio. Our classes offer hands-on learning to bring your creative visions to life, from traditional to modern techniques.',
+//   openGraph: {
+//     title: 'Sculpture Classes by Forgn Studio',
+//     description:
+//       'Unleash your artistic potential with Forgn Studio's sculpture classes. Explore diverse materials and techniques with expert guidance.',
+//     url: 'https://forgn.art/sculpture',
+//   },
+// }
 
 interface ClassDetailsProps {
   params: {
@@ -15,15 +28,69 @@ interface ClassDetailsProps {
 
 
 export default function ClassDetails({ params }: ClassDetailsProps) {
-  // Add mounting state to prevent hydration mismatch
   const [isMounted, setIsMounted] = useState(false)
   const { workshopId } = params
+  const searchParams = useSearchParams()
+  
+  // Track UTM parameters
+  const utmSource = searchParams.get('utm_source')
+  const utmMedium = searchParams.get('utm_medium')
+  const utmCampaign = searchParams.get('utm_campaign')
 
   const workshop = workshops.find((workshop) => workshop.id === workshopId)
 
   useEffect(() => {
-    setIsMounted(true)
-  }, [])
+    if (!isMounted) {
+      setIsMounted(true)
+      return
+    }
+    
+    // Debug logging
+    console.log('Component mounted, checking UTM params:', { utmSource, utmMedium, utmCampaign })
+    
+    const logAnalytics = async () => {
+      if (utmSource || utmMedium || utmCampaign) {
+        const visitId = `${workshopId}-${utmSource}-${utmMedium}-${utmCampaign}`
+        const hasLogged = localStorage.getItem(`analytics-${visitId}`)
+        
+        if (!hasLogged) {
+          try {
+            console.log('Preparing to send analytics data')
+            const response = await fetch('/api/analytics', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                type: 'campaign_view',
+                source: utmSource || '',
+                medium: utmMedium || '',
+                campaign: utmCampaign || '',
+                workshopId,
+                timestamp: new Date().toISOString()
+              })
+            })
+
+            const data = await response.json()
+            
+            if (!response.ok) {
+              throw new Error(data.error || 'Failed to log analytics')
+            }
+            
+            console.log('Analytics logged successfully:', data)
+            localStorage.setItem(`analytics-${visitId}`, 'true')
+          } catch (error) {
+            console.error('Error sending analytics:', error)
+            // Don't set localStorage if the request failed
+          }
+        } else {
+          console.log('Analytics already logged for this visit')
+        }
+      }
+    }
+
+    logAnalytics()
+  }, [isMounted, utmSource, utmMedium, utmCampaign, workshopId])
 
   if (!workshop) {
     return notFound()
@@ -36,6 +103,16 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
 
   console.log(workshops);
   console.log("Received workshopId:", workshopId);
+
+  // Modify the booking link to include UTM parameters if they exist
+  const getBookingUrl = (originalUrl: string) => {
+    if (!originalUrl) return '';
+    const url = new URL(originalUrl);
+    if (utmSource) url.searchParams.append('utm_source', utmSource);
+    if (utmMedium) url.searchParams.append('utm_medium', utmMedium);
+    if (utmCampaign) url.searchParams.append('utm_campaign', utmCampaign);
+    return url.toString();
+  }
 
   return (
     <div className="max-w-screen-xl mx-auto font-poppins p-4">
@@ -84,7 +161,7 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
             {/* <SubscribeToClassForm workshopId={workshopId} /> */}
 
             {
-              workshop.booking && <a href={workshop.booking} target="_blank">
+              workshop.booking && <a href={getBookingUrl(workshop.booking)} target="_blank">
                 <button type="submit" className="w-full rounded bg-red-600 py-3 text-white hover:bg-red-500 mb-2">
                   Sign up for Class 
                 </button>

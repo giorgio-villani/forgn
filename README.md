@@ -35,3 +35,25 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # forgn
+
+## Analytics Setup
+
+The application includes campaign and analytics tracking capabilities using MongoDB. To set up analytics:
+
+1. Configure MongoDB Environment Variables:
+   ```env
+   MONGODB_URI=mongodb+srv://your-username:your-password@your-cluster.mongodb.net/your-database
+   MONGODB_DB=forgn
+   ```
+
+2. Analytics are automatically tracked when users visit workshop pages with UTM parameters:
+   - utm_source
+   - utm_medium
+   - utm_campaign
+
+3. Example tracking URL:
+   ```
+   ?utm_source=facebook&utm_medium=social&utm_campaign=summer2024
+   ```
+
+
