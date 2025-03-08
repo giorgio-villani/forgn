@@ -17,7 +17,7 @@ export class MongoClientSingleton {
       const password = process.env.MONGODB_PASSWORD || ''
       let connection_string = process.env.MONGODB_CONNECTION_STRING || ''
       connection_string = connection_string
-        .replace('<user>', username)
+        .replace('<db_username>', username)
         .replace('<db_password>', password)
 
       const options = {

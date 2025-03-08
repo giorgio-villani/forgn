@@ -1,6 +1,6 @@
 import { headers } from 'next/headers'
 import { NextResponse } from 'next/server'
-import { MongoClientSingleton } from '@/lib/mongoClientSingleton'
+import { MongoClientSingleton } from '@/database/MongoClientSingleton'
 
 interface AnalyticsEvent {
   type: string
@@ -26,11 +26,10 @@ export async function POST(request: Request) {
       recordedAt: new Date()
     }
 
-    console.log('Connecting to MongoDB...')
-    const mongo = await MongoClientSingleton.connect()
-    console.log('Connected to database:', process.env.MONGODB_DB)
-    
-    const result = await mongo.db.collection('analytics').insertOne(eventData)
+    const mongo = await MongoClientSingleton.getInstance()
+    const database = process.env.MONGODB_DATABASE || 'forgn-studio'
+    const collection = process.env.MONGODB_COLLECTION || 'analytics'
+    const result = await mongo.getClient().db(database).collection(collection).insertOne(eventData)
     console.log('Successfully inserted document:', result.insertedId)
     
     return NextResponse.json({
