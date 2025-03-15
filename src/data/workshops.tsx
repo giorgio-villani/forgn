@@ -10,8 +10,10 @@ const workshops = [
     sessions: 'March 18th, 20th, 25th, 27th',
     time: '6:00 pm - 9:00 pm',
     price: '$400',
+    discountedPrice: '$300',
     image: '/classes/sculpture-terracotta.webp',
-    booking: 'https://bookeo.com/forgnstudio?type=41577A3PEP719549529190'
+    booking: 'https://bookeo.com/forgnstudio?type=41577A3PEP719549529190',
+    discount_booking: 'https://bookeo.com/forgnstudio/?promotion=FORGN_MARCH_DISCOUNT'
   },
   {
     id: '1',

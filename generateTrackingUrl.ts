@@ -11,11 +11,13 @@ const rl = readline.createInterface({
 })
 
 const sourceToMedium = {
+  'navigation': 'website',
   'facebook': 'social',
   'instagram': 'social',
   'facebook-instagram': 'social',
   'email': 'email',
-  'flyer': 'print'
+  'flyer': 'print',
+  'qr': 'personal'
 } as const
 
 const sources = Object.keys(sourceToMedium) as Array<keyof typeof sourceToMedium>
@@ -54,14 +56,14 @@ function askQuestion(question: string, options?: readonly string[]): Promise<str
 }
 
 async function generateQRCode(url: string, filename: string) {
-  const qrDir = path.join(process.cwd(), 'qrcodes')
+  const urlsDir = path.join(process.cwd(), 'urls')
   
-  // Create qrcodes directory if it doesn't exist
-  if (!fs.existsSync(qrDir)) {
-    fs.mkdirSync(qrDir)
+  // Create urls directory if it doesn't exist
+  if (!fs.existsSync(urlsDir)) {
+    fs.mkdirSync(urlsDir)
   }
 
-  const filePath = path.join(qrDir, `${filename}.png`)
+  const filePath = path.join(urlsDir, `${filename}.png`)
   
   try {
     await QRCode.toFile(filePath, url, {
@@ -72,6 +74,24 @@ async function generateQRCode(url: string, filename: string) {
     console.log(`\nQR Code generated: ${filePath}`)
   } catch (err) {
     console.error('Error generating QR code:', err)
+  }
+}
+
+async function saveUrlToFile(url: string, filename: string) {
+  const urlsDir = path.join(process.cwd(), 'urls')
+  
+  // Create urls directory if it doesn't exist
+  if (!fs.existsSync(urlsDir)) {
+    fs.mkdirSync(urlsDir)
+  }
+
+  const filePath = path.join(urlsDir, `${filename}.txt`)
+  
+  try {
+    fs.writeFileSync(filePath, url)
+    console.log(`URL saved to: ${filePath}`)
+  } catch (err) {
+    console.error('Error saving URL to file:', err)
   }
 }
 
@@ -100,9 +120,10 @@ async function generateUrl() {
   console.log(`Full URL:`)
   console.log(fullUrl)
 
-  // Generate QR code
-  const qrFilename = `${workshopId}-${source}-${campaign}`
-  await generateQRCode(fullUrl, qrFilename)
+  // Generate QR code and save URL to file
+  const filename = `${workshopId}-${source}-${campaign}`
+  await generateQRCode(fullUrl, filename)
+  await saveUrlToFile(fullUrl, filename)
 
   rl.close()
 }

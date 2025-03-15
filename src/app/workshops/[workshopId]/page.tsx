@@ -156,16 +156,30 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
               📍<strong>Location:</strong> <a href='https://g.co/kgs/fHhjxQn' className='text-blue-600 font-italic hover:underline'>{workshop.location || "To be announced"}</a>
             </p>
             <p className="text-sm lg:text-lg mb-4">
-              🏷️<strong>Price:</strong> {workshop.price || "To be announced"}
+              🏷️<strong>Price:</strong> {
+                workshop.discountedPrice ? (
+                  <>
+                    <span className="line-through text-gray-500">{workshop.price}</span>
+                    {' '}
+                    <span className="text-red-600">{workshop.discountedPrice}</span>
+                  </>
+                ) : (
+                  workshop.price || "To be announced"
+                )
+              }
             </p>
             {/* <SubscribeToClassForm workshopId={workshopId} /> */}
 
             {
-              workshop.booking && <a href={getBookingUrl(workshop.booking)} target="_blank">
-                <button type="submit" className="w-full rounded bg-red-600 py-3 text-white hover:bg-red-500 mb-2">
-                  Sign up for Class 
-                </button>
-              </a>
+              workshop.booking && (
+                <a href={getBookingUrl(workshop.discount_booking || workshop.booking)} target="_blank">
+                  <button type="submit" className={`w-full rounded py-3 text-white hover:bg-red-500 mb-2 ${
+                    workshop.discount_booking ? 'bg-green-600 hover:bg-green-500' : 'bg-red-600'
+                  }`}>
+                    {workshop.discount_booking ? 'Sign up with Discount' : 'Sign up for Class'}
+                  </button>
+                </a>
+              )
             }
             <a href="http://eepurl.com/i7qwzg" target="_blank">
               <button
