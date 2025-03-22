@@ -12,16 +12,18 @@ const rl = readline.createInterface({
 
 const sourceToMedium = {
   'navigation': 'website',
+  'linktree': 'social',
   'facebook': 'social',
   'instagram': 'social',
   'facebook-instagram': 'social',
   'email': 'email',
   'flyer': 'print',
+  'pamphlet': 'print',
   'qr': 'personal'
 } as const
 
 const sources = Object.keys(sourceToMedium) as Array<keyof typeof sourceToMedium>
-const campaigns = ['2025'] as const
+const campaigns = ['2025-march', '2025-april', '2025-may', '2025-june', '2025-july', '2025-august', '2025-september', '2025-october', '2025-november', '2025-december'] as const
 
 type Source = keyof typeof sourceToMedium
 type Medium = typeof sourceToMedium[Source]
