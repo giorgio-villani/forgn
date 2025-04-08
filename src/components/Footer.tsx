@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
       <div className="max-w-screen-xl mx-auto flex justify-between items-start">
         <div className="m-5">
           <img
-            src="/forgn.png"
-            className="max-w-[120px] max-h-[120px]"
+            src="/forgn_v2.png"
+            className="max-w-[150px] max-h-[150px]"
             alt="forgn studio logo"
           />
           <p className="text-sm mt-1">ART AND TECH MEET</p>

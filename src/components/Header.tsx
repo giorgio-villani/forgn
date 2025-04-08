@@ -34,8 +34,8 @@ const Header: React.FC = () => {
       <div className="max-w-screen-xl mx-auto py-4 flex items-center justify-between">
         <a className="hover:opacity-50 transition duration-300 m-5" href="/">
           <img
-            src="/forgn.png"
-            className="max-w-[120px] max-h-[120px]"
+            src="/forgn_v2.png"
+            className="max-w-[200px] max-h-[200px]"
             alt="Forgn"
           />
         </a>
