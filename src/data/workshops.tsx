@@ -12,8 +12,8 @@ const workshops = [
     price: '$400',
     discountedPrice: '$300',
     image: '/classes/sculpture-terracotta.webp',
-    booking: 'https://bookeo.com/forgnstudio?type=41577A3PEP719549529190',
-    discount_booking: 'https://bookeo.com/forgnstudio/?promotion=FORGN_MARCH_DISCOUNT'
+    booking: 'https://www.eventbrite.com/e/sculpture-class-clay-figure-4-class-series-tickets-1337758905899',
+    discount_booking: 'https://www.eventbrite.com/e/sculpture-class-clay-figure-4-class-series-tickets-1337758905899'
   },
   {
     id: '1',
