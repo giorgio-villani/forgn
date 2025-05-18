@@ -12,8 +12,8 @@ const workshops = [
     price: '$400',
     discountedPrice: '$300',
     image: '/classes/sculpture-terracotta.webp',
-    booking: 'https://www-1577h.bookeo.com/bookeo/b_forgnstudio_start.html',
-    discount_booking: 'https://www-1577h.bookeo.com/bookeo/b_forgnstudio_start.html'
+    booking: 'https://bookeo.com/forgnstudio',
+    discount_booking: 'https://bookeo.com/forgnstudio'
   },
   {
     id: '1',
