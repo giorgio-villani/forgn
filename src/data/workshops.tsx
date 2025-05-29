@@ -7,7 +7,7 @@ const workshops = [
     description:
       'Join our 2-week clay figure sculpting class and create lifelike sculptures with a live model. Learn anatomy, proportion, and expression while refining your technique under expert guidance. Open to all skill levels, this hands-on course offers personalized instruction in a supportive, creative environment. All materials included.',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
-    sessions: 'June 10th, 12th, 17th, 19th',
+    sessions: 'July 8th, 10th, 15th, 17th',
     time: '6:00 pm - 9:00 pm',
     price: '$400',
     discountedPrice: '$300',
