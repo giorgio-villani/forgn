@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sculpture Classes by Forgn Studio',
     description:
-      'Unleash your artistic potential with Forgn Studio’s sculpture classes. Explore diverse materials and techniques with expert guidance.',
+      'Unleash your artistic potential with Forgn Studio\'s sculpture classes. Explore diverse materials and techniques with expert guidance.',
     url: 'https://forgn.art/sculpture',
   },
 }
