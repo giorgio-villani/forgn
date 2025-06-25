@@ -117,8 +117,8 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
 
   return (
     <>
-      {/* Meta Pixel Code - Only for Terracotta Sculpture Class (ID: 0) */}
-      {workshopId === '0' && (
+      {/* Meta Pixel Code - Only for Terracotta Sculpture Class (ID: 0) and not on localhost */}
+      {workshopId === '0' && typeof window !== 'undefined' && window.location.hostname !== 'localhost' && (
         <>
           <Script id="facebook-pixel" strategy="afterInteractive">
             {`
@@ -179,7 +179,7 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
                 🎨<strong>Instructor:</strong> {workshop.instructor || "To be announced"}
               </h2>
               <p className="text-sm lg:text-lg mb-4">
-                ��<strong>Sessions:</strong> {workshop.sessions || "To be announced"}
+              ⚒️<strong>Sessions:</strong> {workshop.sessions || "To be announced"}
               </p>
               <p className="text-sm lg:text-lg mb-4">
                 🕰️<strong>Time:</strong> {workshop.time || "To be announced"}
