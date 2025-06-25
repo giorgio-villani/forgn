@@ -49,6 +49,18 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
     // Debug logging
     console.log('Component mounted, checking UTM params:', { utmSource, utmMedium, utmCampaign })
     
+    // Log when Facebook pixel is active
+    if (workshopId === '0' && typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+      console.log('Facebook Pixel: Pixel is active for workshop ID 0 on production')
+    } else {
+      console.log('Facebook Pixel: Pixel is NOT active - conditions not met:', {
+        workshopId,
+        isWindow: typeof window !== 'undefined',
+        hostname: typeof window !== 'undefined' ? window.location.hostname : 'undefined',
+        isLocalhost: typeof window !== 'undefined' ? window.location.hostname === 'localhost' : 'unknown'
+      })
+    }
+    
     const logAnalytics = async () => {
       if (utmSource || utmMedium || utmCampaign) {
         const visitId = `${workshopId}-${utmSource}-${utmMedium}-${utmCampaign}`
@@ -122,6 +134,7 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
         <>
           <Script id="facebook-pixel" strategy="afterInteractive">
             {`
+              console.log('Facebook Pixel: Initializing pixel...');
               !function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
               n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -132,6 +145,7 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '725525180424391');
               fbq('track', 'PageView');
+              console.log('Facebook Pixel: Pixel initialized and PageView tracked');
             `}
           </Script>
           <noscript>
