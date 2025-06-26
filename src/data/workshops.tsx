@@ -11,7 +11,7 @@ const workshops = [
     time: '6:00 pm - 9:00 pm',
     price: '$400',
     discountedPrice: '$300',
-    image: '/classes/sculpture-terracotta.webp',
+    image: '/classes/sculpture-class.png',
     booking: 'https://bookeo.com/forgnstudio',
     discount_booking: 'https://bookeo.com/forgnstudio'
   },

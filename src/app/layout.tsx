@@ -59,7 +59,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
         {/* Add structured data */}
         <script
           type="application/ld+json"
@@ -68,7 +67,6 @@ export default function RootLayout({
           }}
         />
         <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           href="/apple-touch-icon.png"

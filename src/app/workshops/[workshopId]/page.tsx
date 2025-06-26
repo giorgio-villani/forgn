@@ -173,10 +173,10 @@ export default function ClassDetails({ params }: ClassDetailsProps) {
                 alt={workshop.title}
                 width={750}
                 height={500}
-                className="w-full h-auto object-cover max-w-full max-h-[500px]"
+                className="w-full h-auto object-contain max-w-full rounded-lg"
               />
             ) : (
-              <div className="w-full h-auto bg-gray-200 flex items-center justify-center">
+              <div className="w-full h-64 bg-gray-200 flex items-center justify-center rounded-lg">
                 No Image Available
               </div>
             )}
