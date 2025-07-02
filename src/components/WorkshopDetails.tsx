@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Script from 'next/script'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 interface Workshop {
   id: string
@@ -147,59 +149,9 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
       )}
       {/* End Meta Pixel Code */}
       
-      {/* Breadcrumb Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              {
-                '@type': 'ListItem',
-                position: 1,
-                name: 'Home',
-                item: 'https://forgn.art',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: 'Workshops',
-                item: 'https://forgn.art/workshops',
-              },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: workshop.title,
-                item: `https://forgn.art/workshops/${workshop.id}`,
-              },
-            ],
-          }),
-        }}
-      />
+      <Breadcrumbs items={createBreadcrumbs.workshop(workshop.title, `/workshops/${workshop.id}`)} />
       
       <div className="max-w-screen-xl mx-auto font-poppins p-4">
-        {/* Breadcrumb Navigation */}
-        <nav className="text-sm text-gray-600 mb-6" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2">
-            <li>
-              <a href="/" className="hover:text-customButton transition-colors">
-                Home
-              </a>
-            </li>
-            <li className="flex items-center">
-              <span className="mx-2">/</span>
-              <a href="/workshops" className="hover:text-customButton transition-colors">
-                Workshops
-              </a>
-            </li>
-            <li className="flex items-center">
-              <span className="mx-2">/</span>
-              <span className="text-gray-900 font-medium">{workshop.title}</span>
-            </li>
-          </ol>
-        </nav>
-        
         <h1 className="text-3xl lg:text-4xl text-center font-inter mb-8">
           {workshop.title}
         </h1>

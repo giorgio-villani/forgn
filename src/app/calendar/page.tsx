@@ -1,5 +1,7 @@
 import MyCalendar from '@/components/MyCalendar'
 import type { Metadata } from 'next'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Event Calendar | Forgn Studio',
@@ -15,8 +17,9 @@ export const metadata: Metadata = {
 
 export default function Calendar() {
   return (
-    // <main className="flex flex-col items-center justify-between w-full min-h-screen">
-    <MyCalendar />
-    // </main>
+    <>
+      <Breadcrumbs items={createBreadcrumbs.single('Calendar', '/calendar')} />
+      <MyCalendar />
+    </>
   )
 }

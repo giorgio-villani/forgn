@@ -1,15 +1,17 @@
 import ImageGallery from '@/components/ImageGallery'
 import { Metadata } from 'next'
 import Image from 'next/image'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Digital Art Classes | Learn and Create',
   description:
-    'Join Forgn Studio’s digital art classes to explore creativity through technology. Perfect for beginners and professionals alike, these workshops inspire and innovate.',
+    'Join Forgn Studio\'s digital art classes to explore creativity through technology. Perfect for beginners and professionals alike, these workshops inspire and innovate.',
   openGraph: {
     title: 'Digital Art Classes by Forgn Studio',
     description:
-      'Discover your creative potential with Forgn Studio’s digital art classes. Hands-on learning, innovative techniques, and expert guidance await.',
+      'Discover your creative potential with Forgn Studio\'s digital art classes. Hands-on learning, innovative techniques, and expert guidance await.',
     url: 'https://forgn.art/digital',
   },
 }
@@ -24,6 +26,8 @@ const images = [
 export default function Digital() {
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white">
+      <Breadcrumbs items={createBreadcrumbs.single('Digital Art Classes', '/digital')} />
+      
       <h1 className="text-5xl text-center mb-8">
         Digital Art Classes at FORGN Studio
       </h1>

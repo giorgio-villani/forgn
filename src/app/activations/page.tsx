@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Activations | Forgn Studio',
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
 export default function Activations() {
   return (
     <div className="w-full flex flex-col items-center font-poppins ">
+      <Breadcrumbs items={createBreadcrumbs.single('Activations', '/activations')} />
       <h1 className="text-5xl text-center">Activations</h1>
       <section className="p-5 max-w-[800px] w-full text-center ">
         <h2 className="mb-6 text-4xl">

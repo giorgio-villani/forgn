@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Hackathons | Forgn Studio',
@@ -15,6 +17,7 @@ export const metadata: Metadata = {
 export default function Hackathon() {
   return (
     <main className="flex flex-col items-center justify-between w-full min-h-screen">
+      <Breadcrumbs items={createBreadcrumbs.single('Hackathons', '/hackathons')} />
       hackathons
     </main>
   )

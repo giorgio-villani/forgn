@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 import workshops from '@/data/workshops'
 
 export default function WorkshopList() {
@@ -38,6 +40,7 @@ export default function WorkshopList() {
   return (
     <div className="flex justify-center p-4 font-poppins">
       <div className="w-full max-w-[1200px]">
+        <Breadcrumbs items={createBreadcrumbs.single('Workshops', '/workshops')} />
         <h1 className="text-5xl mb-6 text-center">Workshop List</h1>
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/4 pr-0 md:pr-4 mb-4 md:mb-0">

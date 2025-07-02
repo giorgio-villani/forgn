@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import ImageGallery from '@/components/ImageGallery'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Forgn Studio Gallery | Art and Technology',
@@ -69,6 +71,7 @@ const images = [
 export default function Gallery() {
   return (
     <div className="w-full flex flex-col font-poppins items-center ">
+      <Breadcrumbs items={createBreadcrumbs.single('Gallery', '/gallery')} />
       <div className="max-w-[1200px]">
         <h1 className="text-5xl text-center ">FORGN Studio Gallery</h1>
         <section className="py-10 max-w-[800px] w-full px-4 text-center">

@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 import artists from '@/data/artists'
 
@@ -87,6 +89,7 @@ const teamMember = ({
 export default function Team() {
   return (
     <div className="w-full">
+      <Breadcrumbs items={createBreadcrumbs.single('Team', '/team')} />
       <h1 className="text-5xl text-center font-inter">Team</h1>
       {artists.map((artist, index) => (
         <section

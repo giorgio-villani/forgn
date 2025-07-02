@@ -1,5 +1,7 @@
 import DonationBar from '@/components/DonationBar'
 import type { Metadata } from 'next'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 const unescapeHtml = (escapedStr: string) => {
   return escapedStr
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   description:
     'Support FORGN STUDIO in blending art and technology to build a vibrant, innovative community. Your donation funds artist residencies, collaborative projects, and free educational workshops for the Houston area.',
   openGraph: {
-    title: 'Support FORGN STUDIO’s Art & Technology Mission',
+    title: "Support FORGN STUDIO's Art & Technology Mission",
     description:
       'Be part of a creative future! Donate to FORGN STUDIO to help fund artist residencies, community events, and transformative art-tech spaces.',
     url: 'https://forgn.art/campaign',
@@ -29,6 +31,7 @@ export default function Campaign() {
 
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white ">
+      <Breadcrumbs items={createBreadcrumbs.single('Campaign', '/campaign')} />
       <h1 className="text-5xl text-center mb-8">
         Donate to Giving Tuesday Campaign
       </h1>

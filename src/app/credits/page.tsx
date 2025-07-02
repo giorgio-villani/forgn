@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Credits | Forgn Studio',
@@ -6,8 +8,7 @@ export const metadata: Metadata = {
     'Acknowledgments and credits for those who contributed to Forgn Studio. Learn about the collaborators, partners, and supporters behind our work.',
   openGraph: {
     title: 'Forgn Studio Credits',
-    description:
-      'Explore the individuals and organizations who have contributed to Forgn Studio’s journey in art and technology.',
+    description: 'Explore the individuals and organizations who have contributed to Forgn Studio\'s journey in art and technology.',
     url: 'https://forgn.art/credits',
   },
 }
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function Credit() {
   return (
     <div className="w-full h-screen flex flex-col font-poppins items-center ">
+      <Breadcrumbs items={createBreadcrumbs.single('Credits', '/credits')} />
       <div className="max-w-[1200px]">
         <h1 className="text-5xl text-center pb-5">Credits</h1>
         <h2 className="text-3xl text-center pb-3">Icons</h2>

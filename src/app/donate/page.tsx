@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Support Forgn Studio | Donate to Art & Technology',
@@ -6,8 +8,7 @@ export const metadata: Metadata = {
     'Help Forgn Studio continue its mission to blend art and technology. Your donation supports innovative programs, artist collaborations, and community workshops.',
   openGraph: {
     title: 'Support Forgn Studio',
-    description:
-      'Join us in supporting a creative future by donating to Forgn Studio’s art and technology initiatives.',
+    description: 'Join us in supporting a creative future by donating to Forgn Studio\'s art and technology initiatives.',
     url: 'https://forgn.art/donate',
   },
 }
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function Donate() {
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white">
+      <Breadcrumbs items={createBreadcrumbs.single('Donate', '/donate')} />
       <h1 className="text-5xl text-center mb-8">
         Empower Artists at FORGN Studio
       </h1>
@@ -42,7 +44,7 @@ export default function Donate() {
           to empowering artists, we benefit from their support in managing our
           operations. Your donations enable us to establish monthly residencies,
           curate innovative exhibitions, and offer free workshops to aspiring
-          digital artists. By contributing, you’re directly supporting our
+          digital artists. By contributing, you're directly supporting our
           mission and helping to cultivate a vibrant arts community through
           Fresh Arts.
         </p>

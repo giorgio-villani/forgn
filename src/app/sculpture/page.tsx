@@ -1,5 +1,7 @@
 import ImageGallery from '@/components/ImageGallery'
 import { Metadata } from 'next'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Sculpture Classes | Shape Your Creativity',
@@ -27,6 +29,8 @@ const images = [
 export default function Sculpture() {
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white">
+      <Breadcrumbs items={createBreadcrumbs.single('Sculpture Classes', '/sculpture')} />
+      
       <h1 className="text-5xl text-center mb-8">
         Sculpture Classes at FORGN Studio
       </h1>
