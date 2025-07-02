@@ -44,7 +44,7 @@ export default function Donate() {
           to empowering artists, we benefit from their support in managing our
           operations. Your donations enable us to establish monthly residencies,
           curate innovative exhibitions, and offer free workshops to aspiring
-          digital artists. By contributing, you're directly supporting our
+          digital artists. By contributing, you&apos;re directly supporting our
           mission and helping to cultivate a vibrant arts community through
           Fresh Arts.
         </p>
