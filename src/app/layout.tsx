@@ -95,6 +95,30 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+        
+        {/* Performance Monitoring - Development Only */}
+        {process.env.NODE_ENV === 'development' && (
+          <Script
+            id="web-vitals"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                if (typeof window !== 'undefined') {
+                  import('web-vitals').then((webVitals) => {
+                    webVitals.getCLS(console.log);
+                    webVitals.getFID(console.log);
+                    webVitals.getFCP(console.log);
+                    webVitals.getLCP(console.log);
+                    webVitals.getTTFB(console.log);
+                  }).catch(err => {
+                    console.log('Web Vitals not available:', err);
+                  });
+                }
+              `,
+            }}
+          />
+        )}
+        
         <Header />
         <div className="grow">{children}</div>
         <Footer />

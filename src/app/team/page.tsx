@@ -58,6 +58,8 @@ const teamMember = ({
         width={750}
         height={500}
         className={`w-full h-auto object-cover max-w-full max-h-[500px] object-cover`}
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 50vw"
       />
     </div>
     <div className="w-full md:w-1/2 flex p-4">

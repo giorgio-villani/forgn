@@ -18,7 +18,9 @@ interface GalleryProps {
 }
 
 function assetLink(asset: string, root: string, width: number) {
-  return `./${root}/${encodeURIComponent(asset)}?w=${width}&q=75`
+  // Optimize image size based on display context
+  const optimizedWidth = Math.min(width, 1200) // Cap at 1200px for performance
+  return `./${root}/${encodeURIComponent(asset)}?w=${optimizedWidth}&q=75`
 }
 
 // Note: Alt text should be provided in the images array when using this component
