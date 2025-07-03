@@ -68,6 +68,7 @@ const Header: React.FC = () => {
               <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
                 <LinkButton href="/team" text="Team" />
                 <LinkButton href="/workshops" text="Workshops" />
+                <LinkButton href="/accelerator" text="Accelerator" />
                 <LinkButton href="/activations" text="Activations" />
                 <LinkButton href="/donate" text="Donate" />
                 {/* <LinkButton href="/campaign" text="Campaign" /> */}
@@ -90,6 +91,7 @@ const Header: React.FC = () => {
             {/* <div className="bg-gray-200"> */}
             <LinkButton href="/team" text="Team" />
             <LinkButton href="/workshops" text="Workshops" />
+            <LinkButton href="/accelerator" text="Accelerator" />
             <LinkButton href="/activations" text="Activations" />
             <LinkButton href="/donate" text="Donate" />
             {/* <LinkButton href="/campaign" text="Campaign" /> */}
