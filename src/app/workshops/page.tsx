@@ -95,7 +95,7 @@ export default function WorkshopList() {
                   className="border border-gray-300 rounded p-4 hover:bg-gray-200"
                 >
                   <a
-                    href={`/workshops/${cls.id}`}
+                    href={`/workshops/${cls.slug}`}
                     className="flex flex-col md:flex-row"
                   >
                     {

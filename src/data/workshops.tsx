@@ -1,6 +1,7 @@
 const workshops = [
   {
     id: '0',
+    slug: 'sculpture-class-terracotta',
     title: 'Sculpture Class - Terracotta',
     type: 'sculpture',
     instructor: 'Shelley Townsend',
@@ -17,6 +18,7 @@ const workshops = [
   },
   {
     id: '1',
+    slug: 'sculpture-class-polymer-clay',
     title: 'Sculpture Class - Polymer Clay',
     type: 'sculpture',
     instructor: 'Bailey Ryherd',
@@ -30,6 +32,7 @@ const workshops = [
   },
   {
     id: '2',
+    slug: 'digital-art-101',
     title: 'Digital Art: 101',
     type: 'digital art',
     instructor: 'Olesia Y. Rodionova',
@@ -43,6 +46,7 @@ const workshops = [
   },
   {
     id: '3',
+    slug: 'video-editing-davinci',
     title: 'Video Editing: DaVinci',
     type: 'film',
     instructor: 'Thomas MacDonald',
@@ -56,6 +60,7 @@ const workshops = [
   },
   {
     id: '4',
+    slug: 'ai-art-stable-diffusion',
     title: 'AI Art: Stable Diffusion',
     type: 'digital art',
     instructor: 'Giorgio Villani',
@@ -69,6 +74,7 @@ const workshops = [
   },
   {
     id: '5',
+    slug: 'website-design-figma',
     title: 'Website Design: Figma',
     type: 'website design',
     instructor: 'Thomas MacDonald',
@@ -82,6 +88,7 @@ const workshops = [
   },
   {
     id: '6',
+    slug: 'blender-3d-sculpting',
     title: 'Blender: 3D Sculpting',
     type: 'digital art',
     instructor: 'Daniel Calderon Arenas',

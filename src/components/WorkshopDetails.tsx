@@ -20,6 +20,7 @@ interface Workshop {
   image?: string
   booking?: string
   discount_booking?: string
+  slug: string
 }
 
 interface WorkshopDetailsProps {
@@ -149,7 +150,7 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
       )}
       {/* End Meta Pixel Code */}
       
-      <Breadcrumbs items={createBreadcrumbs.workshop(workshop.title, `/workshops/${workshop.id}`)} />
+      <Breadcrumbs items={createBreadcrumbs.workshop(workshop.title, `/workshops/${workshop.slug}`)} />
       
       <div className="max-w-screen-xl mx-auto font-poppins p-4">
         <h1 className="text-3xl lg:text-4xl text-center font-inter mb-8">

@@ -4,8 +4,8 @@ import { Metadata } from 'next'
 import WorkshopDetails from '@/components/WorkshopDetails'
 
 // Generate metadata for dynamic workshop pages
-export async function generateMetadata({ params }: { params: { workshopId: string } }): Promise<Metadata> {
-  const workshop = workshops.find((w) => w.id === params.workshopId)
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const workshop = workshops.find((w) => w.slug === params.slug)
   
   if (!workshop) {
     return {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: { workshopId: strin
     openGraph: {
       title: `${workshop.title} - Forgn Studio`,
       description: workshop.description || `Join ${workshop.title} at Forgn Studio. Learn from expert instructors in a hands-on workshop environment.`,
-      url: `https://forgn.art/workshops/${params.workshopId}`,
+      url: `https://forgn.art/workshops/${params.slug}`,
       type: 'website',
       images: workshop.image ? [
         {
@@ -44,24 +44,24 @@ export async function generateMetadata({ params }: { params: { workshopId: strin
 // Generate static params for all workshops
 export async function generateStaticParams() {
   return workshops.map((workshop) => ({
-    workshopId: workshop.id,
+    slug: workshop.slug,
   }))
 }
 
 interface ClassDetailsProps {
   params: {
-    workshopId: string
+    slug: string
   }
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
 export default function ClassDetails({ params, searchParams }: ClassDetailsProps) {
-  const { workshopId } = params
-  const workshop = workshops.find((workshop) => workshop.id === workshopId)
+  const { slug } = params
+  const workshop = workshops.find((workshop) => workshop.slug === slug)
 
   if (!workshop) {
     return notFound()
   }
 
   return <WorkshopDetails workshop={workshop} searchParams={searchParams} />
-}
+} 

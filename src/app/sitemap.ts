@@ -83,7 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic workshop pages
   const workshopPages = workshops.map((workshop) => ({
-    url: `${baseUrl}/workshops/${workshop.id}`,
+    url: `${baseUrl}/workshops/${workshop.slug}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.8,

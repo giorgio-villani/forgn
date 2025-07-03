@@ -36,13 +36,11 @@ const About: React.FC = () => {
       <section className="bg-white lg:py-20 m-5">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row flex-col-reverse">
           <div className="text-center md:text-left">
-            <h1 className="mb-4">
-              <div
-                className="pt-5 font-inter text-5xl lg:text-7xl"
-                style={{ textWrap: 'balance' }}
-              >
-                Learn Skills, Make Art, Meet People
-              </div>
+            <h1 
+              className="mb-4 pt-5 font-inter text-5xl lg:text-7xl"
+              style={{ textWrap: 'balance' }}
+            >
+              Learn Skills, Make Art, Meet People
             </h1>
             <p
               className="text-xl font-inter leading-relaxed mb-4"
