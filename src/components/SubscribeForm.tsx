@@ -54,7 +54,7 @@ const SubscribeForm: React.FC = () => {
               Sign Up
             </button>
           </form> */}
-          <a href="http://eepurl.com/i7qwzg">
+                          <a href="https://eepurl.com/i7qwzg">
             <button
               type="submit"
               className="w-full bg-red-600 text-white py-4 px-4 rounded hover:bg-red-700 transition duration-300 ease-in-out"

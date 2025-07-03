@@ -11,12 +11,12 @@ const artists = [
     picture: 'shelley-1.webp',
     description:
       "Shelley, born in Houston, Texas, began her artistic journey in Europe, where her family moved to support her mother's opera career. Living in Paris and Milan for eleven years, she was inspired by Italian sculptor Ernesto Ornati to pursue sculpture. Townsend honed her craft at Loretto Heights College in Denver, Colorado, earning BFA degrees in both Sculpture and Painting. Her career flourished in New York City and later in Connecticut, where she studied under Peter Rubino. Now back in Houston, Townsend has produced a significant body of work and enjoys teaching sculpture, sharing her passion for creating beauty in its most natural form.",
-    website: 'http://sculpturestudieswithshelley.info/',
+    website: 'https://sculpturestudieswithshelley.info/',
   },
   { name: 'Anne Billingsley',
     picture: 'anne-1.webp',
     description: 'Anne Billingsley is a highly accomplished professional with a background in geosciences, climate research, and environmental analysis. She holds a Ph.D. in Geosciences from the University of Arizona, specializing in paleoclimate and hominin evolution. Dr. Billingsley has developed expertise across interdisciplinary fields, focusing on environmental and geoscience applications. Her research spans locations such as Kenya, Ethiopia, and the Bahamas, where she analyzed sediment cores, environmental proxies, and used advanced statistical modeling to better understand climate change patterns and their impact on human evolution. In addition to her scientific work, Dr. Billingsley is an avid artist and writer. She earned a degree in Creative Writing from the University of Houston and founded the Heinrich Lagerburger Society in 2002, a community that fosters diverse voices in writing. She blends her scientific research with creative expression, exploring how humans interact with their environment through technology and art.',
-    website: 'http://www.theheinrichlagerburgersociety.com/',
+    website: 'https://www.theheinrichlagerburgersociety.com/',
   },
   {
     name: 'Bailey Ryherd',
