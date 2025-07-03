@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 }
 
 const images = [
-  { src: 'misty.webp', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'group.webp', root: 'sculpture', width: 800, height: 600 },
-  { src: 'claire.webp', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'shelley.webp', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'wade.webp', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'thuy_1.webp', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'will.webp', root: 'sculpture', width: 1215, height: 1800 },
-  { src: 'thuy_2.webp', root: 'sculpture', width: 203, height: 300 },
+  { src: 'misty.webp', root: 'sculpture', width: 1215, height: 1800, alt: 'Misty working on sculpture' },
+  { src: 'group.webp', root: 'sculpture', width: 800, height: 600, alt: 'Group sculpture class' },
+  { src: 'claire.webp', root: 'sculpture', width: 1215, height: 1800, alt: 'Claire creating sculpture artwork' },
+  { src: 'shelley.webp', root: 'sculpture', width: 1215, height: 1800, alt: 'Shelley working on terracotta sculpture' },
+  { src: 'wade.webp', root: 'sculpture', width: 1215, height: 1800, alt: 'Wade sculpting clay artwork' },
+  { src: 'thuy_1.webp', root: 'sculpture', width: 1215, height: 1800, alt: 'Model Thuy having fun between sculpting sessions' },
+  { src: 'will.webp', root: 'sculpture', width: 1215, height: 1800, alt: 'Will creating sculpture' },
+  { src: 'thuy_2.webp', root: 'sculpture', width: 203, height: 300, alt: 'Thuy modeling in front of a sculpture of her' },
 ]
 
 export default function Sculpture() {

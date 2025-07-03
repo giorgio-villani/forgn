@@ -62,13 +62,11 @@ const teamMember = ({
     </div>
     <div className="w-full md:w-1/2 flex p-4">
       <div className="px-5">
-        <h2 className="mb-4">
-          <div
-            className="pt-5 text-4xl md:text-5xl"
-            style={{ wordWrap: 'break-word' }}
-          >
-            {name}
-          </div>
+        <h2 
+          className="mb-4 pt-5 text-4xl md:text-5xl"
+          style={{ wordWrap: 'break-word' }}
+        >
+          {name}
         </h2>
         {website && (
           <p className="hover:underline text-customButton pb-3">

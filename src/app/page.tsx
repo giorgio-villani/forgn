@@ -1,6 +1,7 @@
 import CustomButton from '@/components/CustomButton'
 import SubscribeForm from '@/components/SubscribeForm'
 import React from 'react'
+import Image from 'next/image'
 
 interface CardProps {
   icon: string
@@ -58,9 +59,11 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className="md:pl-5 lg:pl-5 max-w-[650px] max-h-[500px] object-cover">
-            <img
+            <Image
               src="/daniel.webp"
-              alt="daniel calderon art of gen"
+              alt="Daniel Calderon artwork from Art of Gen exhibition"
+              width={650}
+              height={500}
               className="w-full h-auto"
             />
             <div className="text-center text-sm mt-3 break-words">
@@ -191,9 +194,11 @@ const About: React.FC = () => {
               </ul>
             </div>
             <div className="flex justify-center md:justify-end flex-1">
-              <img
+              <Image
                 src="/activation.jpg"
-                alt="activation"
+                alt="Forgn Studio activation event showcasing art and technology"
+                width={400}
+                height={300}
                 className="w-full h-auto max-w-xs md:max-w-md transform hover:scale-105 transition duration-500 ease-in-out"
               />
             </div>

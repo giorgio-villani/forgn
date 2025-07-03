@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import CustomButton from './CustomButton'
 import LinkButton from './LinkButton'
+import Image from 'next/image'
 
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx'
 
@@ -33,10 +34,13 @@ const Header: React.FC = () => {
     <div className="bg-white w-full z-50 relative">
       <div className="max-w-screen-xl mx-auto py-4 flex items-center justify-between">
         <a className="hover:opacity-50 transition duration-300 m-5" href="/">
-          <img
+          <Image
             src="/forgn_v2.png"
-            className="max-w-[200px] max-h-[200px]"
-            alt="Forgn"
+            className="w-[200px] h-auto"
+            alt="Forgn Studio logo"
+            width={200}
+            height={200}
+            priority
           />
         </a>
 

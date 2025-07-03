@@ -1,16 +1,20 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-300 text-black py-3 w-full">
       <div className="max-w-screen-xl mx-auto flex justify-between items-start">
         <div className="m-5">
-          <img
+          <Image
             src="/forgn_v2.png"
-            className="max-w-[150px] max-h-[150px]"
-            alt="forgn studio logo"
+            className="w-[150px] h-auto"
+            alt="Forgn Studio logo"
+            width={150}
+            height={150}
+            priority
           />
           <p className="text-sm mt-1">ART AND TECH MEET</p>
         </div>

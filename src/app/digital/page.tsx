@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 }
 
 const images = [
-  { src: 'digital-1.webp', root: 'digital', width: 710, height: 400 },
-  { src: 'digital-2.webp', root: 'digital', width: 710, height: 400 },
-  { src: 'digital-3.webp', root: 'digital', width: 710, height: 400 },
-  { src: 'digital-4.webp', root: 'digital', width: 710, height: 400 },
+  { src: 'digital-1.webp', root: 'digital', width: 710, height: 400, alt: 'Digital art creation process at Sesh Coworking' },
+  { src: 'digital-2.webp', root: 'digital', width: 710, height: 400, alt: 'Digital art workshop in progress at Sesh Coworking' },
+  { src: 'digital-3.webp', root: 'digital', width: 710, height: 400, alt: 'Digital art tools and technology setup at Sesh Coworking' },
+  { src: 'digital-4.webp', root: 'digital', width: 710, height: 400, alt: 'Digital art student working on project at Sesh Coworking' },
 ]
 
 export default function Digital() {

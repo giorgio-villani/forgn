@@ -2,6 +2,7 @@ import DonationBar from '@/components/DonationBar'
 import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { createBreadcrumbs } from '@/utils/breadcrumbs'
+import Image from 'next/image'
 
 const unescapeHtml = (escapedStr: string) => {
   return escapedStr
@@ -41,10 +42,12 @@ export default function Campaign() {
             href="https://www.givingtuesday.org/"
             className="text-2xl text-customButton underline mb-6 block"
           >
-            <img
+            <Image
               className="p-7 mx-auto"
-              alt="Fresh Arts"
+              alt="Giving Tuesday logo"
               src="/campaign/GT_logo_stacked2.png"
+              width={200}
+              height={100}
             />
           </a>
         </h2>
