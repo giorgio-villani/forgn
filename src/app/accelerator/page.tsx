@@ -24,7 +24,7 @@ export default function Accelerator() {
           Forgn Accelerator
         </h1>
         <div className="text-center">
-          <p className="text-xl font-inter leading-relaxed mb-8 max-w-3xl mx-auto">
+          <p className="text-lg font-inter leading-relaxed mb-8 max-w-3xl mx-auto">
             The Forgn Accelerator is our flagship program designed to help artists and technologists 
             transform their innovative ideas into successful consumer products that people love and use daily.
           </p>
@@ -36,7 +36,7 @@ export default function Accelerator() {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <Image
                   src="/accelerator/thomas-macdonald-halo-speaker.jpg"
-                  alt="Thomas MacDonald's Halo Speaker - innovative art-tech consumer product"
+                  alt="Thomas MacDonald - Founder of Halo Speaker"
                   width={600}
                   height={400}
                   className="w-full h-64 object-cover"
@@ -122,7 +122,9 @@ export default function Accelerator() {
               
               <div className="text-center">
                 <a 
-                  href="mailto:info@forgn.art?subject=Product%20Development%20Application" 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdb6F-CKP7ajwHi3R8_05k-noKlEI11deJV4oTxbG0HgicoBA/viewform?usp=header" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block bg-customButton text-white px-8 py-4 rounded-full hover:bg-red-700 transition duration-300 text-lg font-semibold w-full"
                 >
                   Apply Now
