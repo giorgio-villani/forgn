@@ -31,7 +31,7 @@ export default function Hackathon() {
           <div className="bg-gray-100 rounded-lg p-8 max-w-2xl mx-auto">
             <h2 className="text-2xl font-inter font-semibold mb-4">Coming Soon</h2>
             <p className="text-lg mb-6">
-              We're planning exciting hackathon events that will bring together artists, 
+              We&apos;re planning exciting hackathon events that will bring together artists, 
               technologists, and innovators. Stay tuned for announcements about upcoming 
               opportunities to collaborate and create.
             </p>
