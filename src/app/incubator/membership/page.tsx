@@ -195,7 +195,7 @@ export default function IncubatorMembership() {
         {/* Application Process */}
         <div className="mb-12 max-w-4xl mx-auto">
           <div className="bg-gray-50 rounded-lg p-8">
-            <h2 className="text-2xl font-inter font-semibold mb-6 text-center">Apply to Houston's Creative Business Incubator</h2>
+            <h2 className="text-2xl font-inter font-semibold mb-6 text-center">Apply to Houston&apos;s Creative Business Incubator</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg font-semibold mb-4 text-customButton">Who Should Apply</h3>
