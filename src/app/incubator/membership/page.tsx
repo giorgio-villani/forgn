@@ -167,7 +167,7 @@ export default function IncubatorMembership() {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
                 src="/incubator/kieren-skelly-gridlights.jpg"
-                alt="Kieren Skelly's Grid Lights - interactive lighting consumer product"
+                alt="Kieren Skelly&apos;s Grid Lights - interactive lighting consumer product"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover"
