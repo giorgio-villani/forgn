@@ -12,6 +12,21 @@ export const metadata: Metadata = {
     description:
       'Experience innovative art at the intersection of digital and physical mediums.',
     url: 'https://forgn.art/gallery',
+    type: 'website',
+    images: [
+      {
+        url: 'https://forgn.art/gallery/studio-02.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Art exhibition space at Forgn Studio gallery',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Forgn Studio Gallery',
+    description: 'Experience innovative art at the intersection of digital and physical mediums.',
+    images: ['https://forgn.art/gallery/studio-02.webp'],
   },
 }
 

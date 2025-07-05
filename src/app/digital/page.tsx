@@ -13,6 +13,21 @@ export const metadata: Metadata = {
     description:
       'Discover your creative potential with Forgn Studio\'s digital art classes. Hands-on learning, innovative techniques, and expert guidance await.',
     url: 'https://forgn.art/digital',
+    type: 'website',
+    images: [
+      {
+        url: 'https://forgn.art/digital/digital-1.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Digital art creation process at Sesh Coworking',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Digital Art Classes by Forgn Studio',
+    description: 'Discover your creative potential with Forgn Studio\'s digital art classes. Hands-on learning, innovative techniques, and expert guidance await.',
+    images: ['https://forgn.art/digital/digital-1.webp'],
   },
 }
 
@@ -39,6 +54,20 @@ export default function Digital() {
           digital artists, our classes cater to both beginners and advanced
           practitioners eager to explore the digital art landscape.
         </p>
+        
+        {/* Video Section */}
+        <div className="mb-8">
+          <div className="relative w-full max-w-4xl mx-auto" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              src="https://www.youtube.com/embed/UAtzguIBgXQ"
+              title="Digital Art Classes at Forgn Studio"
+              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+        
         <ImageGallery images={images} />
         <h3 className="text-2xl mb-4">Class Offering:</h3>
         <ul className="list-inside text-justify pb-5">

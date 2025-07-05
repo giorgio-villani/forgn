@@ -12,6 +12,21 @@ export const metadata: Metadata = {
     description:
       'Unleash your artistic potential with Forgn Studio\'s sculpture classes. Explore diverse materials and techniques with expert guidance.',
     url: 'https://forgn.art/sculpture',
+    type: 'website',
+    images: [
+      {
+        url: 'https://forgn.art/sculpture/group.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Group sculpture class at Forgn Studio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sculpture Classes by Forgn Studio',
+    description: 'Unleash your artistic potential with Forgn Studio\'s sculpture classes. Explore diverse materials and techniques with expert guidance.',
+    images: ['https://forgn.art/sculpture/group.webp'],
   },
 }
 
