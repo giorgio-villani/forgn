@@ -12,6 +12,21 @@ export const metadata: Metadata = {
     description:
       'Learn why Houston needs this incubator and why East End Maker Hub is the ideal location for art-tech innovation.',
     url: 'https://forgn.art/incubator',
+    type: 'website',
+    images: [
+      {
+        url: 'https://forgn.art/incubator/eemh.png',
+        width: 1200,
+        height: 630,
+        alt: 'East End Maker Hub - Houston Art-Tech Incubator Location',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Forgn Incubator - Houston Art-Tech Innovation',
+    description: 'Learn why Houston needs this incubator and why East End Maker Hub is the ideal location for art-tech innovation.',
+    images: ['https://forgn.art/incubator/eemh.png'],
   },
 }
 

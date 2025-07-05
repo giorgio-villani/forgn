@@ -56,7 +56,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/accelerator`,
+      url: `${baseUrl}/incubator`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/incubator/membership`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
