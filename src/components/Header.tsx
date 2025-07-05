@@ -18,17 +18,17 @@ const Header: React.FC = () => {
     setMenuOpen(!menuOpen)
   }
 
-  // useEffect(() => {
-  //   if (menuOpen) {
-  //     document.body.classList.add('no-scroll')
-  //   } else {
-  //     document.body.classList.remove('no-scroll')
-  //   }
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
 
-  //   return () => {
-  //     document.body.classList.remove('no-scroll')
-  //   }
-  // }, [menuOpen])
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [menuOpen])
 
   return (
     <div className="bg-white w-full z-50 relative">
@@ -90,24 +90,57 @@ const Header: React.FC = () => {
         </div>
 
         {menuOpen && (
-          <div className="lg:hidden h-screen text-2xl flex flex-col absolute top-full left-0 w-full h-text-center bg-white p-4 pt-7 text-center">
-            <div className="bg-customButton rounded-full text-white m-6 ">
-              <LinkButton href="/calendar" text="Calendar" />
+          <div className="lg:hidden fixed inset-0 bg-white z-50 flex flex-col">
+            {/* Header with close button */}
+            <div className="flex justify-between items-center p-4 border-b">
+              <Image
+                src="/forgn_v2.png"
+                className="w-[150px] h-auto"
+                alt="Forgn Studio logo"
+                width={150}
+                height={150}
+              />
+              <button
+                onClick={toggleMenu}
+                className="text-2xl p-2"
+              >
+                <RxCross1 />
+              </button>
             </div>
-            <LinkButton href="/sculpture" text="Sculpture" />
-            <LinkButton href="/digital" text="Digital Art" />
-            <LinkButton href="/gallery" text="Gallery" />
-            <LinkButton href="/incubator" text="Overview" />
-            <LinkButton href="/incubator/membership" text="Membership" />
-            {/* <div className="bg-gray-200"> */}
-            <LinkButton href="/team" text="Team" />
-            <LinkButton href="/workshops" text="Workshops" />
-            <LinkButton href="/activations" text="Activations" />
-            <LinkButton href="/donate" text="Donate" />
-            {/* <LinkButton href="/campaign" text="Campaign" /> */}
-            {/* <LinkButton href="./presentations" text="Presentations" /> */}
-            {/* <LinkButton href="./hackathons" text="Hackathons" /> */}
-            {/* </div> */}
+            
+            {/* Menu Items */}
+            <div className="flex-1 flex flex-col justify-center items-center px-6 space-y-8 overflow-y-auto">
+              {/* Main Navigation */}
+              <div className="space-y-4 text-center w-full max-w-sm">
+                <h3 className="text-lg font-semibold text-gray-500 uppercase tracking-wide">Art / Creativity</h3>
+                <LinkButton href="/sculpture" text="Sculpture" />
+                <LinkButton href="/digital" text="Digital Art" />
+                <LinkButton href="/gallery" text="Gallery" />
+              </div>
+              
+              {/* Incubator Section */}
+              <div className="space-y-4 text-center w-full max-w-sm">
+                <h3 className="text-lg font-semibold text-gray-500 uppercase tracking-wide">Incubator</h3>
+                <LinkButton href="/incubator" text="Overview" />
+                <LinkButton href="/incubator/membership" text="Membership" />
+              </div>
+              
+              {/* More Section */}
+              <div className="space-y-4 text-center w-full max-w-sm">
+                <h3 className="text-lg font-semibold text-gray-500 uppercase tracking-wide">More</h3>
+                <LinkButton href="/team" text="Team" />
+                <LinkButton href="/workshops" text="Workshops" />
+                <LinkButton href="/activations" text="Activations" />
+                <LinkButton href="/donate" text="Donate" />
+              </div>
+            </div>
+            
+            {/* Calendar CTA at bottom */}
+            <div className="p-6 border-t">
+              <div className="bg-customButton rounded-full text-white w-full text-center">
+                <LinkButton href="/calendar" text="Calendar" />
+              </div>
+            </div>
           </div>
         )}
 

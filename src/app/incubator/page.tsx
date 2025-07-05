@@ -50,6 +50,17 @@ export default function Incubator() {
         <div className="mb-12 max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-inter font-semibold mb-6 text-center">Why Houston Needs This Incubator</h2>
+            
+            {/* Ion Image */}
+            <div className="mb-8 flex justify-center">
+              <Image 
+                src="/incubator/the-ion.jpg" 
+                alt="Ion District - Houston Innovation Hub" 
+                width={1000} 
+                height={600} 
+                className="rounded-lg shadow-lg w-full h-auto"
+              />
+            </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-customButton">The Innovation Gap</h3>
@@ -95,7 +106,7 @@ export default function Incubator() {
                   who are redefining what&apos;s possible. This vibrant community provides the perfect ecosystem for our art incubator 
                   to thrive.
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-700 mb-4">
                   Located in the historic East End Cultural District, our incubator program taps into decades of creative energy and cultural 
                   diversity that makes this neighborhood uniquely positioned to foster innovative consumer products.
                 </p>
@@ -127,15 +138,15 @@ export default function Incubator() {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-customButton rounded-lg p-8 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-inter font-semibold mb-4 text-white">Ready to Learn More?</h2>
-            <p className="text-white mb-6">
+          <div className="bg-white border-2 border-customButton rounded-lg p-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl font-inter font-semibold mb-4 text-customButton">Ready to Learn More?</h2>
+            <p className="text-gray-700 mb-6">
               Discover what we offer and how our incubator program can help you bring your ideas to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/incubator/membership" 
-                className="inline-block bg-white text-customButton px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 text-lg font-semibold"
+                className="inline-block bg-customButton text-white px-8 py-4 rounded-full hover:bg-red-700 transition duration-300 text-lg font-semibold"
               >
                 View Membership
               </a>

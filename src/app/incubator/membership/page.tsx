@@ -25,6 +25,18 @@ export default function IncubatorMembership() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-bold mb-8">
             Forgn Incubator Membership
           </h1>
+          
+          {/* Forgn Labs Image */}
+          <div className="mb-8 flex justify-center">
+            <Image 
+              src="/incubator/forgn-labs.png" 
+              alt="Forgn Labs - Innovation Workspace" 
+              width={1000} 
+              height={600} 
+              className="rounded-lg shadow-lg w-full h-auto max-w-2xl"
+            />
+          </div>
+          
           <p className="text-lg font-inter leading-relaxed max-w-3xl mx-auto">
             Join Houston&apos;s leading art-tech incubator and creative business incubator at East End Maker Hub. Our comprehensive program provides everything you need to transform your creative vision into successful art and technology consumer products. From maker space access to expert mentorship, we&apos;ve designed this art startup accelerator to maximize your chances of success.
           </p>
@@ -265,16 +277,16 @@ export default function IncubatorMembership() {
 
         {/* Apply Now */}
         <div className="text-center">
-          <div className="bg-customButton rounded-lg p-8 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-inter font-semibold mb-4 text-white">Ready to Launch Your Art-Tech Product?</h2>
-            <p className="text-white mb-6">
+          <div className="bg-white border-2 border-customButton rounded-lg p-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl font-inter font-semibold mb-4 text-customButton">Ready to Launch Your Art-Tech Product?</h2>
+            <p className="text-gray-700 mb-6">
               Join Houston&apos;s premier art startup accelerator and turn your creative vision into successful art and technology consumer products.
             </p>
             <a 
               href="https://docs.google.com/forms/d/e/1FAIpQLSdb6F-CKP7ajwHi3R8_05k-noKlEI11deJV4oTxbG0HgicoBA/viewform?usp=header" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-customButton px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 text-lg font-semibold"
+              className="inline-block bg-customButton text-white px-8 py-4 rounded-full hover:bg-red-700 transition duration-300 text-lg font-semibold"
             >
               Apply Now
             </a>
