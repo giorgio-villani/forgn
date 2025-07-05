@@ -6,7 +6,8 @@ const workshops = [
     type: 'sculpture',
     instructor: 'Shelley Townsend',
     description:
-      'Join our 2-week clay figure sculpting class and create lifelike sculptures with a live model. Learn anatomy, proportion, and expression while refining your technique under expert guidance. Open to all skill levels, this hands-on course offers personalized instruction in a supportive, creative environment. All materials included.',
+      'Join our 4-session clay sculpture class to create a lifelike figure using a live model. Held over two weeks, this evening course guides you through fundamentals, pose selection, detailing, and finishing techniques. Perfect for all skill levels, you\'ll receive hands-on instruction in a supportive, creative studio environment. All materials provided.',
+    keywords: 'clay sculpture, figure sculpting, terracotta art, live model drawing, sculpture techniques, art fundamentals, pose selection, texture exploration, detailing techniques, finishing techniques, preservation methods, 3D art, clay modeling, figure art, anatomical sculpture',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
     sessions: 'July 8th, 10th, 15th, 17th',
     time: '6:00 pm - 9:00 pm',
@@ -24,6 +25,7 @@ const workshops = [
     instructor: 'Bailey Ryherd',
     description:
       'This 4-week class introduces students to polymer clay techniques. You will learn to condition, blend, shape, and bake polymer clay, creating various small sculptures and decorative items. Projects will be guided step-by-step, ensuring you complete several finished pieces.',
+    keywords: 'polymer clay, clay modeling, small sculptures, decorative items, clay conditioning, clay blending, clay shaping, clay baking, polymer clay techniques, miniature art, clay crafts, 3D modeling, clay projects',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
@@ -38,6 +40,7 @@ const workshops = [
     instructor: 'Olesia Y. Rodionova',
     description:
       'In this 4-week class, students will learn the fundamentals of digital art. Topics include using digital art software, understanding layers and tools, and creating digital illustrations and paintings. No prior experience is required.',
+    keywords: 'digital art, digital illustration, digital painting, art software, digital tools, layers, digital techniques, computer art, digital creativity, digital design, digital drawing, digital media',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
@@ -52,6 +55,7 @@ const workshops = [
     instructor: 'Thomas MacDonald',
     description:
       'This 4-week class covers the basics of video editing using DaVinci Resolve. Students will learn how to import footage, edit clips, add transitions and effects, and export their projects. Ideal for beginners looking to get started with professional video editing software.',
+    keywords: 'video editing, DaVinci Resolve, film editing, video production, video effects, video transitions, professional video editing, video software, film making, video post-production, video editing techniques, DaVinci Resolve tutorial',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
@@ -66,6 +70,7 @@ const workshops = [
     instructor: 'Giorgio Villani',
     description:
       'A Stable Diffusion class focused on Automatic 1111 Stable Diffusion would cover the usage and customization of the popular AI image generation tool. The course would include installing and setting up the Automatic 1111 interface, understanding model parameters, exploring various prompts and styles, and fine-tuning model outputs. Students would learn to generate high-quality images, apply custom settings, and utilize extensions and scripts to enhance their workflow.',
+    keywords: 'AI art, artificial intelligence art, Stable Diffusion, AI image generation, Automatic 1111, AI prompts, AI art tools, machine learning art, digital AI, AI creativity, AI image creation, AI art techniques',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
@@ -80,6 +85,7 @@ const workshops = [
     instructor: 'Thomas MacDonald',
     description:
       "Learn the essentials of Figma in this 3-session course. You'll explore key features, master design tools, and create interactive prototypes. Perfect for beginners looking to build a strong foundation in UI/UX design.",
+    keywords: 'Figma, UI design, UX design, website design, interface design, design tools, interactive prototypes, design software, user experience, user interface, design fundamentals, web design, digital design tools',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
@@ -94,6 +100,7 @@ const workshops = [
     instructor: 'Daniel Calderon Arenas',
     description:
       'Dive into the world of 3D sculpting with Blender, one of the most powerful open-source 3D modeling tools available. This hands-on course is designed to guide beginners through the fundamental concepts and techniques of digital sculpting, helping you transform your creative ideas into detailed 3D models.',
+    keywords: 'Blender 3D, 3D sculpting, 3D modeling, digital sculpting, 3D art, Blender software, 3D design, digital 3D, 3D creation, Blender techniques, 3D modeling software, digital sculpture',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',

@@ -12,6 +12,7 @@ interface Workshop {
   type: string
   instructor?: string
   description: string
+  keywords?: string
   location?: string
   sessions?: string
   time?: string
@@ -174,9 +175,9 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
           </div>
           <div className="w-full md:w-1/2 p-4">
             <div className="px-5">
-              <p className="text-sm lg:text-lg leading-relaxed mb-4">
+              <div className="text-sm lg:text-lg leading-relaxed mb-4 whitespace-pre-line">
                 {workshop.description}
-              </p>
+              </div>
               <h2 className="text-sm lg:text-lg mb-4">
                 🎨<strong>Instructor:</strong> {workshop.instructor || "To be announced"}
               </h2>

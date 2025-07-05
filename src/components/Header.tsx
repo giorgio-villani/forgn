@@ -57,9 +57,19 @@ const Header: React.FC = () => {
 
           {/* Always visible on larger screens */}
           <div className="hidden lg:flex items-center space-x-4">
-            <LinkButton href="/sculpture" text="Sculpture Classes" />
-            <LinkButton href="/digital" text="Digital Art Classes" />
+            <LinkButton href="/sculpture" text="Sculpture" />
+            <LinkButton href="/digital" text="Digital Art" />
             <LinkButton href="/gallery" text="Gallery" />
+            <div className="relative group">
+              <button className="px-4 py-2 rounded-md flex items-center">
+                Incubator
+                <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
+              </button>
+              <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
+                <LinkButton href="/incubator" text="Overview" />
+                <LinkButton href="/incubator/membership" text="Membership" />
+              </div>
+            </div>
             <div className="relative group">
               <button className="px-4 py-2 rounded-md flex items-center">
                 More
@@ -68,7 +78,6 @@ const Header: React.FC = () => {
               <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
                 <LinkButton href="/team" text="Team" />
                 <LinkButton href="/workshops" text="Workshops" />
-                <LinkButton href="/accelerator" text="Accelerator" />
                 <LinkButton href="/activations" text="Activations" />
                 <LinkButton href="/donate" text="Donate" />
                 {/* <LinkButton href="/campaign" text="Campaign" /> */}
@@ -85,13 +94,14 @@ const Header: React.FC = () => {
             <div className="bg-customButton rounded-full text-white m-6 ">
               <LinkButton href="/calendar" text="Calendar" />
             </div>
-            <LinkButton href="/sculpture" text="Sculpture Classes" />
-            <LinkButton href="/digital" text="Digital Art Classes" />
+            <LinkButton href="/sculpture" text="Sculpture" />
+            <LinkButton href="/digital" text="Digital Art" />
             <LinkButton href="/gallery" text="Gallery" />
+            <LinkButton href="/incubator" text="Overview" />
+            <LinkButton href="/incubator/membership" text="Membership" />
             {/* <div className="bg-gray-200"> */}
             <LinkButton href="/team" text="Team" />
             <LinkButton href="/workshops" text="Workshops" />
-            <LinkButton href="/accelerator" text="Accelerator" />
             <LinkButton href="/activations" text="Activations" />
             <LinkButton href="/donate" text="Donate" />
             {/* <LinkButton href="/campaign" text="Campaign" /> */}

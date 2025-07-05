@@ -19,7 +19,7 @@ export default function Calendar() {
   return (
     <>
       <Breadcrumbs items={createBreadcrumbs.single('Calendar', '/calendar')} />
-      <MyCalendar />
+    <MyCalendar />
     </>
   )
 }
