@@ -6,11 +6,11 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Forgn Incubator Membership | Houston Art-Tech Creative Business Support',
   description:
-    'Join Houston\'s leading art-tech incubator at East End Maker Hub. Get mentorship, workspace access, and resources to launch innovative art and technology consumer products. Apply to our creative business incubator today.',
+    'Join Houston&apos;s leading art-tech incubator at East End Maker Hub. Get mentorship, workspace access, and resources to launch innovative art and technology consumer products. Apply to our creative business incubator today.',
   openGraph: {
     title: 'Forgn Incubator Membership - Houston Art-Tech Creative Business Support',
-    description:
-      'Discover Houston\'s top art startup accelerator offering mentorship, maker space access, and support for creative entrepreneurs. Launch your art-tech consumer products with our comprehensive incubator program.',
+          description:
+        'Discover Houston&apos;s top art startup accelerator offering mentorship, maker space access, and support for creative entrepreneurs. Launch your art-tech consumer products with our comprehensive incubator program.',
     url: 'https://forgn.art/incubator/membership',
   },
 }
@@ -26,7 +26,7 @@ export default function IncubatorMembership() {
             Forgn Incubator Membership
           </h1>
           <p className="text-lg font-inter leading-relaxed max-w-3xl mx-auto">
-            Join Houston's leading art-tech incubator and creative business incubator at East End Maker Hub. Our comprehensive program provides everything you need to transform your creative vision into successful art and technology consumer products. From maker space access to expert mentorship, we've designed this art startup accelerator to maximize your chances of success.
+            Join Houston&apos;s leading art-tech incubator and creative business incubator at East End Maker Hub. Our comprehensive program provides everything you need to transform your creative vision into successful art and technology consumer products. From maker space access to expert mentorship, we&apos;ve designed this art startup accelerator to maximize your chances of success.
           </p>
         </div>
 
@@ -252,7 +252,7 @@ export default function IncubatorMembership() {
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow">
                   <strong className="text-customButton">2. Review & Interview</strong><br/>
-                  <span className="text-gray-600">We'll review your application and schedule a call</span>
+                  <span className="text-gray-600">We&apos;ll review your application and schedule a call</span>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow">
                   <strong className="text-customButton">3. Program Start</strong><br/>
@@ -268,7 +268,7 @@ export default function IncubatorMembership() {
           <div className="bg-customButton rounded-lg p-8 max-w-2xl mx-auto">
             <h2 className="text-2xl font-inter font-semibold mb-4 text-white">Ready to Launch Your Art-Tech Product?</h2>
             <p className="text-white mb-6">
-              Join Houston's premier art startup accelerator and turn your creative vision into successful art and technology consumer products.
+              Join Houston&apos;s premier art startup accelerator and turn your creative vision into successful art and technology consumer products.
             </p>
             <a 
               href="https://docs.google.com/forms/d/e/1FAIpQLSdb6F-CKP7ajwHi3R8_05k-noKlEI11deJV4oTxbG0HgicoBA/viewform?usp=header" 

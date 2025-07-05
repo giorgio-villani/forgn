@@ -39,9 +39,9 @@ export default function Incubator() {
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-customButton">The Innovation Gap</h3>
                 <p className="text-gray-700 mb-4">
-                  Houston's vibrant art scene and growing tech community are disconnected. Artists have incredible creative vision 
-                  but lack the resources to bring their ideas to market. Meanwhile, Houston's economy needs more diverse, 
-                  innovative consumer products that reflect our city's unique cultural identity.
+                  Houston&apos;s vibrant art scene and growing tech community are disconnected. Artists have incredible creative vision 
+                  but lack the resources to bring their ideas to market. Meanwhile, Houston&apos;s economy needs more diverse, 
+                  innovative consumer products that reflect our city&apos;s unique cultural identity.
                 </p>
                 <p className="text-gray-700">
                   Our art incubator bridges this gap by providing the infrastructure, mentorship, and community that creative 
@@ -52,7 +52,7 @@ export default function Incubator() {
                 <h3 className="text-lg font-semibold mb-3 text-customButton">Art as the Key to Innovation</h3>
                 <p className="text-gray-700 mb-4">
                   At Forgn, we believe art is the fundamental driver of innovation. People need to be able to play, 
-                  experiment with ideas that aren't necessarily useful in the moment, and be surrounded by people who 
+                  experiment with ideas that aren&apos;t necessarily useful in the moment, and be surrounded by people who 
                   motivate them to turn those ideas into something meaningful.
                 </p>
                 <p className="text-gray-700">
@@ -74,10 +74,10 @@ export default function Incubator() {
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-customButton">The Heart of Houston's Creative District</h3>
+                <h3 className="text-lg font-semibold mb-3 text-customButton">The Heart of Houston&apos;s Creative District</h3>
                 <p className="text-gray-700 mb-4">
-                  Houston's East End Cultural District is the city's fastest-growing creative district, home to artists, makers, and innovators 
-                  who are redefining what's possible. This vibrant community provides the perfect ecosystem for our art incubator 
+                  Houston&apos;s East End Cultural District is the city&apos;s fastest-growing creative district, home to artists, makers, and innovators 
+                  who are redefining what&apos;s possible. This vibrant community provides the perfect ecosystem for our art incubator 
                   to thrive.
                 </p>
                 <p className="text-gray-700">
@@ -88,22 +88,22 @@ export default function Incubator() {
                   Learn more about the <a href="https://eastendmakerhub.org/" target="_blank" rel="noopener noreferrer" className="text-customButton hover:underline">East End Maker Hub</a> and its mission to create jobs and prepare a sustainable trained high-tech manufacturing workforce.
                 </p>
                 <p className="text-gray-700">
-                  Explore the <a href="https://eastendhouston.com/" target="_blank" rel="noopener noreferrer" className="text-customButton hover:underline">East End Cultural District</a>, Houston's most connected region and cultural district, home to vibrant murals, local markets, and a rich artistic heritage.
+                  Explore the <a href="https://eastendhouston.com/" target="_blank" rel="noopener noreferrer" className="text-customButton hover:underline">East End Cultural District</a>, Houston&apos;s most connected region and cultural district, home to vibrant murals, local markets, and a rich artistic heritage.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-customButton">World-Class Maker Infrastructure</h3>
                 <p className="text-gray-700 mb-4">
-                  East End Maker Hub is Houston's premier maker space, offering state-of-the-art fabrication tools, 
+                  East End Maker Hub is Houston&apos;s premier maker space, offering state-of-the-art fabrication tools, 
                   collaborative workspaces, and a community of experienced makers. This infrastructure is essential for 
                   turning creative ideas into tangible consumer products.
                 </p>
                 <p className="text-gray-700">
                   Our incubator participants get direct access to this world-class facility, along with the mentorship 
-                  of the Maker Hub's community of craftspeople, engineers, and entrepreneurs who call this space home.
+                  of the Maker Hub&apos;s community of craftspeople, engineers, and entrepreneurs who call this space home.
                 </p>
                 <p className="text-gray-700">
-                  Discover <a href="https://apps.txrxlabs.org/" target="_blank" rel="noopener noreferrer" className="text-customButton hover:underline">TXRX Labs</a>, Houston's non-profit makerspace with diverse classes, equipment access, and a network of creators, artists, and inventors.
+                  Discover <a href="https://apps.txrxlabs.org/" target="_blank" rel="noopener noreferrer" className="text-customButton hover:underline">TXRX Labs</a>, Houston&apos;s non-profit makerspace with diverse classes, equipment access, and a network of creators, artists, and inventors.
                 </p>
               </div>
             </div>

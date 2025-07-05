@@ -2,6 +2,32 @@ import CustomButton from '@/components/CustomButton'
 import SubscribeForm from '@/components/SubscribeForm'
 import React from 'react'
 import Image from 'next/image'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Forgn Studio | Learn Skills, Make Art, Meet People',
+  description: 'Work with artists and tech experts to create exciting art that blends traditional and digital styles. Join our workshops and become part of our creative community.',
+  openGraph: {
+    title: 'Forgn Studio - Learn Skills, Make Art, Meet People',
+    description: 'Work with artists and tech experts to create exciting art that blends traditional and digital styles.',
+    url: 'https://forgn.art',
+    type: 'website',
+    images: [
+      {
+        url: 'https://forgn.art/gallery/studio-01.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Forgn Studio Workspace',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Forgn Studio - Learn Skills, Make Art, Meet People',
+    description: 'Work with artists and tech experts to create exciting art that blends traditional and digital styles.',
+    images: ['https://forgn.art/gallery/studio-01.webp'],
+  },
+}
 
 interface CardProps {
   icon: string
