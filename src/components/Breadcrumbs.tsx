@@ -13,16 +13,20 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
     return {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
-      itemListElement: items.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        item: item.href
+      itemListElement: items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        const url = item.href
           ? (item.href.startsWith('http')
               ? item.href
               : `https://forgn.art${item.href}`)
-          : undefined,
-      })),
+          : undefined;
+        return {
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.name,
+          ...(isLast ? {} : { item: url }),
+        };
+      }),
     }
   }
 
