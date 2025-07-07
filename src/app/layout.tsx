@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://forgn.art/forgn_metadata.png',
+        url: 'https://forgn.art/forgn_v2.png',
         width: 1200,
         height: 630,
         alt: 'Forgn Studio Logo',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Forgn Studio',
     description: 'Learn Skills, Make Art and Meet People',
-    images: ['https://forgn.art/forgn_metadata.png'],
+    images: ['https://forgn.art/forgn_v2.png'],
   },
 }
 

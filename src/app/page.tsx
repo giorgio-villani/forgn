@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://forgn.art/forgn_metadata.png',
+        url: 'https://forgn.art/forgn_v2.png',
         width: 1200,
         height: 630,
         alt: 'Forgn Studio Logo',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Forgn Studio - Learn Skills, Make Art, Meet People',
     description: 'Work with artists and tech experts to create exciting art that blends traditional and digital styles.',
-    images: ['https://forgn.art/forgn_metadata.png'],
+    images: ['https://forgn.art/forgn_v2.png'],
   },
 }
 
