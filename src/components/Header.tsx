@@ -121,9 +121,11 @@ const Header: React.FC = () => {
             
             {/* Calendar CTA at bottom */}
             <div className="p-6 border-t mt-auto">
-              <div className="bg-customButton rounded-full text-white w-full text-center">
-                <LinkButton href="/calendar" text="Calendar" />
-              </div>
+              <a href="/calendar" className="block">
+                <button className="bg-customButton rounded-full text-white w-full py-3 px-5 transform hover:scale-105 transition duration-300 ease-in-out">
+                  Calendar
+                </button>
+              </a>
             </div>
           </div>
         )}
