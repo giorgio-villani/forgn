@@ -17,7 +17,11 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
-        item: item.href || `https://forgn.art${item.href}`,
+        item: item.href
+          ? (item.href.startsWith('http')
+              ? item.href
+              : `https://forgn.art${item.href}`)
+          : undefined,
       })),
     }
   }
