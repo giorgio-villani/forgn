@@ -22,11 +22,12 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
       '@type': 'BreadcrumbList',
       itemListElement: items.map((item, index) => {
         const isLast = index === items.length - 1;
-        const url = item.href
-          ? (item.href.startsWith('http')
-              ? item.href
-              : `https://forgn.art${item.href}`)
-          : undefined;
+        let url: string | undefined = undefined;
+        if (item.href) {
+          url = item.href.startsWith('http')
+            ? item.href
+            : `https://forgn.art${item.href}`;
+        }
         const listItem: BreadcrumbListItem = {
           '@type': 'ListItem',
           position: index + 1,
