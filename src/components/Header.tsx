@@ -32,7 +32,7 @@ const Header: React.FC = () => {
 
   return (
     <div className="bg-white w-full z-50 relative">
-      <div className="max-w-screen-xl mx-auto py-4 flex items-center justify-between">
+        <div className="max-w-screen-xl mx-auto py-4 flex items-center justify-between">
         <a className="hover:opacity-50 transition duration-300 m-5" href="/">
           <Image
             src="/forgn_v2.png"
@@ -89,27 +89,11 @@ const Header: React.FC = () => {
           </div>
         </div>
 
+        {/* Mobile Menu - Positioned below header */}
         {menuOpen && (
-          <div className="lg:hidden fixed inset-0 bg-white z-50 flex flex-col">
-            {/* Header with close button */}
-            <div className="flex justify-between items-center p-4 border-b">
-              <Image
-                src="/forgn_v2.png"
-                className="w-[150px] h-auto"
-                alt="Forgn Studio logo"
-                width={150}
-                height={150}
-              />
-              <button
-                onClick={toggleMenu}
-                className="text-2xl p-2"
-              >
-                <RxCross1 />
-              </button>
-            </div>
-            
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white z-[9999] border-t shadow-lg flex flex-col max-h-[80vh]">
             {/* Menu Items */}
-            <div className="flex-1 flex flex-col justify-center items-center px-6 space-y-8 overflow-y-auto">
+            <div className="flex-1 flex flex-col items-center px-6 py-4 space-y-8 overflow-y-auto">
               {/* Main Navigation */}
               <div className="space-y-4 text-center w-full max-w-sm">
                 <h3 className="text-lg font-semibold text-gray-500 uppercase tracking-wide">Art / Creativity</h3>
@@ -136,34 +120,13 @@ const Header: React.FC = () => {
             </div>
             
             {/* Calendar CTA at bottom */}
-            <div className="p-6 border-t">
+            <div className="p-6 border-t mt-auto">
               <div className="bg-customButton rounded-full text-white w-full text-center">
                 <LinkButton href="/calendar" text="Calendar" />
               </div>
             </div>
           </div>
         )}
-
-        {/* <div className="">
-          <div className="flex items-center space-x-4">
-            <LinkButton href="./sculpture" text="Sculpture Classes" />
-            <LinkButton href="./digital" text="Digital Art Classes" />
-            <LinkButton href="./gallery" text="Gallery" />
-            <div className="relative group">
-              <button className="px-4 py-2 rounded-md flex items-center">
-                More <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
-              </button>
-              <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
-                <LinkButton href="./team" text="Team" />
-                <LinkButton href="./activations" text="Activations" />
-                <LinkButton href="./presentations" text="Presentations" />
-                <LinkButton href="./workshops" text="Workshops" />
-                <LinkButton href="./hackathons" text="Hackathons" />
-              </div>
-            </div>
-            <CustomButton href="./calendar" text="Calendar" />
-          </div>
-        </div> */}
       </div>
     </div>
   )
