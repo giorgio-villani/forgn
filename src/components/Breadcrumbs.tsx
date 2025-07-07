@@ -8,6 +8,13 @@ interface BreadcrumbsProps {
   className?: string
 }
 
+type BreadcrumbListItem = {
+  '@type': 'ListItem';
+  position: number;
+  name: string;
+  item?: string;
+};
+
 export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
   const generateStructuredData = () => {
     return {
@@ -20,12 +27,15 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
               ? item.href
               : `https://forgn.art${item.href}`)
           : undefined;
-        return {
+        const listItem: BreadcrumbListItem = {
           '@type': 'ListItem',
           position: index + 1,
           name: item.name,
-          ...(isLast ? {} : { item: url }),
         };
+        if (!isLast && url) {
+          listItem.item = url;
+        }
+        return listItem;
       }),
     }
   }
