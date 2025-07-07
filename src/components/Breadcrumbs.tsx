@@ -26,7 +26,7 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
         if (item.href) {
           url = item.href.startsWith('http')
             ? item.href
-            : `https://forgn.art${item.href}`;
+            : `https://forgn.art${item.href.startsWith('/') ? item.href : '/' + item.href}`;
         }
         const listItem: BreadcrumbListItem = {
           '@type': 'ListItem',
