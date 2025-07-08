@@ -18,7 +18,7 @@ FORGN's teaching artist residency empowers creatives to build sustainable income
 FORGN's hybrid approach fosters collaboration between analog makers (painters, sculptors) and digital innovators (coders, generative artists), sparking unique outcomes. Through select workshops, youth programming, community events, and exhibitions, FORGN empowers a wide range of creators and strengthens Houston's cultural fabric.
 
 Applications for residencies and product incubation cohorts open Fall 2025. Visit [www.forgn.art](http://www.forgn.art) or follow [@forgnstudio](http://www.forgnstudio.com) for details.`,
-    slug: '2024-art-tech-incubator',
+    slug: '2025-art-tech-incubator',
   },
   // Add more releases here as needed
 ]
