@@ -80,9 +80,7 @@ const Header: React.FC = () => {
                 <LinkButton href="/workshops" text="Workshops" />
                 <LinkButton href="/activations" text="Activations" />
                 <LinkButton href="/donate" text="Donate" />
-                {/* <LinkButton href="/campaign" text="Campaign" /> */}
-                {/* <LinkButton href="./presentations" text="Presentations" />
-                <LinkButton href="./hackathons" text="Hackathons" /> */}
+                <LinkButton href="/press-releases" text="Press" />
               </div>
             </div>
             <CustomButton href="/calendar" text="Calendar" />
@@ -116,6 +114,7 @@ const Header: React.FC = () => {
                 <LinkButton href="/workshops" text="Workshops" />
                 <LinkButton href="/activations" text="Activations" />
                 <LinkButton href="/donate" text="Donate" />
+                <LinkButton href="/press-releases" text="Press" />
               </div>
             </div>
             
