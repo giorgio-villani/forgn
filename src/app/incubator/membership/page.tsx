@@ -148,7 +148,7 @@ export default function IncubatorMembership() {
 
         {/* Resident Innovators */}
         <div className="mb-12">
-          <h2 className="text-2xl font-inter font-semibold mb-8 text-center">Houston Art-Tech Success Stories</h2>
+          <h2 className="text-2xl font-inter font-semibold mb-8 text-center">Current Cohort</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
