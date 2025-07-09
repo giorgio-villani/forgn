@@ -3,6 +3,7 @@ const pressReleases = [
     title: 'Forgn Studio Launches New Art-Tech Incubator',
     date: '2025-07-07',
     location: 'Houston, TX',
+    category: 'internal',
     summary: `
 FORGN STUDIO, based in Houston's [East End Maker Hub](https://eastendmakerhub.org/), unveils a dual-purpose incubator that blends art and commerce. Through their unique partnership with Houston's largest maker hub, and supported by [Fresh Arts](https://fresharts.org/) as fiscal sponsor, [TXRX](https://apps.txrxlabs.org/), and dedicated studio space, FORGN empowers artists and creators to launch products and classes. Today we announce the first cohort: [GridLights](https://www.gridlights.co/), a LED manufacturing and design company and [Halo Speaker](https://halospeakers.webflow.io/) a rugged and loud portable speaker. This project is fiscally sponsored by [Fresh Arts](https://fresharts.org/). 
 

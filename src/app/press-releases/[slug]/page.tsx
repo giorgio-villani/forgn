@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { createBreadcrumbs } from '@/utils/breadcrumbs'
 import ReactMarkdown from 'react-markdown'
+import PrintButton from '@/components/PrintButton'
 
 function formatDate(dateString: string) {
   const date = new Date(dateString)
@@ -60,9 +61,36 @@ export default function PressReleaseDetail({ params }: { params: { slug: string 
       <Breadcrumbs items={createBreadcrumbs.single('Press Releases', '/press-releases').concat({ name: pr.title, href: `/press-releases/${pr.slug}` })} />
       <div className="max-w-screen-xl mx-auto px-4 py-12">
         <article className="bg-white rounded-lg shadow-lg p-8 max-w-[1200px] mx-auto">
-          <h1 className="text-3xl font-bold mb-2">{pr.title}</h1>
+          <div className="flex justify-between items-start mb-4">
+            <h1 className="text-3xl font-bold">{pr.title}</h1>
+            <PrintButton 
+              title={pr.title}
+              content={pr.summary}
+              date={pr.date}
+              location={pr.location}
+            />
+          </div>
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-blockquote:border-l-4 prose-blockquote:border-customButton prose-blockquote:pl-4 prose-blockquote:italic prose-a:text-customButton prose-a:no-underline hover:prose-a:underline">
-            <ReactMarkdown>{summaryWithDateLocation}</ReactMarkdown>
+            <ReactMarkdown 
+              components={{
+                a: ({ href, children }) => {
+                  // Check if it's an external link
+                  const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'))
+                  return (
+                    <a 
+                      href={href} 
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                      className="text-customButton hover:underline"
+                    >
+                      {children}
+                    </a>
+                  )
+                }
+              }}
+            >
+              {summaryWithDateLocation}
+            </ReactMarkdown>
           </div>
           <div className="mt-8 border-t pt-6 text-sm text-gray-500">
             <strong>Media Contact:</strong><br />
