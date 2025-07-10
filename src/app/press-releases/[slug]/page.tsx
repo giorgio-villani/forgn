@@ -59,10 +59,10 @@ export default function PressReleaseDetail({ params }: { params: { slug: string 
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b to-gray-300 from-white min-h-screen">
       <Breadcrumbs items={createBreadcrumbs.single('Press Releases', '/press-releases').concat({ name: pr.title, href: `/press-releases/${pr.slug}` })} />
-      <div className="max-w-screen-xl mx-auto px-4 py-12">
-        <article className="bg-white rounded-lg shadow-lg p-8 max-w-[1200px] mx-auto">
-          <div className="flex justify-between items-start mb-4">
-            <h1 className="text-3xl font-bold">{pr.title}</h1>
+      <div className="max-w-screen-xl mx-auto px-4 py-8 sm:py-12">
+        <article className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 max-w-[1200px] mx-auto">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-4">
+            <h1 className="text-2xl sm:text-3xl font-bold">{pr.title}</h1>
             <PrintButton 
               title={pr.title}
               content={pr.summary}
@@ -70,7 +70,7 @@ export default function PressReleaseDetail({ params }: { params: { slug: string 
               location={pr.location}
             />
           </div>
-          <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-blockquote:border-l-4 prose-blockquote:border-customButton prose-blockquote:pl-4 prose-blockquote:italic prose-a:text-customButton prose-a:no-underline hover:prose-a:underline">
+          <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-blockquote:border-l-4 prose-blockquote:border-customButton prose-blockquote:pl-4 prose-blockquote:italic prose-a:text-customButton prose-a:no-underline hover:prose-a:underline">
             <ReactMarkdown 
               components={{
                 a: ({ href, children }) => {
@@ -92,7 +92,7 @@ export default function PressReleaseDetail({ params }: { params: { slug: string 
               {summaryWithDateLocation}
             </ReactMarkdown>
           </div>
-          <div className="mt-8 border-t pt-6 text-sm text-gray-500">
+          <div className="mt-6 sm:mt-8 border-t pt-4 sm:pt-6 text-xs sm:text-sm text-gray-500">
             <strong>Media Contact:</strong><br />
             Forgn Studio<br />
             Giorgio Villani, Founder<br />
