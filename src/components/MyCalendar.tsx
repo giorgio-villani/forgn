@@ -77,6 +77,11 @@ const MyCalendar: React.FC = () => {
           format: 'ics',
           failure: function (error: any) {
             console.error('Calendar fetch error:', error)
+            console.error('Error details:', {
+              message: error.message,
+              status: error.status,
+              response: error.response
+            })
             // Try alternative approach - direct Google Calendar URL
             console.log('Attempting direct Google Calendar fetch...')
             return {
@@ -84,10 +89,19 @@ const MyCalendar: React.FC = () => {
               format: 'ics',
               failure: function (directError: any) {
                 console.error('Direct calendar fetch also failed:', directError)
+                console.error('Direct error details:', {
+                  message: directError.message,
+                  status: directError.status,
+                  response: directError.response
+                })
                 // Silently fail without interrupting user experience
               }
             }
           },
+          success: function(events: any) {
+            console.log('Calendar events loaded successfully:', events)
+            console.log('Number of events:', events.length)
+          }
         }}
         eventClick={handleEventClick} // Add event click handler
       />

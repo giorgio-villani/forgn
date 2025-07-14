@@ -5,9 +5,6 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[functions]
-  directory = ".next/serverless"
-
 # Handle calendar API specifically with Netlify function
 [[redirects]]
   from = "/api/calendar"
