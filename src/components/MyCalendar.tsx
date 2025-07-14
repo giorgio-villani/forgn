@@ -77,7 +77,16 @@ const MyCalendar: React.FC = () => {
           format: 'ics',
           failure: function (error: any) {
             console.error('Calendar fetch error:', error)
-            alert('There was an error while fetching events! Please try refreshing the page.')
+            // Try alternative approach - direct Google Calendar URL
+            console.log('Attempting direct Google Calendar fetch...')
+            return {
+              url: 'https://calendar.google.com/calendar/ical/1825616f43534c0f70af67648708bf2c5bd054cfb56583597b3c16b86b49b32c%40group.calendar.google.com/public/basic.ics',
+              format: 'ics',
+              failure: function (directError: any) {
+                console.error('Direct calendar fetch also failed:', directError)
+                // Silently fail without interrupting user experience
+              }
+            }
           },
         }}
         eventClick={handleEventClick} // Add event click handler

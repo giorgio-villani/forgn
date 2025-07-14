@@ -8,9 +8,24 @@
 [functions]
   directory = ".next/serverless"
 
+# Handle calendar API specifically with Netlify function
+[[redirects]]
+  from = "/api/calendar"
+  to = "/.netlify/functions/calendar"
+  status = 200
+  force = true
+
+# Handle other API routes with Next.js
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/___netlify-handler"
+  status = 200
+  force = true
+
+# Handle all other routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
 
 [[headers]]
