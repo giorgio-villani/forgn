@@ -87,9 +87,29 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Menu - Positioned below header */}
+        {/* Mobile Menu - Full screen overlay */}
         {menuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white z-[9999] border-t shadow-lg flex flex-col max-h-[80vh]">
+          <div className="lg:hidden fixed inset-0 top-0 left-0 right-0 bottom-0 bg-white z-[9999] flex flex-col">
+            {/* Mobile Menu Header */}
+            <div className="flex items-center justify-between p-4 border-b">
+              <a href="/" className="hover:opacity-50 transition duration-300">
+                <Image
+                  src="/forgn_v2.png"
+                  className="w-[150px] h-auto"
+                  alt="Forgn Studio logo"
+                  width={150}
+                  height={150}
+                />
+              </a>
+              <button
+                onClick={toggleMenu}
+                className="text-2xl p-2"
+                onMouseDown={(e) => e.preventDefault()}
+              >
+                <RxCross1 />
+              </button>
+            </div>
+            
             {/* Menu Items */}
             <div className="flex-1 flex flex-col items-center px-6 py-4 space-y-8 overflow-y-auto">
               {/* Main Navigation */}
