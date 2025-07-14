@@ -57,49 +57,6 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
         isLocalhost: typeof window !== 'undefined' ? window.location.hostname === 'localhost' : 'unknown'
       })
     }
-    
-    const logAnalytics = async () => {
-      if (utmSource || utmMedium || utmCampaign) {
-        const visitId = `${workshop.id}-${utmSource}-${utmMedium}-${utmCampaign}`
-        const hasLogged = localStorage.getItem(`analytics-${visitId}`)
-        
-        if (!hasLogged) {
-          try {
-            console.log('Preparing to send analytics data')
-            const response = await fetch('/api/analytics', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                type: 'campaign_view',
-                source: utmSource || '',
-                medium: utmMedium || '',
-                campaign: utmCampaign || '',
-                workshopId: workshop.id,
-                timestamp: new Date().toISOString()
-              })
-            })
-
-            const data = await response.json()
-            
-            if (!response.ok) {
-              throw new Error(data.error || 'Failed to log analytics')
-            }
-            
-            console.log('Analytics logged successfully:', data)
-            localStorage.setItem(`analytics-${visitId}`, 'true')
-          } catch (error) {
-            console.error('Error sending analytics:', error)
-            // Don't set localStorage if the request failed
-          }
-        } else {
-          console.log('Analytics already logged for this visit')
-        }
-      }
-    }
-
-    logAnalytics()
   }, [isMounted, utmSource, utmMedium, utmCampaign, workshop.id])
 
   // Return null or loading state before mounting

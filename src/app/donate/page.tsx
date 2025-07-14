@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { createBreadcrumbs } from '@/utils/breadcrumbs'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Support Forgn Studio | Donate to Art & Technology',
@@ -34,11 +35,13 @@ export default function Donate() {
         <h3 className="text-3xl mb-6 text-customHighlight">
           Support Our Cause
         </h3>
-        <img
-          className="p-7 "
+        <Image
+          className="p-7"
           alt="Fresh Arts"
           src="/donate/fresh-arts.jpg"
-        ></img>
+          width={400}
+          height={300}
+        />
         <p className="mb-6 text-left text-center text-justify">
           As a fiscally sponsored project of Fresh Arts, a nonprofit dedicated
           to empowering artists, we benefit from their support in managing our

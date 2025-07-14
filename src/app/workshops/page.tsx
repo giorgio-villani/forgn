@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { createBreadcrumbs } from '@/utils/breadcrumbs'
 import workshops from '@/data/workshops'
+import Image from 'next/image'
 
 export default function WorkshopList() {
   const [selectedFilter, setSelectedFilter] = useState('all')
@@ -99,9 +100,11 @@ export default function WorkshopList() {
                     className="flex flex-col md:flex-row"
                   >
                     {
-                      <img
+                      <Image
                         src={cls.image}
                         alt={cls.title}
+                        width={300}
+                        height={200}
                         className="w-full md:w-1/4 h-auto mb-4 md:mb-0 md:mr-4 rounded object-cover"
                       />
                     }

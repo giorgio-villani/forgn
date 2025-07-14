@@ -50,7 +50,13 @@ const About: React.FC = () => {
         <div
           className={`bg-white text-black border border-customButton p-4 transition-transform duration-100 transform hover:-translate-y-5 md:aspect-1 flex flex-col`}
         >
-          <img className="w-12 h-12" src={icon} alt={alt} />
+          <Image 
+            className="w-12 h-12" 
+            src={icon} 
+            alt={alt}
+            width={48}
+            height={48}
+          />
           <h3 className="font-bold text-xl font-inter mb-2">{title}</h3>
           <p className="text-xl font-inter mb-4">{description}</p>
           <div className="mt-auto text-red-500 ">Learn More</div>
