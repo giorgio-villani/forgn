@@ -24,4 +24,11 @@ export const createBreadcrumbs = {
     { name: 'Workshops', href: '/workshops' },
     { name: workshopTitle, href: workshopPath },
   ],
+  
+  // Artist specific: Home > Team > Artist Name
+  artist: (artistName: string, artistPath: string): BreadcrumbItem[] => [
+    { name: 'Home', href: '/' },
+    { name: 'Team', href: '/team' },
+    { name: artistName, href: artistPath },
+  ],
 } 

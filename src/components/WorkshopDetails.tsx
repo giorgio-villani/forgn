@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Script from 'next/script'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { createBreadcrumbs } from '@/utils/breadcrumbs'
+import ImageCarousel from '@/components/ImageCarousel'
 
 interface Workshop {
   id: string
@@ -14,11 +15,12 @@ interface Workshop {
   description: string
   keywords?: string
   location?: string
-  sessions?: string
+  sessions?: string | string[]
   time?: string
   price?: string
   discountedPrice?: string
   image?: string
+  images?: string[]
   booking?: string
   discount_booking?: string
   slug: string
@@ -74,6 +76,34 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
     return url.toString();
   }
 
+  // Helper function to format dates nicely
+  const formatSessions = (sessions: string | string[] | undefined) => {
+    if (!sessions) return "To be announced";
+    
+    if (Array.isArray(sessions)) {
+      if (sessions.length === 0) return "To be announced";
+      
+      const formattedDates = sessions.map((date: string) => {
+        // Parse the date correctly by adding 'T00:00:00' to ensure local timezone
+        const sessionDate = new Date(date + 'T00:00:00');
+        return sessionDate.toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      });
+      
+      if (formattedDates.length === 1) {
+        return formattedDates[0];
+      } else {
+        return formattedDates.join('\n');
+      }
+    }
+    
+    return sessions;
+  }
+
   return (
     <>
       {/* Meta Pixel Code - Only for Terracotta Sculpture Class (ID: 0) and not on localhost */}
@@ -116,19 +146,11 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
         </h1>
         <div className="flex flex-col md:flex-row items-start">
           <div className="w-full md:w-1/2 p-4">
-            {workshop.image ? (
-              <Image
-                src={workshop.image}
+            <ImageCarousel
+              images={workshop.images || (workshop.image ? [workshop.image] : [])}
                 alt={workshop.title}
-                width={750}
-                height={500}
-                className="w-full h-auto object-contain max-w-full rounded-lg"
+              className="w-full"
               />
-            ) : (
-              <div className="w-full h-64 bg-gray-200 flex items-center justify-center rounded-lg">
-                No Image Available
-              </div>
-            )}
           </div>
           <div className="w-full md:w-1/2 p-4">
             <div className="px-5">
@@ -138,9 +160,30 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
               <h2 className="text-sm lg:text-lg mb-4">
                 🎨<strong>Instructor:</strong> {workshop.instructor || "To be announced"}
               </h2>
-              <p className="text-sm lg:text-lg mb-4">
-              ⚒️<strong>Sessions:</strong> {workshop.sessions || "To be announced"}
-              </p>
+              <div className="text-sm lg:text-lg mb-4">
+                ⚒️<strong>Sessions:</strong>
+                <div className="mt-2 ml-4">
+                  {Array.isArray(workshop.sessions) && workshop.sessions.length > 0 ? (
+                    workshop.sessions.map((date: string, index: number) => {
+                      // Parse the date correctly by adding 'T00:00:00' to ensure local timezone
+                      const sessionDate = new Date(date + 'T00:00:00');
+                      const formattedDate = sessionDate.toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      });
+                      return (
+                        <div key={index} className="mb-1">
+                          {formattedDate}
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <div>{formatSessions(workshop.sessions)}</div>
+                  )}
+                </div>
+              </div>
               <p className="text-sm lg:text-lg mb-4">
                 🕰️<strong>Time:</strong> {workshop.time || "To be announced"}
               </p>

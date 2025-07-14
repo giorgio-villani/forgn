@@ -1,18 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { createBreadcrumbs } from '@/utils/breadcrumbs'
 
 import artists from '@/data/artists'
 
-interface TeamMemberProps {
+interface Artist {
   name: string
+  slug: string
+  picture: string
   description: string
-  imgSrc: string
-  imgClass?: string
-  reverse?: boolean
   website?: string
+  active?: boolean
 }
 
 export const metadata: Metadata = {
@@ -36,76 +37,51 @@ const unescapeHtml = (escapedStr: string) => {
     .replace(/&amp;/g, '&')
 }
 
-const teamMember = ({
-  name,
-  description,
-  imgSrc,
-  reverse = false,
-  website = '',
-}: TeamMemberProps) => (
-  <div
-    className={`max-w-screen-xl mx-auto font-poppins flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center`}
-  >
-    <div className="w-full md:w-1/2 p-4">
-      {/* <img
-        src={imgSrc}
-        alt={name}
-        className={`w-full h-auto object-cover max-w-full max-h-[500px] object-cover`}
-      /> */}
-      <Image
-        src={imgSrc}
-        alt={name}
-        width={750}
-        height={500}
-        className={`w-full h-auto object-cover max-w-full max-h-[500px] object-cover`}
-        loading="lazy"
-        sizes="(max-width: 768px) 100vw, 50vw"
-      />
-    </div>
-    <div className="w-full md:w-1/2 flex p-4">
-      <div className="px-5">
-        <h2 
-          className="mb-4 pt-5 text-4xl md:text-5xl"
-          style={{ wordWrap: 'break-word' }}
-        >
-          {name}
-        </h2>
-        {website && (
-          <p className="hover:underline text-customButton pb-3">
-            <a href={website}>{website}</a>
-          </p>
-        )}
-        <p
-          className="leading-relaxed text-justify mb-4"
-          style={{ wordWrap: 'break-word' }}
-        >
-          {unescapeHtml(description)}
-        </p>
-      </div>
-    </div>
-  </div>
-)
-
 export default function Team() {
+  // Filter to show only active artists
+  const activeArtists = artists.filter(artist => artist.active !== false)
+  
   return (
     <div className="w-full">
       <Breadcrumbs items={createBreadcrumbs.single('Team', '/team')} />
-      <h1 className="text-5xl text-center font-inter">Team</h1>
-      {artists.map((artist, index) => (
-        <section
-          key={artist.name}
-          className={`${index % 2 === 0 ? 'bg-white' : 'bg-gradient-to-b from-gray-100 to-white'} py-5 lg:py-10`}
-        >
-          {teamMember({
-            name: artist.name,
-            description: artist.description,
-            imgSrc: `/team/${artist.picture}`,
-            imgClass: 'max-w-full max-h-[500px] object-cover',
-            reverse: index % 2 !== 0,
-            website: artist.website,
-          })}
-        </section>
-      ))}
+      <h1 className="text-5xl text-center font-inter mb-12">Our Team</h1>
+      
+      <div className="max-w-screen-xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {activeArtists.map((artist) => (
+            <Link 
+              href={`/team/${artist.slug}`} 
+              key={artist.slug}
+              className="group block"
+            >
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="relative overflow-hidden bg-gray-200 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                  <Image
+                    src={`/team/${artist.picture}`}
+                    alt={artist.name}
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
+                    {artist.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-3">
+                    {unescapeHtml(artist.description)}
+                  </p>
+                  {artist.website && (
+                    <p className="text-blue-500 text-sm mt-2 hover:underline">
+                      Visit Website →
+                    </p>
+                  )}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
