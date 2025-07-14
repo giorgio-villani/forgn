@@ -75,8 +75,9 @@ const MyCalendar: React.FC = () => {
         events={{
           url: '/api/calendar',
           format: 'ics',
-          failure: function () {
-            alert('There was an error while fetching events!')
+          failure: function (error: any) {
+            console.error('Calendar fetch error:', error)
+            alert('There was an error while fetching events! Please try refreshing the page.')
           },
         }}
         eventClick={handleEventClick} // Add event click handler
