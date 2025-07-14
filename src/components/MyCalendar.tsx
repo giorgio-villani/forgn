@@ -12,6 +12,8 @@ const MyCalendar: React.FC = () => {
   const [selectedEvent, setSelectedEvent] = useState<any>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [publicLink, setPublicLink] = useState<string | null>(null) // State to store the extracted link
+  const [calendarRef, setCalendarRef] = useState<any>(null)
+  const [isRefreshing, setIsRefreshing] = useState(false)
 
   const handleEventClick = (info: any) => {
     const description =
@@ -32,6 +34,21 @@ const MyCalendar: React.FC = () => {
   const closeModal = () => {
     setIsModalOpen(false)
     setSelectedEvent(null)
+  }
+
+  const handleRefresh = async () => {
+    if (!calendarRef) return
+    
+    setIsRefreshing(true)
+    try {
+      // Force refresh by refetching events with timestamp
+      await calendarRef.getApi().refetchEvents()
+      console.log('Calendar refreshed successfully')
+    } catch (error) {
+      console.error('Error refreshing calendar:', error)
+    } finally {
+      setIsRefreshing(false)
+    }
   }
 
   function extractLink(text: string) {
@@ -57,7 +74,33 @@ const MyCalendar: React.FC = () => {
 
   return (
     <div className="max-w-5xl mx-auto m-8 bg-white">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold text-gray-800">Event Calendar</h1>
+        <button
+          onClick={handleRefresh}
+          disabled={isRefreshing}
+          className="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
+        >
+          {isRefreshing ? (
+            <>
+              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+              </svg>
+              Refreshing...
+            </>
+          ) : (
+            <>
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Refresh Events
+            </>
+          )}
+        </button>
+      </div>
       <FullCalendar
+        ref={setCalendarRef}
         plugins={[
           dayGridPlugin,
           timeGridPlugin,
