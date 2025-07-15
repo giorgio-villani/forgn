@@ -4,7 +4,6 @@ import { Metadata } from 'next'
 import WorkshopDetails from '@/components/WorkshopDetails'
 
 
-
 // Generate metadata for dynamic workshop pages
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const workshop = workshops.find((w) => w.slug === params.slug)

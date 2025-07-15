@@ -5,6 +5,9 @@ import Image from 'next/image'
 import Script from 'next/script'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { createBreadcrumbs } from '@/utils/breadcrumbs'
+import ImageCarousel from '@/components/ImageCarousel'
+import Link from 'next/link'
+import artists from '@/data/artists'
 
 interface Workshop {
   id: string
@@ -14,14 +17,18 @@ interface Workshop {
   description: string
   keywords?: string
   location?: string
-  sessions?: string
+  sessions?: string | string[]
   time?: string
   price?: string
   discountedPrice?: string
   image?: string
+  images?: string[]
   booking?: string
   discount_booking?: string
   slug: string
+  model_fee?: string
+  materials?: string
+  discountedEndDate?: string
 }
 
 interface WorkshopDetailsProps {
@@ -74,6 +81,56 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
     return url.toString();
   }
 
+  // Helper function to format dates nicely
+  const formatSessions = (sessions: string | string[] | undefined) => {
+    if (!sessions) return "To be announced";
+    
+    if (Array.isArray(sessions)) {
+      if (sessions.length === 0) return "To be announced";
+      
+      const formattedDates = sessions.map((date: string) => {
+        // Parse the date correctly by adding 'T00:00:00' to ensure local timezone
+        const sessionDate = new Date(date + 'T00:00:00');
+        return sessionDate.toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      });
+      
+      if (formattedDates.length === 1) {
+        return formattedDates[0];
+      } else {
+        return formattedDates.join('\n');
+      }
+    }
+    
+    return sessions;
+  }
+
+  // Helper to calculate Early Bird countdown
+  const getEarlyBirdCountdown = (endDate?: string) => {
+    if (!endDate) return null;
+    const now = new Date();
+    const end = new Date(endDate + 'T23:59:59');
+    const diff = end.getTime() - now.getTime();
+    if (diff <= 0) return 'ended';
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    if (days > 0) return `${days} day${days === 1 ? '' : 's'} left`;
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    if (hours > 0) return `${hours} hour${hours === 1 ? '' : 's'} left`;
+    return 'ending soon';
+  };
+
+  // Helper to check if Early Bird is active
+  const isEarlyBirdActive = (endDate?: string) => {
+    if (!endDate) return true;
+    const now = new Date();
+    const end = new Date(endDate + 'T23:59:59');
+    return end.getTime() > now.getTime();
+  };
+
   return (
     <>
       {/* Meta Pixel Code - Only for Terracotta Sculpture Class (ID: 0) and not on localhost */}
@@ -116,19 +173,11 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
         </h1>
         <div className="flex flex-col md:flex-row items-start">
           <div className="w-full md:w-1/2 p-4">
-            {workshop.image ? (
-              <Image
-                src={workshop.image}
+            <ImageCarousel
+              images={workshop.images || (workshop.image ? [workshop.image] : [])}
                 alt={workshop.title}
-                width={750}
-                height={500}
-                className="w-full h-auto object-contain max-w-full rounded-lg"
+              className="w-full"
               />
-            ) : (
-              <div className="w-full h-64 bg-gray-200 flex items-center justify-center rounded-lg">
-                No Image Available
-              </div>
-            )}
           </div>
           <div className="w-full md:w-1/2 p-4">
             <div className="px-5">
@@ -136,24 +185,77 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
                 {workshop.description}
               </div>
               <h2 className="text-sm lg:text-lg mb-4">
-                🎨<strong>Instructor:</strong> {workshop.instructor || "To be announced"}
+                🎨<strong>Instructor:</strong> {
+                  (() => {
+                    const artist = artists.find(a => a.active !== false && a.name === workshop.instructor)
+                    if (artist && artist.slug) {
+                      return (
+                        <Link href={`/team/${artist.slug}`} className="text-blue-600 hover:underline">
+                          {artist.name}
+                        </Link>
+                      )
+                    }
+                    return workshop.instructor || "To be announced"
+                  })()
+                }
               </h2>
-              <p className="text-sm lg:text-lg mb-4">
-              ⚒️<strong>Sessions:</strong> {workshop.sessions || "To be announced"}
-              </p>
+              <div className="text-sm lg:text-lg mb-4">
+                ⚒️<strong>Sessions:</strong>
+                <div className="mt-2 ml-4">
+                  {Array.isArray(workshop.sessions) && workshop.sessions.length > 0 ? (
+                    workshop.sessions.map((date: string, index: number) => {
+                      // Parse the date correctly by adding 'T00:00:00' to ensure local timezone
+                      const sessionDate = new Date(date + 'T00:00:00');
+                      const formattedDate = sessionDate.toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      });
+                      return (
+                        <div key={index} className="mb-1">
+                          {formattedDate}
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <div>{formatSessions(workshop.sessions)}</div>
+                  )}
+                </div>
+              </div>
               <p className="text-sm lg:text-lg mb-4">
                 🕰️<strong>Time:</strong> {workshop.time || "To be announced"}
               </p>
               <p className="text-sm lg:text-lg mb-4">
                 📍<strong>Location:</strong> <a href='https://g.co/kgs/fHhjxQn' className='text-blue-600 font-italic hover:underline'>{workshop.location || "To be announced"}</a>
               </p>
+              {workshop.model_fee && (
+                <p className="text-sm lg:text-lg mb-4">
+                  💵<strong> Model Fee:</strong> {workshop.model_fee}
+                </p>
+              )}
+              {workshop.materials && (
+                <p className="text-sm lg:text-lg mb-4">
+                  🧰<strong> Materials:</strong> {workshop.materials}
+                </p>
+              )}
               <p className="text-sm lg:text-lg mb-4">
                 🏷️<strong>Price:</strong> {
-                  workshop.discountedPrice ? (
+                  workshop.discountedPrice && isEarlyBirdActive(workshop.discountedEndDate) ? (
                     <>
                       <span className="line-through text-gray-500">{workshop.price}</span>
                       {' '}
-                      <span className="text-red-600">{workshop.discountedPrice}</span>
+                      <span className="text-red-600">
+                        {workshop.discountedPrice}
+                        {workshop.discountedEndDate && getEarlyBirdCountdown(workshop.discountedEndDate) !== 'ended' && (
+                          <span className="ml-2 text-xs bg-yellow-200 text-yellow-800 px-2 py-1 rounded align-middle">
+                            Early Bird ({getEarlyBirdCountdown(workshop.discountedEndDate)})
+                          </span>
+                        )}
+                        {!workshop.discountedEndDate && (
+                          <span className="ml-2 text-xs bg-yellow-200 text-yellow-800 px-2 py-1 rounded align-middle">Early Bird</span>
+                        )}
+                      </span>
                     </>
                   ) : (
                     workshop.price || "To be announced"
@@ -164,10 +266,9 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
               {
                 workshop.booking && (
                   <a href={getBookingUrl(workshop.discount_booking || workshop.booking)} target="_blank">
-                    <button type="submit" className={`w-full rounded py-3 text-white hover:bg-red-500 mb-2 ${
-                      workshop.discount_booking ? 'bg-green-600 hover:bg-green-500' : 'bg-red-600'
+                    <button type="submit" className={`w-full rounded py-3 text-white hover:bg-green-500 mb-2 bg-green-600 hover:bg-green-500'
                     }`}>
-                      {workshop.discount_booking ? 'Sign up with Discount' : 'Sign up for Class'}
+                      {workshop.discount_booking && isEarlyBirdActive(workshop.discountedEndDate) ? 'Sign up with Discount' : 'Sign Up'}
                     </button>
                   </a>
                 )

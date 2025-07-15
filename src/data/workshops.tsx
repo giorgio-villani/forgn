@@ -9,13 +9,22 @@ const workshops = [
       'Join our 4-session clay sculpture class to create a lifelike figure using a live model. Held over two weeks, this evening course guides you through fundamentals, pose selection, detailing, and finishing techniques. Perfect for all skill levels, you\'ll receive hands-on instruction in a supportive, creative studio environment. All materials provided.',
     keywords: 'clay sculpture, figure sculpting, terracotta art, live model drawing, sculpture techniques, art fundamentals, pose selection, texture exploration, detailing techniques, finishing techniques, preservation methods, 3D art, clay modeling, figure art, anatomical sculpture',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
-    sessions: 'July 8th, 10th, 15th, 17th',
+    sessions: ['2025-07-08', '2025-07-10', '2025-07-15', '2025-07-17'],
     time: '6:00 pm - 9:00 pm',
     price: '$400',
     discountedPrice: '$300',
+    discountedEndDate: '2025-07-01',
     image: '/classes/sculpture-class.png',
+    images: [
+      '/classes/sculpture-class.png',
+      '/classes/sculpture-1.jpg',
+      '/classes/sculpture-2.jpg',
+      '/classes/sculpture-3.jpg'
+    ],
     booking: 'https://bookeo.com/forgnstudio',
-    discount_booking: 'https://bookeo.com/forgnstudio'
+    discount_booking: 'https://bookeo.com/forgnstudio',
+    model_fee: 'Model fee included',
+    materials: 'All materials provided'
   },
   {
     id: '1',
@@ -107,6 +116,32 @@ const workshops = [
     // price: '$125',
     image: '/classes/blender_icon.webp',
   },
+  {
+    id: '7',
+    slug: 'oil-painting-zorn-palette',
+    title: 'Oil Painting - Zorn Palette Portrait (7 weeks)',
+    type: 'painting',
+    instructor: 'Peter Broz',
+    description:
+      'This 7 week course offers an in depth look at painting portraits in oil using a direct painting method, also known as alla prima. This method allows the artist to paint more efficiently by strategically placing opaque colors on the canvas, resulting in a completed painting using a single layer of paint. The alla prima technique eliminates the need for underpainting or glazing. In addition to working faster and more efficiently, less or even no solvent is needed during the painting process. The zorn palette offers a convenient and versatile way to create an array of hues and skin tones using just four colors. By adopting a limited color palette, color mixing is made more approachable and easier to understand. As we will be focusing mainly on painting, this course will be best fit for students with a solid foundation in drawing. We will work from both printed reference material as well as live models.',
+    keywords: 'Blender 3D, 3D sculpting, 3D modeling, digital sculpting, 3D art, Blender software, 3D design, digital 3D, 3D creation, Blender techniques, 3D modeling software, digital sculpture',
+    location: 'Forgn Studio @ East End Maker Hub - Y114',
+    sessions: ['2025-08-16', '2025-08-23', '2025-08-30', '2025-09-06', '2025-09-13', '2025-09-20'],
+    time: '9:30am to 12:30pm',
+    price: '$430',
+    discountedPrice: '$400',
+    discountedEndDate: '2025-07-25',
+    image: '/classes/painting-1.png',
+    images: [
+      '/classes/painting-1.png',
+      '/classes/painting-2.png',
+      '/classes/painting-3.png',
+    ],
+    booking: 'https://bookeo.com/forgnstudio',
+    discount_booking: 'https://bookeo.com/forgnstudio',
+    model_fee: 'This course will include an additional model fee (a one time payment ranging from $48-$96 depending on enrollment)',
+    materials: ''
+  }
 ]
 
 export default workshops

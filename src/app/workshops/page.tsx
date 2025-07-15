@@ -18,8 +18,23 @@ export default function WorkshopList() {
     setSearchTerm(event.target.value.toLowerCase())
   }
 
+  // Function to check if a workshop is upcoming
+  const isUpcoming = (workshop: any) => {
+    if (!workshop.sessions || !Array.isArray(workshop.sessions)) return false
+    
+    const currentDate = new Date()
+    
+    // Check if any session date is in the future
+    return workshop.sessions.some((sessionDate: string) => {
+      const session = new Date(sessionDate + 'T00:00:00')
+      return session >= currentDate
+    })
+  }
+
   const filteredWorkshops = workshops.filter((item) => {
-    const matchesType = selectedFilter === 'all' || item.type === selectedFilter
+    const matchesType = selectedFilter === 'all' || 
+                       (selectedFilter === 'upcoming' && isUpcoming(item)) ||
+                       (selectedFilter !== 'upcoming' && item.type === selectedFilter)
 
     const matchesSearchTerm =
       searchTerm === '' ||
@@ -28,6 +43,21 @@ export default function WorkshopList() {
       item.description.toLowerCase().includes(searchTerm)
 
     return matchesType && matchesSearchTerm
+  }).sort((a, b) => {
+    // Helper function to get the earliest session date
+    const getEarliestDate = (workshop: any) => {
+      if (!workshop.sessions || !Array.isArray(workshop.sessions) || workshop.sessions.length === 0) {
+        return new Date('9999-12-31'); // Far future date for workshops without sessions
+      }
+      const dates = workshop.sessions.map((date: string) => new Date(date + 'T00:00:00'));
+      return new Date(Math.min(...dates.map((d: Date) => d.getTime())));
+    };
+
+    const aDate = getEarliestDate(a);
+    const bDate = getEarliestDate(b);
+
+    // Sort by date: workshops with dates first (earliest first), then workshops without dates
+    return aDate.getTime() - bDate.getTime();
   })
 
   const uniqueWorkshops = Array.from(
@@ -55,37 +85,67 @@ export default function WorkshopList() {
             <div className="border rounded p-2">
               <h2 className="font-bold text-lg mb-2">All Subjects</h2>
               <ul className="space-y-2 text-customButton">
+                <li>
+                  <button
+                    onClick={() => handleFilterClick('upcoming')}
+                    className={`text-left w-full ${
+                      selectedFilter === 'upcoming' ? 'font-bold text-blue-600' : ''
+                    }`}
+                  >
+                    {`Upcoming Classes (${workshops.filter(isUpcoming).length})`}
+                  </button>
+                </li>
+                <li className="border-t pt-2 mt-2">
+                  <button
+                    onClick={() => handleFilterClick('all')}
+                    className={`text-left w-full ${
+                      selectedFilter === 'all' ? 'font-bold text-blue-600' : ''
+                    }`}
+                  >
+                    {`All Classes (${workshops.length})`}
+                  </button>
+                </li>
                 {uniqueWorkshops.map((cls, index) => (
-                  // <div>{cls.type}</div>
                   <li key={index}>
                     <button
                       onClick={() => handleFilterClick(cls.type)}
-                      className="text-left w-full"
+                      className={`text-left w-full ${
+                        selectedFilter === cls.type ? 'font-bold text-blue-600' : ''
+                      }`}
                     >
                       {`${capitalizeFirstLetter(cls.type)} (${workshops.filter((item) => item.type === cls.type).length})`}
                     </button>
                   </li>
                 ))}
-
-                <li>
-                  <button
-                    onClick={() => handleFilterClick('all')}
-                    className="text-left w-full"
-                  >{`All (${workshops.length})`}</button>
-                </li>
               </ul>
             </div>
           </div>
 
           <main className="md:w-3/4">
             <div className="flex justify-between mb-4">
+              <div className="flex gap-2">
               <button
                 onClick={() => handleFilterClick('all')}
-                className="px-4 py-2 bg-gray-200 rounded"
+                  className={`px-4 py-2 rounded transition-colors ${
+                    selectedFilter === 'all' 
+                      ? 'bg-blue-500 text-white' 
+                      : 'bg-gray-200 hover:bg-gray-300'
+                  }`}
               >
                 All Classes
               </button>
-              <button className="px-4 py-2 bg-gray-200 rounded">
+                <button
+                  onClick={() => handleFilterClick('upcoming')}
+                  className={`px-4 py-2 rounded transition-colors ${
+                    selectedFilter === 'upcoming' 
+                      ? 'bg-blue-500 text-white' 
+                      : 'bg-gray-200 hover:bg-gray-300'
+                  }`}
+                >
+                  {`Upcoming Classes (${workshops.filter(isUpcoming).length})`}
+                </button>
+              </div>
+              <button className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition-colors">
                 {`My Classes (${workshops.length})`}
               </button>
             </div>
@@ -101,7 +161,7 @@ export default function WorkshopList() {
                   >
                     {
                       <Image
-                        src={cls.image}
+                        src={cls.images?.[0] || cls.image || '/classes/placeholder.jpg'}
                         alt={cls.title}
                         width={300}
                         height={200}
@@ -112,10 +172,19 @@ export default function WorkshopList() {
                     <div className="flex flex-col justify-between">
                       <div>
                         <h2 className="text-xl font-bold mb-2">{cls.title}</h2>
-                        <p className="text-gray-700 mb-2">{cls.description}</p>
+                        <p className="text-gray-700 mb-2">
+                          {cls.description.length > 400
+                            ? cls.description.slice(0, 400) + '...'
+                            : cls.description}
+                        </p>
                         <p className="text-left">
                           Sessions:{' '}
-                          <span className="text-gray-500">{cls.sessions || "To be announced"}</span>
+                          <span className="text-gray-500">
+                            {Array.isArray(cls.sessions) 
+                              ? cls.sessions.map((date: string) => new Date(date + 'T00:00:00').toLocaleDateString()).join(', ')
+                              : cls.sessions || "To be announced"
+                            }
+                          </span>
                           <br />
                           Location:{' '}
                           <span className="text-gray-500">{cls.location}</span>

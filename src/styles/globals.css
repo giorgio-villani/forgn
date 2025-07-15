@@ -32,3 +32,11 @@
 .animate-checkmark {
   animation: checkmark 0.5s ease-out forwards;
 }
+
+/* Line clamp utility for text truncation */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
