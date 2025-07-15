@@ -173,15 +173,20 @@ export default function WorkshopList() {
                       <div>
                         <h2 className="text-xl font-bold mb-2">{cls.title}</h2>
                         <p className="text-gray-700 mb-2">
-                          {cls.description.length > 400
-                            ? cls.description.slice(0, 400) + '...'
-                            : cls.description}
+                          {(() => {
+                            if (cls.description.length <= 400) {
+                              return cls.description;
+                            }
+                            const truncated = cls.description.slice(0, 400);
+                            const lastSpace = truncated.lastIndexOf(' ');
+                            return lastSpace > 0 ? truncated.slice(0, lastSpace) + '...' : truncated + '...';
+                          })()}
                         </p>
                         <p className="text-left">
                           Sessions:{' '}
                           <span className="text-gray-500">
                             {Array.isArray(cls.sessions) 
-                              ? cls.sessions.map((date: string) => new Date(date + 'T00:00:00').toLocaleDateString()).join(', ')
+                              ? cls.sessions.map((date: string) => new Date(date + 'T00:00:00').toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' })).join(', ')
                               : cls.sessions || "To be announced"
                             }
                           </span>
