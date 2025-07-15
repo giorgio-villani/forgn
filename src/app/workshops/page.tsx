@@ -172,7 +172,11 @@ export default function WorkshopList() {
                     <div className="flex flex-col justify-between">
                       <div>
                         <h2 className="text-xl font-bold mb-2">{cls.title}</h2>
-                        <p className="text-gray-700 mb-2">{cls.description}</p>
+                        <p className="text-gray-700 mb-2">
+                          {cls.description.length > 400
+                            ? cls.description.slice(0, 400) + '...'
+                            : cls.description}
+                        </p>
                         <p className="text-left">
                           Sessions:{' '}
                           <span className="text-gray-500">

@@ -13,9 +13,18 @@ const workshops = [
     time: '6:00 pm - 9:00 pm',
     price: '$400',
     discountedPrice: '$300',
+    discountedEndDate: '2025-07-01',
     image: '/classes/sculpture-class.png',
+    images: [
+      '/classes/sculpture-class.png',
+      '/classes/sculpture-1.jpg',
+      '/classes/sculpture-2.jpg',
+      '/classes/sculpture-3.jpg'
+    ],
     booking: 'https://bookeo.com/forgnstudio',
-    discount_booking: 'https://bookeo.com/forgnstudio'
+    discount_booking: 'https://bookeo.com/forgnstudio',
+    model_fee: 'Model fee included',
+    materials: 'All materials provided'
   },
   {
     id: '1',
@@ -109,8 +118,8 @@ const workshops = [
   },
   {
     id: '7',
-    slug: 'painting-class-zorn-palette',
-    title: 'Painting Class: Zorn Palette Portrait Painting',
+    slug: 'oil-painting-zorn-palette',
+    title: 'Oil Painting - Zorn Palette Portrait (7 weeks)',
     type: 'painting',
     instructor: 'Peter Broz',
     description:
@@ -121,6 +130,7 @@ const workshops = [
     time: '9:30am to 12:30pm',
     price: '$430',
     discountedPrice: '$400',
+    discountedEndDate: '2025-07-25',
     image: '/classes/painting-1.png',
     images: [
       '/classes/painting-1.png',
@@ -128,7 +138,9 @@ const workshops = [
       '/classes/painting-3.png',
     ],
     booking: 'https://bookeo.com/forgnstudio',
-    discount_booking: 'https://bookeo.com/forgnstudio'
+    discount_booking: 'https://bookeo.com/forgnstudio',
+    model_fee: 'This course will include an additional model fee (a one time payment ranging from $48-$96 depending on enrollment)',
+    materials: ''
   }
 ]
 

@@ -13,17 +13,6 @@ interface ImageCarouselProps {
 export default function ImageCarousel({ images, alt, className = '' }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // Auto-advance carousel every 5 seconds
-  useEffect(() => {
-    if (images.length <= 1) return
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [images.length])
-
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
