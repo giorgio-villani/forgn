@@ -140,7 +140,8 @@ const workshops = [
     booking: 'https://bookeo.com/forgnstudio',
     discount_booking: 'https://bookeo.com/forgnstudio',
     model_fee: 'This course will include an additional model fee (a one time payment ranging from $48-$96 depending on enrollment)',
-    materials: ''
+    materials: 'Materials are not included in the price of the course. Please see the materials list below.',
+    materials_list: 'https://docs.google.com/spreadsheets/d/1lG1DxK3uZA63IBXre0M954Z_QzWF4i7UIRSWdFUHUS8'
   }
 ]
 

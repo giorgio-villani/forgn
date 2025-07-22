@@ -27,8 +27,9 @@ interface Workshop {
   discount_booking?: string
   slug: string
   model_fee?: string
-  materials?: string
+  materials?: string | { name: string; url: string }[]
   discountedEndDate?: string
+  materials_list?: string
 }
 
 interface WorkshopDetailsProps {
@@ -130,6 +131,11 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
     const end = new Date(endDate + 'T23:59:59');
     return end.getTime() > now.getTime();
   };
+
+  // Type guard for materials array
+  function isMaterialsArray(materials: any): materials is { name: string; url: string }[] {
+    return Array.isArray(materials) && materials.every(item => item && typeof item === 'object' && 'name' in item && 'url' in item);
+  }
 
   return (
     <>
@@ -234,10 +240,27 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
                   💵<strong> Model Fee:</strong> {workshop.model_fee}
                 </p>
               )}
-              {workshop.materials && (
-                <p className="text-sm lg:text-lg mb-4">
+              {isMaterialsArray(workshop.materials) && workshop.materials.length > 0 && (
+                <div className="text-sm lg:text-lg mb-4">
+                  🧰<strong> Materials:</strong>
+                  <ul className="list-disc ml-6 mt-2">
+                    {workshop.materials.map((item, idx) => (
+                      <li key={idx}>
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{item.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {typeof workshop.materials === 'string' && workshop.materials && (
+                <div className="text-sm lg:text-lg mb-4">
                   🧰<strong> Materials:</strong> {workshop.materials}
-                </p>
+                </div>
+              )}
+              {workshop.materials_list && typeof workshop.materials_list === 'string' && (
+                <div className="text-sm lg:text-lg mb-4">
+                  📝<strong> Materials List:</strong> <a href={workshop.materials_list} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">View Full Materials List</a>
+                </div>
               )}
               <p className="text-sm lg:text-lg mb-4">
                 🏷️<strong>Price:</strong> {
