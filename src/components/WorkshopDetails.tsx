@@ -55,11 +55,10 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
     console.log('Component mounted, checking UTM params:', { utmSource, utmMedium, utmCampaign })
     
     // Log when Facebook pixel is active
-    if (workshop.id === '0' && typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
-      console.log('Facebook Pixel: Pixel is active for workshop ID 0 on production')
+    if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+      console.log('Facebook Pixel: Pixel is active on production')
     } else {
       console.log('Facebook Pixel: Pixel is NOT active - conditions not met:', {
-        workshopId: workshop.id,
         isWindow: typeof window !== 'undefined',
         hostname: typeof window !== 'undefined' ? window.location.hostname : 'undefined',
         isLocalhost: typeof window !== 'undefined' ? window.location.hostname === 'localhost' : 'unknown'
@@ -139,8 +138,8 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
 
   return (
     <>
-      {/* Meta Pixel Code - Only for Terracotta Sculpture Class (ID: 0) and not on localhost */}
-      {workshop.id === '0' && typeof window !== 'undefined' && window.location.hostname !== 'localhost' && (
+      {/* Meta Pixel Code - Only on production, not on localhost */}
+      {typeof window !== 'undefined' && window.location.hostname !== 'localhost' && (
         <>
           <Script id="facebook-pixel" strategy="afterInteractive">
             {`
