@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${workshop.title} | Forgn Studio`,
     description: workshop.description || `Join ${workshop.title} at Forgn Studio. Learn from expert instructors in a hands-on workshop environment.`,
-    keywords: `art workshop, ${workshop.title.toLowerCase()}, art classes, creative workshop, Houston art studio, art education, hands-on learning, creative skills, artistic development, art techniques, creative expression, art instruction, studio art, art fundamentals, creative workshop Houston, art classes Houston, ${workshop.keywords || ''}, ${workshop.instructor ? `${workshop.instructor} workshop` : 'expert instruction'}`,
+    keywords: `${workshop.keywords || ''}, art workshop, ${workshop.title.toLowerCase()}, art classes, creative workshop, Houston art studio, art education, hands-on learning, creative skills, artistic development, art techniques, creative expression, art instruction, studio art, art fundamentals, creative workshop Houston, art classes Houston, ${workshop.instructor ? `${workshop.instructor} workshop` : 'expert instruction'}`,
     openGraph: {
       title: `${workshop.title} - Forgn Studio`,
       description: workshop.description || `Join ${workshop.title} at Forgn Studio. Learn from expert instructors in a hands-on workshop environment.`,

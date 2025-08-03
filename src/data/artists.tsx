@@ -35,6 +35,15 @@ const artists: Artist[] = [
      website: 'https://www.peterbroz.com/',
      active: true,
    },
+   {
+   name: 'Marnie Shick',
+   slug: 'marnie-shick',
+   picture: 'marnie-shick.jpg',
+   description:
+     "Marnie Shick graduated with a B.F.A. in Animation from Savannah College of Art and Design in 2023. She's currently a resident artist at Jersey House Studio, where she's worked on concept art, character designs, storyboards, graphics, voice acting, and more. Marnie creates art primarily in Photoshop and Blender, but also uses traditional media. She's passionate about combining meaningful storytelling with quirky, experimental animation.",
+   website: 'https://www.marnieshick.com/',
+   active: true,
+ },
   { name: 'Anne Billingsley',
     slug: 'anne-billingsley',
     picture: 'anne-1.webp',
