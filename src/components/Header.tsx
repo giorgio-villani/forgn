@@ -68,6 +68,7 @@ const Header: React.FC = () => {
               <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
                 <LinkButton href="/incubator" text="Overview" />
                 <LinkButton href="/incubator/membership" text="Membership" />
+                <LinkButton href="/incubator/social-media" text="Media" />
               </div>
             </div>
             <div className="relative group">
@@ -125,6 +126,7 @@ const Header: React.FC = () => {
                 <h3 className="text-lg font-semibold text-gray-500 uppercase tracking-wide">Incubator</h3>
                 <LinkButton href="/incubator" text="Overview" />
                 <LinkButton href="/incubator/membership" text="Membership" />
+                <LinkButton href="/incubator/social-media" text="Media" />
               </div>
               
               {/* More Section */}
