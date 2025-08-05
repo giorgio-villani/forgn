@@ -1,30 +1,23 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-type TabType = 'overview' | 'membership' | 'social-media'
-
 export default function IncubatorClient() {
-  const [activeTab, setActiveTab] = useState<TabType>('overview')
+  return (
+    <div className="max-w-screen-xl mx-auto px-4 py-8">
+      {/* Hero Section */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-bold mb-8">
+          Forgn Incubator
+        </h1>
+        <p className="text-lg font-inter leading-relaxed max-w-3xl mx-auto">
+          Understanding why Houston needs this incubator and why East End Maker Hub is the perfect 
+          location for transforming art-tech ideas into successful consumer products.
+        </p>
+      </div>
 
-  const TabButton = ({ tab, label }: { tab: TabType, label: string }) => (
-    <button
-      onClick={() => setActiveTab(tab)}
-      className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
-        activeTab === tab
-          ? 'bg-customButton text-white shadow-lg'
-          : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
-      }`}
-    >
-      {label}
-    </button>
-  )
-
-  const renderOverviewContent = () => (
-    <>
-      {/* Why Houston Needs This Incubator */}
+      {/* Overview Content */}
       <div className="mb-12 max-w-4xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-inter font-semibold mb-6 text-center">Why Houston Needs This Incubator</h2>
@@ -113,205 +106,10 @@ export default function IncubatorClient() {
           </div>
         </div>
       </div>
-    </>
-  )
 
-  const renderMembershipContent = () => (
-    <div className="text-center py-12">
-      <h2 className="text-3xl font-inter font-semibold mb-6">Membership Information</h2>
-      <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-        Learn about our membership options and how to join the Forgn Incubator program.
-      </p>
-      <Link 
-        href="/incubator/membership" 
-        className="inline-block bg-customButton text-white px-8 py-4 rounded-full hover:bg-red-700 transition duration-300 text-lg font-semibold"
-      >
-        View Full Membership Details
-      </Link>
-    </div>
-  )
 
-  const renderSocialMediaContent = () => (
-    <>
-      {/* Video Production Capabilities */}
-      <div className="mb-12 max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-inter font-semibold mb-6 text-center">Video Production Capabilities</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-customButton">Professional Interview Production</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  High-quality video and audio recording equipment
-                </li>
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  Professional lighting setup for optimal visual quality
-                </li>
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  Multiple camera angles for dynamic content
-                </li>
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  Professional editing and post-production services
-                </li>
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  Captioning and subtitle generation for accessibility
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-customButton">Day-in-the-Life Content</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  Behind-the-scenes studio and workshop footage
-                </li>
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  Process documentation from concept to completion
-                </li>
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  Artist and maker lifestyle content
-                </li>
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  Community and collaboration highlights
-                </li>
-                <li className="flex items-start">
-                  <span className="text-customButton mr-2">•</span>
-                  Event and workshop coverage
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          {/* Studio Setup */}
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-6 mb-8">
-            <h3 className="text-xl font-semibold mb-4 text-customButton">Professional Studio Setup</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <h4 className="font-semibold mb-2">4K Video Recording</h4>
-                  <p className="text-sm text-gray-600">High-resolution video capture for crisp, professional content</p>
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <h4 className="font-semibold mb-2">Professional Audio</h4>
-                  <p className="text-sm text-gray-600">Studio-quality microphones and audio processing</p>
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <h4 className="font-semibold mb-2">LED Lighting</h4>
-                  <p className="text-sm text-gray-600">Adjustable lighting for optimal visual presentation</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Content Types */}
-      <div className="mb-12 max-w-4xl mx-auto">
-        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-8">
-          <h2 className="text-2xl font-inter font-semibold mb-6 text-center">Content Types We Create</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold mb-3 text-customButton">Interview Content</h3>
-              <p className="text-gray-700 mb-4">
-                Professional interviews with artists, makers, entrepreneurs, and community leaders. 
-                We capture authentic conversations that showcase expertise, share stories, and build connections.
-              </p>
-              <ul className="text-gray-700 space-y-2">
-                <li>• Artist and maker spotlights</li>
-                <li>• Entrepreneur success stories</li>
-                <li>• Community leader interviews</li>
-                <li>• Expert knowledge sharing</li>
-                <li>• Behind-the-scenes conversations</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-3 text-customButton">Day-in-the-Life Content</h3>
-              <p className="text-gray-700 mb-4">
-                Authentic, engaging content that shows the real work and lifestyle of creators, 
-                makers, and entrepreneurs in our community.
-              </p>
-              <ul className="text-gray-700 space-y-2">
-                <li>• Studio and workshop tours</li>
-                <li>• Creative process documentation</li>
-                <li>• Daily routines and workflows</li>
-                <li>• Project development journeys</li>
-                <li>• Community collaboration moments</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Social Media Strategy */}
-      <div className="mb-12 max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-inter font-semibold mb-6 text-center">Social Media Strategy</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="bg-customButton text-white rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3">Platform Optimization</h3>
-                <p className="text-sm">Content tailored for Instagram, TikTok, YouTube, and LinkedIn</p>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-customButton text-white rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3">Engagement Focus</h3>
-                <p className="text-sm">Content designed to spark conversations and build community</p>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-customButton text-white rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3">Brand Storytelling</h3>
-                <p className="text-sm">Authentic narratives that connect with your target audience</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  )
-
-  return (
-    <div className="max-w-screen-xl mx-auto px-4 py-8">
-      {/* Hero Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-bold mb-8">
-          Forgn Incubator
-        </h1>
-        <p className="text-lg font-inter leading-relaxed max-w-3xl mx-auto">
-          Understanding why Houston needs this incubator and why East End Maker Hub is the perfect 
-          location for transforming art-tech ideas into successful consumer products.
-        </p>
-      </div>
-
-      {/* Tab Navigation */}
-      <div className="flex justify-center mb-8">
-        <div className="flex space-x-2 bg-gray-100 p-2 rounded-xl">
-          <TabButton tab="overview" label="Overview" />
-          <TabButton tab="membership" label="Membership" />
-                     <TabButton tab="social-media" label="Media" />
-        </div>
-      </div>
-
-      {/* Tab Content */}
-      <div className="min-h-[600px]">
-        {activeTab === 'overview' && renderOverviewContent()}
-        {activeTab === 'membership' && renderMembershipContent()}
-        {activeTab === 'social-media' && renderSocialMediaContent()}
-      </div>
 
       {/* CTA Section */}
       <div className="text-center">
