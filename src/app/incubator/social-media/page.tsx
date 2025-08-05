@@ -219,7 +219,7 @@ export default function SocialMedia() {
           <div className="bg-white border-2 border-customButton rounded-lg p-8 max-w-2xl mx-auto">
             <h2 className="text-3xl font-inter font-bold mb-6 text-customButton">Ready to Create Amazing Content?</h2>
             <p className="text-gray-700 mb-6">
-              Let's work together to create compelling video content that tells your story and connects with your audience.
+              Let&apos;s work together to create compelling video content that tells your story and connects with your audience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
