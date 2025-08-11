@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { createBreadcrumbs } from '@/utils/breadcrumbs'
 import Image from 'next/image'
+import { generateVideoSchema } from '@/utils/videoSchema'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Social Media & Video Production | Forgn Incubator',
@@ -30,32 +32,52 @@ export const metadata: Metadata = {
 }
 
 export default function SocialMedia() {
-  return (
-    <main className="flex flex-col items-center justify-between w-full min-h-screen">
-      <Breadcrumbs items={createBreadcrumbs.double('Incubator', '/incubator', 'Social Media', '/incubator/social-media')} />
-      <div className="max-w-screen-xl mx-auto px-4 py-8">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-bold mb-8">
-            Social Media & Video Production
-          </h1>
-          <p className="text-lg font-inter leading-relaxed max-w-3xl mx-auto">
-            Professional video production capabilities to help you create compelling content for social media, 
-            including interviews and day-in-the-life content that connects with your audience.
-          </p>
-        </div>
+  // Video schema markup
+  const videoSchema = generateVideoSchema({
+    name: 'Forgn Incubator Media Production Example',
+    description: 'Professional video production capabilities to help you create compelling content for social media, including interviews and day-in-the-life content that connects with your audience.',
+    videoId: 'yd7guWbqUCc',
+    duration: 'PT4M',
+    keywords: 'video production, social media, forgn incubator, media production, content creation',
+    genre: 'Business'
+  })
 
-        {/* Video Production Capabilities */}
-        <div className="mb-12 max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-inter font-bold mb-8 text-center text-gray-800 border-b-2 border-customButton pb-4">Video Production Capabilities</h2>
-            
-            {/* Example Video */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-inter font-semibold mb-6 text-center text-customButton">Example of Our Media Production</h3>
-              <div className="flex justify-center">
-                <div className="relative w-full max-w-5xl" style={{ height: '400px' }}>
-                                      <iframe
+  return (
+    <>
+      {/* Video Schema Markup */}
+      <Script
+        id="video-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(videoSchema),
+        }}
+      />
+      
+      <main className="flex flex-col items-center justify-between w-full min-h-screen">
+        <Breadcrumbs items={createBreadcrumbs.double('Incubator', '/incubator', 'Social Media', '/incubator/social-media')} />
+        <div className="max-w-screen-xl mx-auto px-4 py-8">
+          {/* Hero Section */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-bold mb-8">
+              Social Media & Video Production
+            </h1>
+            <p className="text-lg font-inter leading-relaxed max-w-3xl mx-auto">
+              Professional video production capabilities to help you create compelling content for social media, 
+              including interviews and day-in-the-life content that connects with your audience.
+            </p>
+          </div>
+
+          {/* Video Production Capabilities */}
+          <div className="mb-12 max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-3xl font-inter font-bold mb-8 text-center text-gray-800 border-b-2 border-customButton pb-4">Video Production Capabilities</h2>
+              
+              {/* Example Video */}
+              <div className="mb-8">
+                <h3 className="text-2xl font-inter font-semibold mb-6 text-center text-customButton">Example of Our Media Production</h3>
+                <div className="flex justify-center">
+                  <div className="relative w-full max-w-5xl" style={{ height: '400px' }}>
+                    <iframe
                       src="https://www.youtube.com/embed/yd7guWbqUCc"
                       title="Forgn Incubator Media Production Example"
                       className="w-full h-full rounded-lg shadow-lg"
@@ -63,12 +85,12 @@ export default function SocialMedia() {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
+                  </div>
                 </div>
+                <p className="text-center text-gray-600 mt-4 text-sm">
+                  Watch an example of our professional video production capabilities
+                </p>
               </div>
-              <p className="text-center text-gray-600 mt-4 text-sm">
-                Watch an example of our professional video production capabilities
-              </p>
-            </div>
             
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div>
@@ -239,5 +261,6 @@ export default function SocialMedia() {
         </div>
       </div>
     </main>
+    </>
   )
 } 
