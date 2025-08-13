@@ -142,6 +142,24 @@ const workshops = [
     model_fee: 'This course will include an additional model fee (a one time payment ranging from $48-$96 depending on enrollment)',
     materials: 'Materials are not included in the price of the course. Please see the materials list below.',
     materials_list: 'https://docs.google.com/spreadsheets/d/1lG1DxK3uZA63IBXre0M954Z_QzWF4i7UIRSWdFUHUS8'
+  },
+  {
+    id: '7',
+    slug: 'digital-art-workshope',
+    title: 'Digital Art Workshop',
+    type: 'digital art',
+    instructor: 'Marnie Shick',
+    description:
+      'In this workshop, we’ll paint “Alla Prima” digitally, using just a few layers & blend modes to create a painting that’s bursting with color! We’ll sketch from a reference and do most of the painting on a single layer. Then, we’ll add details & work with some basic blend modes. It’s helpful to have experience with drawing/painting, but different skill levels are welcome.',
+    keywords: 'oil painting, portrait painting, Zorn palette, alla prima, direct painting, oil painting techniques, portrait art, painting fundamentals, color mixing, limited palette, skin tones, oil painting methods, painting from life, live model painting, oil painting studio',
+    location: 'Forgn Studio @ East End Maker Hub - Y114',
+    image: '/classes/painting-1.png',
+    images: [
+      '/classes/digital-art-1.png',
+      '/classes/digital-art-2.png',
+      '/classes/digital-art-3.png',
+    ],
+    materials: 'Drawing tablet with a digital painting program. Photoshop and Procreate are preferred (as the instructor has experience with these 2 programs and will be able to help directly), but features demonstrated should be applicable to most digital programs.',
   }
 ]
 

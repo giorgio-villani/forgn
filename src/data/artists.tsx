@@ -4,6 +4,7 @@ interface Artist {
   picture: string
   description: string
   website?: string
+  instagram?: string
   active?: boolean
 }
 
@@ -15,6 +16,7 @@ const artists: Artist[] = [
     description:
       'Giorgio is a Houston-based Italian American mixed media artist whose work centers on the integration of technology with organic forms. His installations—featuring TVs, electrical components, and animatronic sculptures—examine the dynamic interaction between digital and natural systems, focusing on how technological mechanisms can simulate or enhance organic processes. Villani frequently collaborates with artists like Bailey Ryherd, Omar Ochoa, Betirri, and Daniel Calderon, merging disciplines to craft innovative, thought-provoking works that challenge conventional boundaries in art and technology.',
     website: 'https://spindletop.digital',
+    instagram: 'https://www.instagram.com/giorgi.max9',
     active: true,
   },
   {
@@ -24,6 +26,7 @@ const artists: Artist[] = [
     description:
       "Shelley, born in Houston, Texas, began her artistic journey in Europe, where her family moved to support her mother's opera career. Living in Paris and Milan for eleven years, she was inspired by Italian sculptor Ernesto Ornati to pursue sculpture. Townsend honed her craft at Loretto Heights College in Denver, Colorado, earning BFA degrees in both Sculpture and Painting. Her career flourished in New York City and later in Connecticut, where she studied under Peter Rubino. Now back in Houston, Townsend has produced a significant body of work and enjoys teaching sculpture, sharing her passion for creating beauty in its most natural form.",
     website: 'https://sculpturestudieswithshelley.info/',
+    instagram: 'https://www.instagram.com/shelley.townsend.71',
     active: true,
   },
      {
@@ -33,6 +36,7 @@ const artists: Artist[] = [
      description:
        "Peter is a two-dimensional artist born and raised in Houston, Texas. Peter attended The High School for Performing and Visual Arts and graduated from University of Houston with a Bachelor of Arts in Studio Painting. He has over 7 years of experience teaching art for several organizations including, including HISD, Art League Houston, The Woods Project and Meive Studio. He has been a resident artist of Box13 ArtSpace since 2020. Peter is also currently represented by Catapult Gallery in Richmond Texas. His most recent work is focused on the sensory aspect of experiencing nature, as well as the primal and instinctual aspects of human nature. Figurative elements, as well as natural and biological references are utilized to suggest a narrative between humans and nature.",
      website: 'https://www.peterbroz.com/',
+     instagram: 'https://www.instagram.com/peter_broz',
      active: true,
    },
    {
@@ -40,8 +44,9 @@ const artists: Artist[] = [
    slug: 'marnie-shick',
    picture: 'marnie-shick.jpg',
    description:
-     "Marnie Shick graduated with a B.F.A. in Animation from Savannah College of Art and Design in 2023. She's currently a resident artist at Jersey House Studio, where she's worked on concept art, character designs, storyboards, graphics, voice acting, and more. Marnie creates art primarily in Photoshop and Blender, but also uses traditional media. She's passionate about combining meaningful storytelling with quirky, experimental animation.",
+     "Marnie Shick graduated with a B.F.A. in Animation from Savannah College of Art and Design in 2023. She's currently a resident artist at <a href='https://www.instagram.com/jerseyhousestudio/' target='_blank' rel='noopener noreferrer' class='text-customButton hover:underline'>Jersey House Studio</a>, where she's worked on concept art, character designs, storyboards, graphics, voice acting, and more. Marnie creates art primarily in Photoshop and Blender, but also uses traditional media. She's passionate about combining meaningful storytelling with quirky, experimental animation.",
    website: 'https://www.marnieshick.com/',
+   instagram: 'https://www.instagram.com/marniealwaysdoodles2',
    active: true,
  },
   { name: 'Anne Billingsley',
