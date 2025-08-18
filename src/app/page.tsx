@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       {
         url: 'https://forgn.art/forgn_v2_metadata.png',
         width: 1200,
-        height: 630,
+        height: 628,
         alt: 'Forgn Studio Logo',
       },
     ],
