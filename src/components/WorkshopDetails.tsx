@@ -21,7 +21,6 @@ interface Workshop {
   time?: string
   price?: string
   discountedPrice?: string
-  image?: string
   images?: string[]
   booking?: string
   discount_booking?: string
@@ -179,7 +178,7 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
         <div className="flex flex-col md:flex-row items-start">
           <div className="w-full md:w-1/2 p-4">
             <ImageCarousel
-              images={workshop.images || (workshop.image ? [workshop.image] : [])}
+              images={workshop.images || []}
                 alt={workshop.title}
               className="w-full"
               />

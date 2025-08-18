@@ -161,7 +161,7 @@ export default function WorkshopList() {
                   >
                     {
                       <Image
-                        src={cls.images?.[0] || cls.image || '/classes/placeholder.jpg'}
+                        src={cls.images?.[0] || '/forgn_metadata.png'}
                         alt={cls.title}
                         width={300}
                         height={200}

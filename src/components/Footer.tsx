@@ -77,6 +77,15 @@ const Footer: React.FC = () => {
                   Linkedin
                 </a>
               </li>
+              <li>
+                {' '}
+                <a
+                  href="https://www.meetup.com/fusionartscollective/"
+                  className="hover:underline"
+                >
+                  Meetup
+                </a>
+              </li>
             </ul>
           </div>
         </div>

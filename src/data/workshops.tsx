@@ -14,12 +14,12 @@ const workshops = [
     price: '$400',
     discountedPrice: '$300',
     discountedEndDate: '2025-07-01',
-    image: '/classes/sculpture-class.png',
     images: [
       '/classes/sculpture-class.png',
       '/classes/sculpture-1.jpg',
       '/classes/sculpture-2.jpg',
-      '/classes/sculpture-3.jpg'
+      '/classes/sculpture-3.jpg',
+      '/classes/sculpture-4.jpg'
     ],
     booking: 'https://bookeo.com/forgnstudio',
     discount_booking: 'https://bookeo.com/forgnstudio',
@@ -39,7 +39,7 @@ const workshops = [
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$250',
-    image: '/classes/polymer-1.webp',
+    images: ['/classes/polymer-1.webp'],
   },
   {
     id: '2',
@@ -54,7 +54,7 @@ const workshops = [
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$150',
-    image: '/classes/digital-art.webp',
+    images: ['/classes/digital-art.webp'],
   },
   {
     id: '3',
@@ -69,7 +69,7 @@ const workshops = [
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$150',
-    image: '/classes/davinci.webp',
+    images: ['/classes/davinci.webp'],
   },
   {
     id: '4',
@@ -84,7 +84,7 @@ const workshops = [
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$150',
-    image: '/classes/ai.gif',
+    images: ['/classes/ai.gif'],
   },
   {
     id: '5',
@@ -99,7 +99,7 @@ const workshops = [
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$125',
-    image: '/classes/figma.webp',
+    images: ['/classes/figma.webp'],
   },
   {
     id: '6',
@@ -114,7 +114,7 @@ const workshops = [
     // sessions: 'Not scheduled yet',
     // time: 'Not scheduled yet',
     // price: '$125',
-    image: '/classes/blender_icon.webp',
+    images: ['/classes/blender_icon.webp'],
   },
   {
     id: '7',
@@ -131,7 +131,6 @@ const workshops = [
     price: '$430',
     discountedPrice: '$400',
     discountedEndDate: '2025-07-25',
-    image: '/classes/painting-1.png',
     images: [
       '/classes/painting-1.png',
       '/classes/painting-2.png',
@@ -153,13 +152,21 @@ const workshops = [
       'In this workshop, we’ll paint “Alla Prima” digitally, using just a few layers & blend modes to create a painting that’s bursting with color! We’ll sketch from a reference and do most of the painting on a single layer. Then, we’ll add details & work with some basic blend modes. It’s helpful to have experience with drawing/painting, but different skill levels are welcome.',
     keywords: 'oil painting, portrait painting, Zorn palette, alla prima, direct painting, oil painting techniques, portrait art, painting fundamentals, color mixing, limited palette, skin tones, oil painting methods, painting from life, live model painting, oil painting studio',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
-    image: '/classes/painting-1.png',
+    sessions: ['2025-09-16'],
+    time: '1:30pm to 4:30pm',
+    price: '$75',
+    discountedPrice: '$65',
+    discountedEndDate: '2025-08-25',
     images: [
       '/classes/digital-art-1.png',
       '/classes/digital-art-2.png',
       '/classes/digital-art-3.png',
     ],
+    booking: 'https://bookeo.com/forgnstudio',
+    discount_booking: 'https://bookeo.com/forgnstudio',
+    model_fee: '',
     materials: 'Drawing tablet with a digital painting program. Photoshop and Procreate are preferred (as the instructor has experience with these 2 programs and will be able to help directly), but features demonstrated should be applicable to most digital programs.',
+    materials_list: ''
   }
 ]
 
