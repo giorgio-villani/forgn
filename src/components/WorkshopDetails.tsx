@@ -8,6 +8,7 @@ import { createBreadcrumbs } from '@/utils/breadcrumbs'
 import ImageCarousel from '@/components/ImageCarousel'
 import Link from 'next/link'
 import artists from '@/data/artists'
+import { calculateDiscountedEndDate, isEarlyBirdActive, getEarlyBirdCountdown } from '@/utils/workshopUtils'
 
 interface Workshop {
   id: string
@@ -27,7 +28,7 @@ interface Workshop {
   slug: string
   model_fee?: string
   materials?: string | { name: string; url: string }[]
-  discountedEndDate?: string
+  discountDaysBefore?: number
   materials_list?: string
 }
 
@@ -122,13 +123,10 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
     return 'ending soon';
   };
 
-  // Helper to check if Early Bird is active
-  const isEarlyBirdActive = (endDate?: string) => {
-    if (!endDate) return true;
-    const now = new Date();
-    const end = new Date(endDate + 'T23:59:59');
-    return end.getTime() > now.getTime();
-  };
+  // Calculate discounted end date dynamically
+  const discountedEndDate = workshop.discountDaysBefore 
+    ? calculateDiscountedEndDate(workshop.sessions, workshop.discountDaysBefore)
+    : undefined;
 
   // Type guard for materials array
   function isMaterialsArray(materials: any): materials is { name: string; url: string }[] {
@@ -262,18 +260,18 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
               )}
               <p className="text-sm lg:text-lg mb-4">
                 🏷️<strong>Price:</strong> {
-                  workshop.discountedPrice && isEarlyBirdActive(workshop.discountedEndDate) ? (
+                  workshop.discountedPrice && isEarlyBirdActive(discountedEndDate) ? (
                     <>
                       <span className="line-through text-gray-500">{workshop.price}</span>
                       {' '}
                       <span className="text-red-600">
                         {workshop.discountedPrice}
-                        {workshop.discountedEndDate && getEarlyBirdCountdown(workshop.discountedEndDate) !== 'ended' && (
+                        {discountedEndDate && getEarlyBirdCountdown(discountedEndDate) !== 'ended' && (
                           <span className="ml-2 text-xs bg-yellow-200 text-yellow-800 px-2 py-1 rounded align-middle">
-                            Early Bird ({getEarlyBirdCountdown(workshop.discountedEndDate)})
+                            Early Bird ({getEarlyBirdCountdown(discountedEndDate)})
                           </span>
                         )}
-                        {!workshop.discountedEndDate && (
+                        {!discountedEndDate && (
                           <span className="ml-2 text-xs bg-yellow-200 text-yellow-800 px-2 py-1 rounded align-middle">Early Bird</span>
                         )}
                       </span>
@@ -289,7 +287,7 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
                   <a href={getBookingUrl(workshop.discount_booking || workshop.booking)} target="_blank">
                     <button type="submit" className={`w-full rounded py-3 text-white hover:bg-green-500 mb-2 bg-green-600 hover:bg-green-500'
                     }`}>
-                      {workshop.discount_booking && isEarlyBirdActive(workshop.discountedEndDate) ? 'Sign up with Discount' : 'Sign Up'}
+                      {workshop.discount_booking && isEarlyBirdActive(discountedEndDate) ? 'Sign up with Discount' : 'Sign Up'}
                     </button>
                   </a>
                 )
