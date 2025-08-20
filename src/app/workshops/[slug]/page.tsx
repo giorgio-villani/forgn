@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         {
           url: `https://forgn.art${workshop.images[0]}`,
           width: 1200,
-          height: 630,
+          height: 628,
           alt: workshop.title,
         },
       ] : undefined,
