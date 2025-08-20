@@ -1,16 +1,23 @@
 /**
  * Calculate the discounted end date based on the first session date
- * @param sessions - Array of session dates (YYYY-MM-DD format)
+ * @param sessions - Session dates (string or array of strings in YYYY-MM-DD format)
  * @param daysBefore - Number of days before the first session to end the discount
  * @returns Date string in YYYY-MM-DD format, or undefined if no sessions
  */
-export function calculateDiscountedEndDate(sessions: string[] | undefined, daysBefore: number): string | undefined {
-  if (!sessions || sessions.length === 0) {
+export function calculateDiscountedEndDate(sessions: string | string[] | undefined, daysBefore: number): string | undefined {
+  if (!sessions) {
+    return undefined;
+  }
+
+  // Convert to array if it's a string
+  const sessionsArray = Array.isArray(sessions) ? sessions : [sessions];
+  
+  if (sessionsArray.length === 0) {
     return undefined;
   }
 
   // Get the first session date
-  const firstSessionDate = new Date(sessions[0] + 'T00:00:00');
+  const firstSessionDate = new Date(sessionsArray[0] + 'T00:00:00');
   
   // Calculate the discounted end date
   const discountedEndDate = new Date(firstSessionDate);
