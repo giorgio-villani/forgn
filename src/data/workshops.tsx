@@ -145,7 +145,7 @@ const workshops = [
   {
     id: '7',
     slug: 'digital-art-workshop',
-    title: 'Digital Art Workshop',
+    title: 'Painting with Pixels: Digital Art Workshop',
     type: 'digital art',
     instructor: 'Marnie Shick',
     description:
