@@ -49,6 +49,16 @@ const artists: Artist[] = [
    instagram: 'https://www.instagram.com/marniealwaysdoodles2',
    active: true,
  },
+ { name: 'Kieran Skelly',
+   slug: 'kieran-skelly',
+   picture: 'kieran.jpg',
+   description: 'Kieran Skelly graduated from Santa Clara University with a degree in UAV Engineering, where his entrepreneurial journey began in a garage filled with custom-built drones powered by Pixhawk flight controllers. That garage, and the growing drone collection, was lost to a winter space heater fire, but the setback only fueled his determination. By the following semester, he was filming campus events, co-founding the university\'s AIAA chapter, and serving as its vice president.\n\n' +
+  'After college, he put his engineering background to work at a wind turbine inspection company, pioneering the use of heavy Sony A7R cameras on drones to capture and transmit high-resolution imagery. He went on to develop one of the first long-distance drone video links, a breakthrough that led him to Skycatch, a VC-backed drone surveying startup. There, as Lead Customer Success Manager, he trained a global team on UAV standards, led onboarding and testing programs, and traveled to hundreds of sites across 18 countries. In the process, he became a translator of sorts: bridging the gap between Silicon Valley design thinking and the realities of rural mining operations.\n\n' +
+      'When the pandemic hit, his inventive streak resurfaced, this time in the world of lighting. Starting again with a Pixhawk controller and the same hands-on curiosity that launched his drone career, he began experimenting with light as both an engineer and an artist. Today, as founder and entrepreneur, he\'s driven by a mission larger than hardware: to illuminate hidden truths and teach his fellow fish about the water they swim in.',
+   website: 'https://thegridlightsstore.com/',
+       instagram: 'https://www.instagram.com/grid_lights',
+   active: true,
+ }, 
   { name: 'Anne Billingsley',
     slug: 'anne-billingsley',
     picture: 'anne-1.webp',

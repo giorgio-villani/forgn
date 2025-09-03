@@ -167,7 +167,22 @@ const workshops = [
     model_fee: '',
     materials: 'Drawing tablet with a digital painting program. Photoshop and Procreate are preferred (as the instructor has experience with these 2 programs and will be able to help directly), but features demonstrated should be applicable to most digital programs.',
     materials_list: ''
-  }
+  },
+    {
+      id: '8',
+      slug: 'led-grid-lights',
+      title: 'LED Lighting: Gridlight workshop',
+      type: 'electronics',
+      instructor: 'Kieran Skelly',
+      description:
+        'Learn the fundamentals of modern lighting while crafting your own custom wooden pendant fixture! In this hands-on class, you will explore the science of LEDs, from how they work to why they are transforming lighting worldwide. Through engaging lectures and demos, you will gain practical knowledge of electronics, microcontrollers, and the WLED software that makes your fixture interactive and customizable. \n\n' + 'After the overview, you will roll up your sleeves to build your light fixture using pre-cut wooden pieces, LEDs, an ESP32 controller, and all provided tools. Step-by-step, you will wire, configure, and assemble your pendant, learning safety tips and practical skills along the way. By the end, you will take home a fully functional, beautifully modern light fixture you built yourself.',
+      keywords: 'led, grid, lights, wood, pendant, fixture, electronics, microcontroller, wled, esp32, woodworking, woodworking tools, woodworking techniques, woodworking tools, woodworking techniques, woodworking tools, woodworking techniques, woodworking tools, woodworking techniques, woodworking tools, woodworking techniques',
+      location: 'Forgn Studio @ East End Maker Hub - Y114',
+      // sessions: 'Not scheduled yet',
+      // time: 'Not scheduled yet',
+      // price: '$125',
+      images: ['/classes/gridlights.jpg'],
+    },
 ]
 
 export default workshops
