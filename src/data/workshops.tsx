@@ -154,7 +154,7 @@ const workshops = [
     location: 'Forgn Studio @ East End Maker Hub - Y114',
     sessions: ['2025-09-06'],
     time: '1:30pm to 4:30pm',
-    price: '$75',
+    price: '$65',
     discountedPrice: '$65',
     discountDaysBefore: 10,
     images: [
