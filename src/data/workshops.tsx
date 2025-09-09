@@ -152,7 +152,7 @@ const workshops = [
       'In this workshop, we’ll paint digitally, using just a few layers & blend modes to create a painting that’s bursting with color! We’ll sketch from a reference and do most of the painting on a single layer. Then, we’ll add details & work with some basic blend modes. It’s helpful to have experience with drawing/painting, but different skill levels are welcome.',
     keywords: 'oil painting, portrait painting, Zorn palette, alla prima, direct painting, oil painting techniques, portrait art, painting fundamentals, color mixing, limited palette, skin tones, oil painting methods, painting from life, live model painting, oil painting studio',
     location: 'Forgn Studio @ East End Maker Hub - Y114',
-    sessions: ['2025-09-06'],
+    sessions: ['2025-09-27'],
     time: '1:30pm to 4:30pm',
     price: '$65',
     discountedPrice: '$65',
