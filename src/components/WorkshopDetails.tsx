@@ -155,9 +155,9 @@ export default function WorkshopDetails({ workshop, searchParams }: WorkshopDeta
             `}
           </Script>
           <noscript>
-            <img 
-              height="1" 
-              width="1" 
+            <Image 
+              height={1} 
+              width={1} 
               style={{display: 'none'}}
               src="https://www.facebook.com/tr?id=725525180424391&ev=PageView&noscript=1"
               alt=""

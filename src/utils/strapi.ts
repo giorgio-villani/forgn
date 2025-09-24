@@ -57,7 +57,7 @@ async function fetchFromStrapi<T>(endpoint: string): Promise<T> {
   } catch (error) {
     // Enhanced error logging for monitoring
     console.error(`🚨 Strapi API Failure: ${endpoint}`, {
-      error: error.message,
+      error: error instanceof Error ? error.message : String(error),
       url,
       timestamp: new Date().toISOString()
     })
@@ -72,7 +72,11 @@ export async function getAllWorkshops(): Promise<StrapiWorkshop[]> {
     return response.data
   } catch (error) {
     console.error('🚨 getAllWorkshops failed - API unavailable')
-    // Don't return fallback data - let the component handle the error
+    // During build time, return empty array to prevent build failures
+    if (process.env.NODE_ENV === 'production' && process.env.NEXT_PHASE === 'phase-production-build') {
+      console.warn('Build time: Returning empty workshops array due to API unavailability')
+      return []
+    }
     throw error
   }
 }
@@ -127,8 +131,17 @@ export async function getAllArtists(): Promise<StrapiArtist[]> {
 
 // Team API functions
 export async function getAllTeams(): Promise<StrapiTeam[]> {
-  const response: StrapiResponse<StrapiTeam[]> = await fetchFromStrapi(STRAPI_CONFIG.teamsEndpoint)
-  return response.data
+  try {
+    const response: StrapiResponse<StrapiTeam[]> = await fetchFromStrapi(STRAPI_CONFIG.teamsEndpoint)
+    return response.data
+  } catch (error) {
+    console.error('🚨 getAllTeams failed - API unavailable')
+    if (process.env.NODE_ENV === 'production' && process.env.NEXT_PHASE === 'phase-production-build') {
+      console.warn('Build time: Returning empty teams array due to API unavailability')
+      return []
+    }
+    throw error
+  }
 }
 
 export async function getTeamBySlug(slug: string): Promise<StrapiTeam | null> {
@@ -258,7 +271,7 @@ export function transformStrapiWorkshop(strapiWorkshop: StrapiWorkshop) {
     discount_booking: strapiWorkshop.discount_booking || strapiWorkshop.booking,
     model_fee: strapiWorkshop.model_fee,
     materials: strapiWorkshop.materials,
-    materials_list: strapiWorkshop.materials_list,
+    materials_list: strapiWorkshop.materials_list || undefined,
   }
 }
 
@@ -287,8 +300,17 @@ export function transformStrapiTeam(strapiTeam: StrapiTeam) {
 
 // Location API functions
 export async function getAllLocations(): Promise<StrapiLocation[]> {
-  const response: StrapiResponse<StrapiLocation[]> = await fetchFromStrapi(STRAPI_CONFIG.locationsEndpoint)
-  return response.data
+  try {
+    const response: StrapiResponse<StrapiLocation[]> = await fetchFromStrapi(STRAPI_CONFIG.locationsEndpoint)
+    return response.data
+  } catch (error) {
+    console.error('🚨 getAllLocations failed - API unavailable')
+    if (process.env.NODE_ENV === 'production' && process.env.NEXT_PHASE === 'phase-production-build') {
+      console.warn('Build time: Returning empty locations array due to API unavailability')
+      return []
+    }
+    throw error
+  }
 }
 
 export async function getLocationBySlug(slug: string): Promise<StrapiLocation | null> {
