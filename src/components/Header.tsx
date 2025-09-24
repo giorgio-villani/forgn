@@ -36,11 +36,11 @@ const Header: React.FC = () => {
         <a className="hover:opacity-50 transition duration-300 m-5" href="/">
           <Image
             src="/forgn_v2.png"
-            className="w-[200px] h-auto"
             alt="Forgn Studio logo"
             width={200}
             height={200}
             priority
+            style={{ width: 'auto', height: 'auto' }}
           />
         </a>
 
@@ -57,9 +57,8 @@ const Header: React.FC = () => {
 
           {/* Always visible on larger screens */}
           <div className="hidden lg:flex items-center space-x-4">
-            <LinkButton href="/sculpture" text="Sculpture" />
-            <LinkButton href="/digital" text="Digital Art" />
-            <LinkButton href="/gallery" text="Gallery" />
+            <LinkButton href="/workshops" text="Workshops" />
+            <LinkButton href="/locations" text="Locations" />
             <div className="relative group">
               <button className="px-4 py-2 rounded-md flex items-center">
                 Incubator
@@ -78,10 +77,10 @@ const Header: React.FC = () => {
               </button>
               <div className="absolute hidden group-hover:block bg-white border rounded-md shadow-lg">
                 <LinkButton href="/team" text="Team" />
-                <LinkButton href="/workshops" text="Workshops" />
-                <LinkButton href="/activations" text="Activations" />
+                <LinkButton href="/gallery" text="Gallery" />
                 <LinkButton href="/donate" text="Donate" />
                 <LinkButton href="/press-releases" text="Press" />
+                <LinkButton href="/blog" text="Blog" />
               </div>
             </div>
             <CustomButton href="/calendar" text="Calendar" />
@@ -96,10 +95,10 @@ const Header: React.FC = () => {
               <a href="/" className="hover:opacity-50 transition duration-300">
                 <Image
                   src="/forgn_v2.png"
-                  className="w-[150px] h-auto"
                   alt="Forgn Studio logo"
                   width={150}
                   height={150}
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </a>
               <button
@@ -115,10 +114,9 @@ const Header: React.FC = () => {
             <div className="flex-1 flex flex-col items-center px-6 py-4 space-y-8 overflow-y-auto">
               {/* Main Navigation */}
               <div className="space-y-4 text-center w-full max-w-sm">
-                <h3 className="text-lg font-semibold text-gray-500 uppercase tracking-wide">Art / Creativity</h3>
-                <LinkButton href="/sculpture" text="Sculpture" />
-                <LinkButton href="/digital" text="Digital Art" />
-                <LinkButton href="/gallery" text="Gallery" />
+                <h3 className="text-lg font-semibold text-gray-500 uppercase tracking-wide">Main</h3>
+                <LinkButton href="/workshops" text="Workshops" />
+                <LinkButton href="/locations" text="Locations" />
               </div>
               
               {/* Incubator Section */}
@@ -133,10 +131,10 @@ const Header: React.FC = () => {
               <div className="space-y-4 text-center w-full max-w-sm">
                 <h3 className="text-lg font-semibold text-gray-500 uppercase tracking-wide">More</h3>
                 <LinkButton href="/team" text="Team" />
-                <LinkButton href="/workshops" text="Workshops" />
-                <LinkButton href="/activations" text="Activations" />
+                <LinkButton href="/gallery" text="Gallery" />
                 <LinkButton href="/donate" text="Donate" />
                 <LinkButton href="/press-releases" text="Press" />
+                <LinkButton href="/blog" text="Blog" />
               </div>
             </div>
             

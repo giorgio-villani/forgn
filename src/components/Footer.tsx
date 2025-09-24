@@ -10,11 +10,11 @@ const Footer: React.FC = () => {
         <div className="m-5">
           <Image
             src="/forgn_v2.png"
-            className="w-[150px] h-auto"
             alt="Forgn Studio logo"
             width={150}
             height={150}
             priority
+            style={{ width: 'auto', height: 'auto' }}
           />
           <p className="text-sm mt-1">ART AND TECH MEET</p>
         </div>

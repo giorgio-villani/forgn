@@ -1,5 +1,40 @@
 import { STRAPI_CONFIG, StrapiResponse, StrapiWorkshop, StrapiBlogPost, StrapiArtist, StrapiTeam, StrapiLocation } from '@/types/strapi'
 
+// Health check function to monitor API status
+export async function checkStrapiHealth(): Promise<{ status: 'healthy' | 'unhealthy', error?: string }> {
+  try {
+    const response = await fetch(`${STRAPI_CONFIG.apiUrl}/workshops?pagination[limit]=1`, {
+      headers: { 'Content-Type': 'application/json' }
+    })
+    
+    if (response.ok) {
+      return { status: 'healthy' }
+    } else {
+      return { 
+        status: 'unhealthy', 
+        error: `HTTP ${response.status}: ${response.statusText}` 
+      }
+    }
+  } catch (error) {
+    return { 
+      status: 'unhealthy', 
+      error: error instanceof Error ? error.message : 'Unknown error' 
+    }
+  }
+}
+
+// Better error handling for components
+export class StrapiError extends Error {
+  constructor(
+    message: string,
+    public endpoint: string,
+    public statusCode?: number
+  ) {
+    super(message)
+    this.name = 'StrapiError'
+  }
+}
+
 // Generic function to fetch data from Strapi
 async function fetchFromStrapi<T>(endpoint: string): Promise<T> {
   const url = `${STRAPI_CONFIG.apiUrl}${endpoint}`
@@ -13,20 +48,33 @@ async function fetchFromStrapi<T>(endpoint: string): Promise<T> {
     })
 
     if (!response.ok) {
+      // Log API failures for monitoring
+      console.error(`🚨 Strapi API Error: ${response.status} ${response.statusText} for ${endpoint}`)
       throw new Error(`Failed to fetch from Strapi: ${response.status} ${response.statusText}`)
     }
 
     return await response.json()
   } catch (error) {
-    console.error(`Error fetching from Strapi endpoint ${endpoint}:`, error)
+    // Enhanced error logging for monitoring
+    console.error(`🚨 Strapi API Failure: ${endpoint}`, {
+      error: error.message,
+      url,
+      timestamp: new Date().toISOString()
+    })
     throw error
   }
 }
 
 // Workshop API functions
 export async function getAllWorkshops(): Promise<StrapiWorkshop[]> {
-  const response: StrapiResponse<StrapiWorkshop[]> = await fetchFromStrapi(STRAPI_CONFIG.workshopsEndpoint)
-  return response.data
+  try {
+    const response: StrapiResponse<StrapiWorkshop[]> = await fetchFromStrapi(STRAPI_CONFIG.workshopsEndpoint)
+    return response.data
+  } catch (error) {
+    console.error('🚨 getAllWorkshops failed - API unavailable')
+    // Don't return fallback data - let the component handle the error
+    throw error
+  }
 }
 
 export async function getWorkshopBySlug(slug: string): Promise<StrapiWorkshop | null> {
@@ -107,55 +155,6 @@ export async function getArtistBySlug(slug: string): Promise<StrapiArtist | null
   }
 }
 
-// Helper function to get fallback images based on workshop type and slug
-function getFallbackImages(workshop: StrapiWorkshop): string[] {
-  // Map of workshop slugs to their original images from the static data
-  const imageMap: Record<string, string[]> = {
-    'sculpture-class-terracotta': [
-      '/classes/sculpture-class.png',
-      '/classes/sculpture-1.jpg',
-      '/classes/sculpture-2.jpg',
-      '/classes/sculpture-3.jpg',
-      '/classes/sculpture-4.jpg'
-    ],
-    'oil-painting-zorn-palette': [
-      '/classes/painting-1.png',
-      '/classes/painting-2.png',
-      '/classes/painting-3.png',
-    ],
-    'sculpture-class-polymer-clay': ['/classes/polymer-1.webp'],
-    'digital-art-101': ['/classes/digital-art.webp'],
-    'video-editing-davinci': ['/classes/davinci.webp'],
-    'ai-art-stable-diffusion': ['/classes/ai.gif'],
-    'website-design-figma': ['/classes/figma.webp'],
-    'blender-3d-sculpting': ['/classes/blender_icon.webp'],
-    'digital-art-workshop': [
-      '/classes/digital-art-1.png',
-      '/classes/digital-art-2.png',
-      '/classes/digital-art-3.png',
-    ],
-    'led-grid-lights': ['/classes/gridlights.jpg'],
-    'mig-welding-101': ['/classes/welding.jpg'], // Add MIG welding class image
-  }
-
-  // Return mapped images if available, otherwise return default based on type
-  if (imageMap[workshop.slug]) {
-    return imageMap[workshop.slug]
-  }
-
-  // Fallback images based on workshop type
-  const typeFallbacks: Record<string, string[]> = {
-    'sculpture': ['/classes/sculpture-class.png'],
-    'painting': ['/classes/painting-1.png'],
-    'digital art': ['/classes/digital-art.webp'],
-    'film': ['/classes/davinci.webp'],
-    'website design': ['/classes/figma.webp'],
-    'electronics': ['/classes/gridlights.jpg'],
-    'welding': ['/classes/welding.jpg'], // Add welding type fallback
-  }
-
-  return typeFallbacks[workshop.type] || ['/forgn_metadata.png']
-}
 
 // Helper function to extract image URLs from Strapi image objects with intelligent sorting
 function extractImageUrls(strapiImages: any[], workshopSlug: string): string[] {
@@ -234,6 +233,11 @@ export function transformStrapiWorkshop(strapiWorkshop: StrapiWorkshop) {
   // Extract image URLs from Strapi image objects with proper sorting
   const strapiImageUrls = strapiWorkshop.images ? extractImageUrls(strapiWorkshop.images, strapiWorkshop.slug) : []
   
+  // Log when no images are available from Strapi
+  if (strapiImageUrls.length === 0) {
+    console.warn(`⚠️ No images from Strapi for workshop: ${strapiWorkshop.slug}`)
+  }
+  
   return {
     id: strapiWorkshop.id.toString(),
     slug: strapiWorkshop.slug,
@@ -243,13 +247,13 @@ export function transformStrapiWorkshop(strapiWorkshop: StrapiWorkshop) {
     instructor: strapiWorkshop.instructor,
     description: strapiWorkshop.description,
     keywords: strapiWorkshop.keywords,
-    location: strapiWorkshop.Studio || 'Forgn Studio @ East End Maker Hub - Y114',
+    location: strapiWorkshop.Studio || 'Forgn Studio @ East End Maker Hub - Y114', // Essential fallback for location
     sessions: strapiWorkshop.sessions,
     time: strapiWorkshop.time,
     price: `$${strapiWorkshop.price}`,
     discountedPrice: strapiWorkshop.discountedPrice ? `$${strapiWorkshop.discountedPrice}` : undefined,
     discountDaysBefore: strapiWorkshop.discountDaysBefore,
-    images: strapiImageUrls.length > 0 ? strapiImageUrls : getFallbackImages(strapiWorkshop),
+    images: strapiImageUrls, // Only use images from Strapi
     booking: strapiWorkshop.booking,
     discount_booking: strapiWorkshop.discount_booking || strapiWorkshop.booking,
     model_fee: strapiWorkshop.model_fee,
@@ -316,7 +320,7 @@ export function transformStrapiLocation(strapiLocation: StrapiLocation) {
     email: undefined, // Not provided in API
     website: undefined, // Not provided in API
     description: strapiLocation.description,
-    images: strapiImageUrls.length > 0 ? strapiImageUrls : ['/locations/default-location.jpg'],
+    images: strapiImageUrls,
     latitude: strapiLocation.location.coordinates.lat,
     longitude: strapiLocation.location.coordinates.lng,
     active: strapiLocation.active ?? true, // Use API value or default to true
@@ -336,8 +340,10 @@ export async function getAllBlogs(): Promise<StrapiBlogPost[]> {
 
 export async function getBlogBySlug(slug: string): Promise<StrapiBlogPost | null> {
   try {
-    const blogs = await getAllBlogs()
-    return blogs.find(blog => blog.slug === slug) || null
+    const response: StrapiResponse<StrapiBlogPost[]> = await fetchFromStrapi(
+      `/blogs?filters[slug][$eq]=${slug}&populate=*`
+    )
+    return response.data[0] || null
   } catch (error) {
     console.error(`Error fetching blog with slug ${slug}:`, error)
     return null

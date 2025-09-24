@@ -72,52 +72,34 @@ export default function RootLayout({
           href="/apple-touch-icon.png"
           sizes="180x180"
         />
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-NVP7C6MS');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-      </head>
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NVP7C6MS"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
-        
-        {/* Performance Monitoring - Development Only */}
-        {process.env.NODE_ENV === 'development' && (
-          <Script
-            id="web-vitals"
-            strategy="afterInteractive"
+        {/* Google Tag Manager - Only in production */}
+        {process.env.NODE_ENV === 'production' && (
+          <script
             dangerouslySetInnerHTML={{
-              __html: `
-                if (typeof window !== 'undefined') {
-                  import('web-vitals').then((webVitals) => {
-                    webVitals.getCLS(console.log);
-                    webVitals.getFID(console.log);
-                    webVitals.getFCP(console.log);
-                    webVitals.getLCP(console.log);
-                    webVitals.getTTFB(console.log);
-                  }).catch(err => {
-                    console.log('Web Vitals not available:', err);
-                  });
-                }
-              `,
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-NVP7C6MS');`,
             }}
           />
         )}
+        {/* End Google Tag Manager */}
+      </head>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
+        {/* Google Tag Manager (noscript) - Only in production */}
+        {process.env.NODE_ENV === 'production' && (
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-NVP7C6MS"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        )}
+        {/* End Google Tag Manager (noscript) */}
+        
         
         <Header />
         <div className="grow">{children}</div>

@@ -176,3 +176,9 @@ export const STRAPI_CONFIG = {
   locationsEndpoint: process.env.URL_LOCATIONS || '/locations?populate=*',
   blogsEndpoint: process.env.URL_BLOGS || '/blogs?populate=*',
 } as const
+
+// Debug: Log the current Strapi configuration
+console.log('🔍 Strapi Configuration Debug:')
+console.log('STRAPI_BASE_URL env var:', process.env.STRAPI_BASE_URL)
+console.log('Using baseUrl:', STRAPI_CONFIG.baseUrl)
+console.log('Using apiUrl:', STRAPI_CONFIG.apiUrl)

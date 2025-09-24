@@ -8,6 +8,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1337',
+        pathname: '/**',
+      },
     ],
   },
   async redirects() {
@@ -19,7 +25,10 @@ const nextConfig = {
       { source: '/workshops/4', destination: '/workshops/ai-art-stable-diffusion', permanent: true },
       { source: '/workshops/5', destination: '/workshops/website-design-figma', permanent: true },
       { source: '/workshops/6', destination: '/workshops/blender-3d-sculpting', permanent: true },
-      { source: '/admin', destination: 'https://ambitious-cactus-1589a7699f.strapiapp.com/admin', permanent: true },
+      { source: '/sculpture', destination: '/blog/sculpture-classes-at-forgn-studio', permanent: true },
+      { source: '/digital', destination: '/blog/innovate-with-digital-art', permanent: true },
+      { source: '/activations', destination: '/blog/activations', permanent: true },
+      { source: '/gallery', destination: '/blog/forgn-the-art-gallery', permanent: true },
     ]
   },
 }

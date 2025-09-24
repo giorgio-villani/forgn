@@ -45,7 +45,7 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
           alt={alt}
           width={750}
           height={500}
-          className="w-full h-auto object-contain max-w-full rounded-lg"
+          className="object-contain max-w-full rounded-lg"
         />
       </div>
     )
@@ -60,7 +60,7 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
           alt={`${alt} - Image ${currentIndex + 1}`}
           width={750}
           height={500}
-          className="w-full h-auto object-contain max-w-full transition-transform duration-300 ease-in-out"
+          className="object-contain max-w-full transition-transform duration-300 ease-in-out"
         />
         
         {/* Navigation Arrows */}

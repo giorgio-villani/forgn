@@ -51,7 +51,6 @@ const About: React.FC = () => {
           className={`bg-white text-black border border-customButton p-4 transition-transform duration-100 transform hover:-translate-y-5 md:aspect-1 flex flex-col`}
         >
           <Image 
-            className="w-12 h-12" 
             src={icon} 
             alt={alt}
             width={48}
@@ -96,7 +95,6 @@ const About: React.FC = () => {
               alt="Daniel Calderon artwork from Art of Gen exhibition"
               width={1200}
               height={500}
-              className="w-full h-auto"
               priority
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
@@ -234,7 +232,7 @@ const About: React.FC = () => {
                 alt="Forgn Studio activation event showcasing art and technology"
                 width={400}
                 height={300}
-                className="w-full h-auto max-w-xs md:max-w-md transform hover:scale-105 transition duration-500 ease-in-out"
+                className="max-w-xs md:max-w-md transform hover:scale-105 transition duration-500 ease-in-out"
               />
             </div>
           </div>

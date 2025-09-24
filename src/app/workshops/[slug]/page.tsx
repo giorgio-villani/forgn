@@ -1,19 +1,21 @@
 import { notFound } from 'next/navigation'
-import workshops from '@/data/workshops'
+import { getWorkshopBySlug, getAllWorkshops, transformStrapiWorkshop } from '@/utils/strapi'
 import { Metadata } from 'next'
 import WorkshopDetails from '@/components/WorkshopDetails'
 
 
 // Generate metadata for dynamic workshop pages
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const workshop = workshops.find((w) => w.slug === params.slug)
+  const strapiWorkshop = await getWorkshopBySlug(params.slug)
   
-  if (!workshop) {
+  if (!strapiWorkshop) {
     return {
       title: 'Workshop Not Found | Forgn Studio',
       description: 'The requested workshop could not be found.',
     }
   }
+
+  const workshop = transformStrapiWorkshop(strapiWorkshop)
 
   return {
     title: `${workshop.title} | Forgn Studio`,
@@ -44,7 +46,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 // Generate static params for all workshops
 export async function generateStaticParams() {
-  return workshops.map((workshop) => ({
+  const strapiWorkshops = await getAllWorkshops()
+  return strapiWorkshops.map((workshop) => ({
     slug: workshop.slug,
   }))
 }
@@ -56,13 +59,15 @@ interface ClassDetailsProps {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function ClassDetails({ params, searchParams }: ClassDetailsProps) {
+export default async function ClassDetails({ params, searchParams }: ClassDetailsProps) {
   const { slug } = params
-  const workshop = workshops.find((workshop) => workshop.slug === slug)
+  const strapiWorkshop = await getWorkshopBySlug(slug)
 
-  if (!workshop) {
+  if (!strapiWorkshop) {
     return notFound()
   }
+
+  const workshop = transformStrapiWorkshop(strapiWorkshop)
 
   return <WorkshopDetails workshop={workshop} searchParams={searchParams} />
 } 
