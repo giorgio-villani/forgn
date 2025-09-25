@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     'Join Forgn Studio to learn art, connect with visionary artists, participate in hands-on classes, and engage in creative workshops blending physical and digital creativity.',
   keywords:
     'art, artists, classes, digital, gallery, workshops, teachers, school, learning, learn, art classes, sculpture, digital art, painting, drawing, creative classes, art education, Houston art studio, art lessons, art events, art exhibitions, creative community, art techniques, artistic skills, art for kids, art for adults, art courses, visual arts',
+  manifest: '/manifest.json',
+  themeColor: '#dc2626',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Forgn Studio',
+  },
+  formatDetection: {
+    telephone: false,
+  },
   openGraph: {
     title: 'Forgn Studio',
     description: 'Learn Skills, Make Art and Meet People',
