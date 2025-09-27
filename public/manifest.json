@@ -62,10 +62,22 @@
   ],
   "shortcuts": [
     {
-      "name": "View Classes",
-      "short_name": "Classes",
-      "description": "Browse available art classes",
+      "name": "View Workshops",
+      "short_name": "Workshops",
+      "description": "Browse available art workshops",
       "url": "/workshops",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Submit Workshop",
+      "short_name": "Submit Workshop",
+      "description": "Submit a workshop proposal",
+      "url": "/workshops/submit-workshop",
       "icons": [
         {
           "src": "/icons/icon-96x96.png",
@@ -78,6 +90,18 @@
       "short_name": "Locations",
       "description": "Find studio locations",
       "url": "/locations",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Submit Location",
+      "short_name": "Submit Location",
+      "description": "Submit a location proposal",
+      "url": "/locations/submit-location",
       "icons": [
         {
           "src": "/icons/icon-96x96.png",

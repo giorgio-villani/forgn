@@ -38,4 +38,18 @@ export const createBreadcrumbs = {
     { name: 'Locations', href: '/locations' },
     { name: locationName, href: locationPath },
   ],
+  
+  // Location submission: Home > Locations > Submit Location
+  locationSubmission: (): BreadcrumbItem[] => [
+    { name: 'Home', href: '/' },
+    { name: 'Locations', href: '/locations' },
+    { name: 'Submit Location', href: '/locations/submit-location' },
+  ],
+  
+  // Workshop submission: Home > Workshops > Submit Workshop
+  workshopSubmission: (): BreadcrumbItem[] => [
+    { name: 'Home', href: '/' },
+    { name: 'Workshops', href: '/workshops' },
+    { name: 'Submit Workshop', href: '/workshops/submit-workshop' },
+  ],
 } 
