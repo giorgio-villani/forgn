@@ -272,6 +272,7 @@ export function transformStrapiWorkshop(strapiWorkshop: StrapiWorkshop) {
     model_fee: strapiWorkshop.model_fee,
     materials: strapiWorkshop.materials,
     materials_list: strapiWorkshop.materials_list || undefined,
+    active: strapiWorkshop.active ?? true, // Use API value or default to true
   }
 }
 

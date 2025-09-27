@@ -109,6 +109,7 @@ export interface StrapiWorkshop extends StrapiItem {
   materials: string
   materials_list: string | null
   images?: StrapiImage[]
+  active?: boolean
   // Additional fields that might be in your current data
   discountedPrice?: number
   discountDaysBefore?: number

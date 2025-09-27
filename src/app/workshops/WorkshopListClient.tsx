@@ -24,6 +24,7 @@ interface Workshop {
   model_fee: string
   materials: string
   materials_list?: string
+  active?: boolean
 }
 
 interface WorkshopListClientProps {
@@ -33,6 +34,11 @@ interface WorkshopListClientProps {
 export default function WorkshopListClient({ workshops }: WorkshopListClientProps) {
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
+  const [expandedSections, setExpandedSections] = useState({
+    quickFilters: true,
+    categories: false,
+    subjects: false
+  })
 
   const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter)
@@ -41,6 +47,14 @@ export default function WorkshopListClient({ workshops }: WorkshopListClientProp
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value.toLowerCase())
   }
+
+  const toggleSection = (section: keyof typeof expandedSections) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }))
+  }
+
 
   // Function to check if a workshop is upcoming
   const isUpcoming = (workshop: Workshop) => {
@@ -56,6 +70,11 @@ export default function WorkshopListClient({ workshops }: WorkshopListClientProp
   }
 
   const filteredWorkshops = workshops.filter((item) => {
+    // First filter out inactive workshops
+    if (!item.active) {
+      return false
+    }
+
     // Handle special filters first
     if (selectedFilter === 'all') {
       const matchesSearchTerm =
@@ -110,7 +129,8 @@ export default function WorkshopListClient({ workshops }: WorkshopListClientProp
   const getCategoriesWithCounts = () => {
     const categoryMap = new Map<string, number>()
     
-    workshops.forEach(workshop => {
+    // Only count active workshops
+    workshops.filter(workshop => workshop.active).forEach(workshop => {
       const category = workshop.category
       categoryMap.set(category, (categoryMap.get(category) || 0) + 1)
     })
@@ -126,7 +146,8 @@ export default function WorkshopListClient({ workshops }: WorkshopListClientProp
   const getSubjectsWithCounts = () => {
     const subjectMap = new Map<string, number>()
     
-    workshops.forEach(workshop => {
+    // Only count active workshops
+    workshops.filter(workshop => workshop.active).forEach(workshop => {
       const subject = workshop.type
       subjectMap.set(subject, (subjectMap.get(subject) || 0) + 1)
     })
@@ -153,74 +174,104 @@ export default function WorkshopListClient({ workshops }: WorkshopListClientProp
           className="w-full p-2 mb-4 border border-gray-300 rounded"
         />
         <div className="border rounded p-2 mb-4">
-          <h2 className="font-bold text-lg mb-2">Quick Filters</h2>
-          <ul className="space-y-2 text-customButton">
-            <li>
-              <button
-                onClick={() => handleFilterClick('upcoming')}
-                className={`text-left w-full ${
-                  selectedFilter === 'upcoming' ? 'font-bold text-blue-600' : ''
-                }`}
-              >
-                {`Upcoming Classes (${workshops.filter(isUpcoming).length})`}
-              </button>
-            </li>
-            <li className="border-t pt-2 mt-2">
-              <button
-                onClick={() => handleFilterClick('all')}
-                className={`text-left w-full ${
-                  selectedFilter === 'all' ? 'font-bold text-blue-600' : ''
-                }`}
-              >
-                All Classes ({workshops.length})
-              </button>
-            </li>
-          </ul>
+          <button
+            onClick={() => toggleSection('quickFilters')}
+            className="flex items-center justify-between w-full font-bold text-lg mb-2 hover:text-blue-600"
+          >
+            <span>Quick Filters</span>
+            <span className={`transform transition-transform ${expandedSections.quickFilters ? 'rotate-180' : ''}`}>
+              ▼
+            </span>
+          </button>
+          {expandedSections.quickFilters && (
+            <ul className="space-y-2 text-customButton">
+              <li>
+                <button
+                  onClick={() => handleFilterClick('upcoming')}
+                  className={`text-left w-full ${
+                    selectedFilter === 'upcoming' ? 'font-bold text-blue-600' : ''
+                  }`}
+                >
+                  {`Upcoming Classes (${workshops.filter(workshop => workshop.active).filter(isUpcoming).length})`}
+                </button>
+              </li>
+              <li className="border-t pt-2 mt-2">
+                <button
+                  onClick={() => handleFilterClick('all')}
+                  className={`text-left w-full ${
+                    selectedFilter === 'all' ? 'font-bold text-blue-600' : ''
+                  }`}
+                >
+                  All Classes ({workshops.filter(workshop => workshop.active).length})
+                </button>
+              </li>
+            </ul>
+          )}
         </div>
 
         <div className="border rounded p-2 mb-4">
-          <h2 className="font-bold text-lg mb-2">Categories</h2>
-          <ul className="space-y-2 text-customButton">
-            {categoriesWithCounts.map(({ category, count }) => (
-              <li key={category}>
-                <button
-                  onClick={() => handleFilterClick(category)}
-                  className={`text-left w-full ${
-                    selectedFilter === category ? 'font-bold text-blue-600' : ''
-                  }`}
-                >
-                  {category} ({count})
-                </button>
-              </li>
-            ))}
-          </ul>
+          <button
+            onClick={() => toggleSection('categories')}
+            className="flex items-center justify-between w-full font-bold text-lg mb-2 hover:text-blue-600"
+          >
+            <span>Categories</span>
+            <span className={`transform transition-transform ${expandedSections.categories ? 'rotate-180' : ''}`}>
+              ▼
+            </span>
+          </button>
+          {expandedSections.categories && (
+            <ul className="space-y-2 text-customButton">
+              {categoriesWithCounts.map(({ category, count }) => (
+                <li key={category}>
+                  <button
+                    onClick={() => handleFilterClick(category)}
+                    className={`text-left w-full ${
+                      selectedFilter === category ? 'font-bold text-blue-600' : ''
+                    }`}
+                  >
+                    {category} ({count})
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div className="border rounded p-2">
-          <h2 className="font-bold text-lg mb-2">All Subjects</h2>
-          <ul className="space-y-2 text-customButton">
-            {subjectsWithCounts.map(({ subject, count }) => (
-              <li key={subject}>
-                <button
-                  onClick={() => handleFilterClick(subject)}
-                  className={`text-left w-full ${
-                    selectedFilter === subject ? 'font-bold text-blue-600' : ''
-                  }`}
-                >
-                  {capitalizeFirstLetter(subject)} ({count})
-                </button>
-              </li>
-            ))}
-          </ul>
+          <button
+            onClick={() => toggleSection('subjects')}
+            className="flex items-center justify-between w-full font-bold text-lg mb-2 hover:text-blue-600"
+          >
+            <span>All Subjects</span>
+            <span className={`transform transition-transform ${expandedSections.subjects ? 'rotate-180' : ''}`}>
+              ▼
+            </span>
+          </button>
+          {expandedSections.subjects && (
+            <ul className="space-y-2 text-customButton">
+              {subjectsWithCounts.map(({ subject, count }) => (
+                <li key={subject}>
+                  <button
+                    onClick={() => handleFilterClick(subject)}
+                    className={`text-left w-full ${
+                      selectedFilter === subject ? 'font-bold text-blue-600' : ''
+                    }`}
+                  >
+                    {capitalizeFirstLetter(subject)} ({count})
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
 
       <main className="md:w-3/4">
-        <div className="flex justify-between mb-4">
+        <div className="flex justify-between items-center mb-4">
           <div className="flex gap-2">
             <button
               onClick={() => handleFilterClick('all')}
-              className={`px-4 py-2 rounded transition-colors ${
+              className={`px-4 sm:px-6 py-2 rounded text-xs sm:text-sm font-semibold transition-colors ${
                 selectedFilter === 'all' 
                   ? 'bg-blue-500 text-white' 
                   : 'bg-gray-200 hover:bg-gray-300'
@@ -230,15 +281,23 @@ export default function WorkshopListClient({ workshops }: WorkshopListClientProp
             </button>
             <button
               onClick={() => handleFilterClick('upcoming')}
-              className={`px-4 py-2 rounded transition-colors ${
+              className={`px-4 sm:px-6 py-2 rounded text-xs sm:text-sm font-semibold transition-colors ${
                 selectedFilter === 'upcoming' 
                   ? 'bg-blue-500 text-white' 
                   : 'bg-gray-200 hover:bg-gray-300'
               }`}
             >
-              {`Upcoming Classes (${workshops.filter(isUpcoming).length})`}
+              {`Upcoming Classes (${workshops.filter(workshop => workshop.active).filter(isUpcoming).length})`}
             </button>
           </div>
+          
+          {/* Submit Class Button */}
+          <a
+            href="/workshops/submit-workshop"
+            className="bg-customButton text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold hover:bg-red-700 transition-colors duration-300 transform hover:scale-105 text-center inline-block"
+          >
+            Submit a Class
+          </a>
         </div>
 
         <div className="space-y-4">
@@ -257,6 +316,7 @@ export default function WorkshopListClient({ workshops }: WorkshopListClientProp
                   width={300}
                   height={200}
                   className="w-full md:w-1/4 h-auto mb-4 md:mb-0 md:mr-4 rounded object-cover"
+                  unoptimized
                 />
 
                 <div className="flex flex-col justify-between">
@@ -302,6 +362,7 @@ export default function WorkshopListClient({ workshops }: WorkshopListClientProp
           ))}
         </div>
       </main>
+      
     </div>
   )
 }

@@ -30,6 +30,11 @@ interface LocationListClientProps {
 export default function LocationListClient({ locations }: LocationListClientProps) {
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
+  const [expandedSections, setExpandedSections] = useState({
+    quickFilters: true,
+    cities: false,
+    states: false
+  })
 
   const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter)
@@ -39,11 +44,20 @@ export default function LocationListClient({ locations }: LocationListClientProp
     setSearchTerm(event.target.value.toLowerCase())
   }
 
+  const toggleSection = (section: keyof typeof expandedSections) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }))
+  }
+
+
   // Get unique cities with counts
   const getCitiesWithCounts = () => {
     const cityMap = new Map<string, number>()
     
-    locations.forEach(location => {
+    // Only count active locations
+    locations.filter(location => location.active).forEach(location => {
       const city = location.city
       cityMap.set(city, (cityMap.get(city) || 0) + 1)
     })
@@ -59,7 +73,8 @@ export default function LocationListClient({ locations }: LocationListClientProp
   const getStatesWithCounts = () => {
     const stateMap = new Map<string, number>()
     
-    locations.forEach(location => {
+    // Only count active locations
+    locations.filter(location => location.active).forEach(location => {
       const state = location.state
       stateMap.set(state, (stateMap.get(state) || 0) + 1)
     })
@@ -113,60 +128,90 @@ export default function LocationListClient({ locations }: LocationListClientProp
       {/* Sidebar */}
       <div className="md:w-1/4">
         <div className="border rounded p-2 mb-4">
-          <h2 className="font-bold text-lg mb-2">All Locations</h2>
-          <ul className="space-y-2 text-customButton">
-            <li>
-              <button
-                onClick={() => handleFilterClick('all')}
-                className={`text-left w-full ${
-                  selectedFilter === 'all' ? 'font-bold text-blue-600' : ''
-                }`}
-              >
-                All Locations ({locations.length})
-              </button>
-            </li>
-          </ul>
+          <button
+            onClick={() => toggleSection('quickFilters')}
+            className="flex items-center justify-between w-full font-bold text-lg mb-2 hover:text-blue-600"
+          >
+            <span>Quick Filters</span>
+            <span className={`transform transition-transform ${expandedSections.quickFilters ? 'rotate-180' : ''}`}>
+              ▼
+            </span>
+          </button>
+          {expandedSections.quickFilters && (
+            <ul className="space-y-2 text-customButton">
+              <li>
+                <button
+                  onClick={() => handleFilterClick('all')}
+                  className={`text-left w-full ${
+                    selectedFilter === 'all' ? 'font-bold text-blue-600' : ''
+                  }`}
+                >
+                  All Locations ({locations.filter(location => location.active).length})
+                </button>
+              </li>
+            </ul>
+          )}
         </div>
 
         <div className="border rounded p-2 mb-4">
-          <h2 className="font-bold text-lg mb-2">Cities</h2>
-          <ul className="space-y-2 text-customButton">
-            {citiesWithCounts.map(({ city, count }) => (
-              <li key={city}>
-                <button
-                  onClick={() => handleFilterClick(city)}
-                  className={`text-left w-full ${
-                    selectedFilter === city ? 'font-bold text-blue-600' : ''
-                  }`}
-                >
-                  {city} ({count})
-                </button>
-              </li>
-            ))}
-          </ul>
+          <button
+            onClick={() => toggleSection('cities')}
+            className="flex items-center justify-between w-full font-bold text-lg mb-2 hover:text-blue-600"
+          >
+            <span>Cities</span>
+            <span className={`transform transition-transform ${expandedSections.cities ? 'rotate-180' : ''}`}>
+              ▼
+            </span>
+          </button>
+          {expandedSections.cities && (
+            <ul className="space-y-2 text-customButton">
+              {citiesWithCounts.map(({ city, count }) => (
+                <li key={city}>
+                  <button
+                    onClick={() => handleFilterClick(city)}
+                    className={`text-left w-full ${
+                      selectedFilter === city ? 'font-bold text-blue-600' : ''
+                    }`}
+                  >
+                    {city} ({count})
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div className="border rounded p-2">
-          <h2 className="font-bold text-lg mb-2">States</h2>
-          <ul className="space-y-2 text-customButton">
-            {statesWithCounts.map(({ state, count }) => (
-              <li key={state}>
-                <button
-                  onClick={() => handleFilterClick(state)}
-                  className={`text-left w-full ${
-                    selectedFilter === state ? 'font-bold text-blue-600' : ''
-                  }`}
-                >
-                  {state} ({count})
-                </button>
-              </li>
-            ))}
-          </ul>
+          <button
+            onClick={() => toggleSection('states')}
+            className="flex items-center justify-between w-full font-bold text-lg mb-2 hover:text-blue-600"
+          >
+            <span>States</span>
+            <span className={`transform transition-transform ${expandedSections.states ? 'rotate-180' : ''}`}>
+              ▼
+            </span>
+          </button>
+          {expandedSections.states && (
+            <ul className="space-y-2 text-customButton">
+              {statesWithCounts.map(({ state, count }) => (
+                <li key={state}>
+                  <button
+                    onClick={() => handleFilterClick(state)}
+                    className={`text-left w-full ${
+                      selectedFilter === state ? 'font-bold text-blue-600' : ''
+                    }`}
+                  >
+                    {state} ({count})
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
 
       <main className="md:w-3/4">
-        <div className="flex justify-between mb-4">
+        <div className="flex justify-between items-center mb-4">
           <div className="flex gap-2">
             <input
               type="text"
@@ -176,8 +221,15 @@ export default function LocationListClient({ locations }: LocationListClientProp
               className="px-3 py-2 border rounded-md w-64"
             />
           </div>
-          <div className="text-sm text-gray-600">
-            {filteredLocations.length} location{filteredLocations.length !== 1 ? 's' : ''} found
+          
+          <div className="flex items-center">
+            {/* Submit Location Button */}
+            <a
+              href="/locations/submit-location"
+              className="bg-customButton text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold hover:bg-red-700 transition-colors duration-300 transform hover:scale-105 text-center inline-block"
+            >
+              Submit Location
+            </a>
           </div>
         </div>
 
@@ -193,6 +245,7 @@ export default function LocationListClient({ locations }: LocationListClientProp
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      unoptimized
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
                       <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white bg-opacity-90 rounded-full p-3">
@@ -247,6 +300,7 @@ export default function LocationListClient({ locations }: LocationListClientProp
           </div>
         )}
       </main>
+      
     </div>
   )
 }
